@@ -60,6 +60,7 @@ const DEFAULT_CONFIG = {
     }
   },
   assertions: [],
+  statusline: 'full',
   hooks: {
     'session-init': true,
     'subagent-init': true,
@@ -505,6 +506,8 @@ function loadConfig(options = {}) {
     result.skills = merged.skills || DEFAULT_CONFIG.skills;
     // Hooks configuration
     result.hooks = merged.hooks || DEFAULT_CONFIG.hooks;
+    // Statusline mode
+    result.statusline = merged.statusline || 'full';
 
     return sanitizeConfig(result, projectRoot);
   } catch (e) {
@@ -521,7 +524,8 @@ function getDefaultConfig(includeProject = true, includeAssertions = true, inclu
     paths: { ...DEFAULT_CONFIG.paths },
     docs: { ...DEFAULT_CONFIG.docs },
     codingLevel: -1,  // Default: disabled (no injection, saves tokens)
-    skills: { ...DEFAULT_CONFIG.skills }
+    skills: { ...DEFAULT_CONFIG.skills },
+    statusline: 'full'
   };
   if (includeLocale) {
     result.locale = { ...DEFAULT_CONFIG.locale };

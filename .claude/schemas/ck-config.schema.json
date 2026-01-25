@@ -318,6 +318,12 @@
       "default": [],
       "description": "Code assertions and rules to enforce"
     },
+    "statusline": {
+      "type": "string",
+      "enum": ["full", "compact", "minimal", "none"],
+      "default": "full",
+      "description": "Statusline display mode: full=all features, compact=2-3 lines, minimal=single text line, none=disabled"
+    },
     "hooks": {
       "type": "object",
       "description": "Toggle individual hooks on/off. Default: all enabled.",
