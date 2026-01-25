@@ -20,8 +20,14 @@ const {
   resolvePlanPath,
   getReportsPath,
   normalizePath,
-  extractTaskListId
+  extractTaskListId,
+  isHookEnabled
 } = require('./lib/ck-config-utils.cjs');
+
+// Early exit if hook disabled in config
+if (!isHookEnabled('subagent-init')) {
+  process.exit(0);
+}
 
 /**
  * Get agent-specific context from config

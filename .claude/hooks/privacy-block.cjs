@@ -27,6 +27,12 @@ const {
   extractPaths,
   isSuspiciousPath
 } = require('./lib/privacy-checker.cjs');
+const { isHookEnabled } = require('./lib/ck-config-utils.cjs');
+
+// Early exit if hook disabled in config
+if (!isHookEnabled('privacy-block')) {
+  process.exit(0);
+}
 
 /**
  * Format block message with approval instructions and JSON marker for AskUserQuestion

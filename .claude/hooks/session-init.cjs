@@ -20,8 +20,14 @@ const {
   resolvePlanPath,
   getReportsPath,
   resolveNamingPattern,
-  extractTaskListId
+  extractTaskListId,
+  isHookEnabled
 } = require('./lib/ck-config-utils.cjs');
+
+// Early exit if hook disabled in config
+if (!isHookEnabled('session-init')) {
+  process.exit(0);
+}
 
 // Import shared project detection logic
 const {

@@ -18,6 +18,12 @@ const {
   buildReminderContext,
   wasRecentlyInjected
 } = require('./lib/context-builder.cjs');
+const { isHookEnabled } = require('./lib/ck-config-utils.cjs');
+
+// Early exit if hook disabled in config
+if (!isHookEnabled('dev-rules-reminder')) {
+  process.exit(0);
+}
 
 // ═══════════════════════════════════════════════════════════════════════════
 // MAIN EXECUTION

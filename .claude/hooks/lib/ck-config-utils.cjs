@@ -59,7 +59,16 @@ const DEFAULT_CONFIG = {
       useGemini: true  // Toggle Gemini CLI usage in research skill
     }
   },
-  assertions: []
+  assertions: [],
+  hooks: {
+    'session-init': true,
+    'subagent-init': true,
+    'dev-rules-reminder': true,
+    'usage-context-awareness': true,
+    'scout-block': true,
+    'privacy-block': true,
+    'post-edit-simplify-reminder': true
+  }
 };
 
 /**
@@ -494,6 +503,8 @@ function loadConfig(options = {}) {
     result.codingLevel = merged.codingLevel ?? -1;
     // Skills configuration
     result.skills = merged.skills || DEFAULT_CONFIG.skills;
+    // Hooks configuration
+    result.hooks = merged.hooks || DEFAULT_CONFIG.hooks;
 
     return sanitizeConfig(result, projectRoot);
   } catch (e) {
@@ -752,6 +763,20 @@ function extractTaskListId(resolved) {
   return path.basename(resolved.path);
 }
 
+/**
+ * Check if a hook is enabled in config
+ * Returns true if hook is not defined (default enabled)
+ *
+ * @param {string} hookName - Hook name (script basename without .cjs)
+ * @returns {boolean} Whether hook is enabled
+ */
+function isHookEnabled(hookName) {
+  const config = loadConfig({ includeProject: false, includeAssertions: false, includeLocale: false });
+  const hooks = config.hooks || {};
+  // Return true if undefined (default enabled), otherwise return the boolean value
+  return hooks[hookName] !== false;
+}
+
 module.exports = {
   CONFIG_PATH,
   LOCAL_CONFIG_PATH,
@@ -782,5 +807,6 @@ module.exports = {
   resolveNamingPattern,
   getGitBranch,
   getGitRoot,
-  extractTaskListId
+  extractTaskListId,
+  isHookEnabled
 };
