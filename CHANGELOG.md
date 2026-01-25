@@ -1,3 +1,16 @@
+## [2.6.0-beta.10](https://github.com/claudekit/claudekit-engineer/compare/v2.6.0-beta.9...v2.6.0-beta.10) (2026-01-25)
+
+
+### 🚀 Features
+
+* **hooks:** add config toggle for enabling/disabling hooks ([7544d87](https://github.com/claudekit/claudekit-engineer/commit/7544d87ba84b577bd35174dd29da2ab17e3ea8de)), closes [#367](https://github.com/claudekit/claudekit-engineer/issues/367)
+* **statusline:** add configurable display modes [#368](https://github.com/claudekit/claudekit-engineer/issues/368) ([ab12ee2](https://github.com/claudekit/claudekit-engineer/commit/ab12ee212a194c6b5782f865d7aea40c53e33dfe))
+
+
+### 🐞 Bug Fixes
+
+* **release:** include only plans/templates in release assets ([685a120](https://github.com/claudekit/claudekit-engineer/commit/685a12007064a3a70d1f2668a3310011dccfff91))
+
 ## [2.6.0-beta.9](https://github.com/claudekit/claudekit-engineer/compare/v2.6.0-beta.8...v2.6.0-beta.9) (2026-01-25)
 
 
