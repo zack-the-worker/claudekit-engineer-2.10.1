@@ -32,6 +32,12 @@ const {
   isVenvExecutable,
   isAllowedCommand
 } = require('./lib/scout-checker.cjs');
+const { isHookEnabled } = require('./lib/ck-config-utils.cjs');
+
+// Early exit if hook disabled in config
+if (!isHookEnabled('scout-block')) {
+  process.exit(0);
+}
 
 // Import formatters (kept local as they're Claude-specific output)
 const { formatBlockedError } = require('./scout-block/error-formatter.cjs');

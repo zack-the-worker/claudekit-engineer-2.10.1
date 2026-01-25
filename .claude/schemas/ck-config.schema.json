@@ -317,6 +317,54 @@
       },
       "default": [],
       "description": "Code assertions and rules to enforce"
+    },
+    "statusline": {
+      "type": "string",
+      "enum": ["full", "compact", "minimal", "none"],
+      "default": "full",
+      "description": "Statusline display mode: full=all features, compact=2-3 lines, minimal=single text line, none=disabled"
+    },
+    "hooks": {
+      "type": "object",
+      "description": "Toggle individual hooks on/off. Default: all enabled.",
+      "properties": {
+        "session-init": {
+          "type": "boolean",
+          "default": true,
+          "description": "SessionStart hook - project detection and env setup"
+        },
+        "subagent-init": {
+          "type": "boolean",
+          "default": true,
+          "description": "SubagentStart hook - injects context to subagents"
+        },
+        "dev-rules-reminder": {
+          "type": "boolean",
+          "default": true,
+          "description": "UserPromptSubmit hook - injects dev rules context"
+        },
+        "usage-context-awareness": {
+          "type": "boolean",
+          "default": true,
+          "description": "UserPromptSubmit/PostToolUse hook - usage limits awareness"
+        },
+        "scout-block": {
+          "type": "boolean",
+          "default": true,
+          "description": "PreToolUse hook - blocks heavy directories"
+        },
+        "privacy-block": {
+          "type": "boolean",
+          "default": true,
+          "description": "PreToolUse hook - blocks sensitive files"
+        },
+        "post-edit-simplify-reminder": {
+          "type": "boolean",
+          "default": true,
+          "description": "PostToolUse hook - simplify reminder after edits"
+        }
+      },
+      "additionalProperties": false
     }
   },
   "additionalProperties": true

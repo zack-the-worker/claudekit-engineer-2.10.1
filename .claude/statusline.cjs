@@ -18,6 +18,7 @@ const path = require('path');
 const { green, yellow, red, cyan, magenta, dim, coloredBar, RESET, shouldUseColor } = require('./hooks/lib/colors.cjs');
 const { parseTranscript } = require('./hooks/lib/transcript-parser.cjs');
 const { countConfigs } = require('./hooks/lib/config-counter.cjs');
+const { loadConfig } = require('./hooks/lib/ck-config-utils.cjs');
 
 // Buffer constant matching /context output (22.5% of 200k)
 const AUTOCOMPACT_BUFFER = 45000;
@@ -110,6 +111,17 @@ async function readStdin() {
 // ============================================================================
 
 /**
+ * Build usage time string with optional percentage
+ * @returns {string|null} Formatted usage string or null if unavailable
+ */
+function buildUsageString(ctx) {
+  if (!ctx.sessionText || ctx.sessionText === 'N/A') return null;
+  let str = ctx.sessionText.replace(' until reset', ' left');
+  if (ctx.usagePercent != null) str += ` (${Math.round(ctx.usagePercent)}%)`;
+  return str;
+}
+
+/**
  * Render session lines with multi-level responsive wrapping
  * Combines parts based on content length vs terminal width
  * Tries to minimize lines while keeping content readable
@@ -150,10 +162,9 @@ function renderSessionLines(ctx) {
     sessionPart += `  ${coloredBar(ctx.contextPercent, 12)} ${ctx.contextPercent}%`;
   }
   // Add usage/reset info to session part (stays on line 1 with model - Claude Code only reads line 1)
-  if (ctx.sessionText) {
-    let usageStr = `⌛ ${ctx.sessionText.replace(' until reset', ' left')}`;
-    if (ctx.usagePercent != null) usageStr += ` (${Math.round(ctx.usagePercent)}% used)`;
-    sessionPart += `  ${usageStr}`;
+  const usageStr = buildUsageString(ctx);
+  if (usageStr) {
+    sessionPart += `  ⌛ ${usageStr.replace(/\)$/, '% used)')}`;
   }
 
   // Build stats part (only lines changed now)
@@ -304,6 +315,42 @@ function renderTodosLine(transcript) {
   const displayText = inProgress.activeForm || inProgress.content;
   const display = displayText.length > 50 ? displayText.slice(0, 47) + '...' : displayText;
   return `${yellow('▸')} ${display} ${dim(`(${completedCount} done, ${pendingCount} pending)`)}`;
+}
+
+/**
+ * Render minimal mode - single line with emojis, no progress bar
+ * Format: "🤖 opus 4.5  🔋 50%  ⏰ 2h 16m (38%)  🌿 branch  📁 ~/path"
+ */
+function renderMinimal(ctx) {
+  const parts = [`🤖 ${ctx.modelName}`];
+  if (ctx.contextPercent > 0) {
+    const batteryIcon = ctx.contextPercent > 70 ? red('🔋') : '🔋';
+    parts.push(`${batteryIcon} ${ctx.contextPercent}%`);
+  }
+  const usageStr = buildUsageString(ctx);
+  if (usageStr) parts.push(`⏰ ${usageStr}`);
+  if (ctx.gitBranch) parts.push(`🌿 ${ctx.gitBranch}`);
+  parts.push(`📁 ${ctx.currentDir}`);
+  console.log(parts.join('  '));
+}
+
+/**
+ * Render compact mode - 2 lines: session info + location (branch + dir)
+ */
+function renderCompact(ctx) {
+  // Line 1: Session info (model + context + usage)
+  let line1 = `🤖 ${ctx.modelName}`;
+  if (ctx.contextPercent > 0) {
+    line1 += `  ${coloredBar(ctx.contextPercent, 12)} ${ctx.contextPercent}%`;
+  }
+  const usageStr = buildUsageString(ctx);
+  if (usageStr) line1 += `  ⌛ ${usageStr}`;
+  console.log(line1.replace(/ /g, '\u00A0'));
+
+  // Line 2: Location (branch + directory)
+  let line2 = `📁 ${ctx.currentDir}`;
+  if (ctx.gitBranch) line2 += `  🌿 ${ctx.gitBranch}`;
+  console.log(line2.replace(/ /g, '\u00A0'));
 }
 
 /**
@@ -491,8 +538,26 @@ async function main() {
       transcript
     };
 
-    // Render (multi-line by default)
-    render(ctx, false);
+    // Load config and get statusline mode
+    const config = loadConfig({ includeProject: false, includeAssertions: false, includeLocale: false });
+    const statuslineMode = config.statusline || 'full';
+
+    // Render based on mode
+    switch (statuslineMode) {
+      case 'none':
+        console.log('');
+        break;
+      case 'minimal':
+        renderMinimal(ctx);
+        break;
+      case 'compact':
+        renderCompact(ctx);
+        break;
+      case 'full':
+      default:
+        render(ctx, false);
+        break;
+    }
 
   } catch (err) {
     // Fallback: output minimal single line on any error

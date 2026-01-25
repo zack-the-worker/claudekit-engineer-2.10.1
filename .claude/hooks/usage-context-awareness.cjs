@@ -17,6 +17,12 @@ const fs = require("fs");
 const path = require("path");
 const os = require("os");
 const { execSync } = require("child_process");
+const { isHookEnabled } = require('./lib/ck-config-utils.cjs');
+
+// Early exit if hook disabled in config
+if (!isHookEnabled('usage-context-awareness')) {
+  process.exit(0);
+}
 
 // Cache configuration
 const USAGE_CACHE_FILE = path.join(os.tmpdir(), "ck-usage-limits-cache.json");
