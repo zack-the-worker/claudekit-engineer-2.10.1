@@ -1,3 +1,23 @@
+## [2.6.0-beta.11](https://github.com/claudekit/claudekit-engineer/compare/v2.6.0-beta.10...v2.6.0-beta.11) (2026-01-26)
+
+
+### 🚀 Features
+
+* **git:** improve commit standards and workflow notes ([836c81f](https://github.com/claudekit/claudekit-engineer/commit/836c81fee7a3e0ac45c630fbce91078a5a31b162))
+* **shader:** add GLSL fragment shader skill ([83ca0cd](https://github.com/claudekit/claudekit-engineer/commit/83ca0cd517119393259ab7bb68ca2f173111398b))
+
+
+### 🐞 Bug Fixes
+
+* **hooks:** avoid stuck at descriptive name hook ([35e960e](https://github.com/claudekit/claudekit-engineer/commit/35e960e2950ac7908c08fb449cc38dfbc656309c))
+
+
+### 📚 Documentation
+
+* **git:** add merge-main-first reminder to PR and merge workflows ([04677c7](https://github.com/claudekit/claudekit-engineer/commit/04677c75433a09d25e49fa5082e2470994e71dae))
+* **git:** add note to search GitHub issues for commit context ([21823de](https://github.com/claudekit/claudekit-engineer/commit/21823de822a261e824eae47f89ad5fa66261c3ef))
+* simplify primary workflow instructions ([11329c7](https://github.com/claudekit/claudekit-engineer/commit/11329c712edbbc973f8a94f61d58d07577e4d9e5))
+
 ## [2.6.0](https://github.com/claudekit/claudekit-engineer/compare/v2.5.0...v2.6.0) (2026-01-26)
 
 
