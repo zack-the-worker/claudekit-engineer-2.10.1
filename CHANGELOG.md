@@ -1,3 +1,11 @@
+## [2.6.0-beta.12](https://github.com/claudekit/claudekit-engineer/compare/v2.6.0-beta.11...v2.6.0-beta.12) (2026-01-26)
+
+
+### 🐞 Bug Fixes
+
+* **release:** pump v2.6.1-beta.0 ([0fed02e](https://github.com/claudekit/claudekit-engineer/commit/0fed02e9fe99e81b0878700f71db195bd40654bf))
+* resolve merge conflict in package.json version ([e435700](https://github.com/claudekit/claudekit-engineer/commit/e435700500e3957fcf0b4e7b83ed8cb5d045fcb4))
+
 ## [2.6.0-beta.11](https://github.com/claudekit/claudekit-engineer/compare/v2.6.0-beta.10...v2.6.0-beta.11) (2026-01-26)
 
 
