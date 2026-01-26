@@ -48,8 +48,8 @@
         "matcher": "Write",
         "hooks": [
           {
-            "type": "prompt",
-            "prompt": "Use kebab-case file naming with a long descriptive name to ensure this file name is self-documenting, so that when LLM is using tools (Grep, Glob, Search) to list files, it can guess what the file does right away without reading the file.\nConsider Modularization.\nSearch for existing modules/components before creating new to avoid code duplication."
+            "type": "command",
+            "command": "node .claude/hooks/descriptive-name.cjs"
           }
         ]
       },
