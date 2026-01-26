@@ -1,7 +1,7 @@
 ---
-name: Debugging
+name: debug
 description: Debug systematically with root cause analysis before fixes. Use for bugs, test failures, unexpected behavior, performance issues, call stack tracing, multi-layer validation.
-version: 3.0.0
+version: 3.1.0
 languages: all
 ---
 

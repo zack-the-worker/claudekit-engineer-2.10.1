@@ -6,7 +6,7 @@ When to activate each skill during fixing workflows.
 
 | Skill | Reason |
 |-------|--------|
-| `debugging` | Core to all fix workflows - find root cause first |
+| `debug` | Core to all fix workflows - find root cause first |
 
 ## Conditional Activation
 
@@ -48,7 +48,7 @@ See `references/parallel-exploration.md` for detailed patterns.
 
 | Workflow | Skills Activated |
 |----------|------------------|
-| Quick | `debugging`, `code-reviewer`, parallel `Bash` verification |
+| Quick | `debug`, `code-reviewer`, parallel `Bash` verification |
 | Standard | Above + `problem-solving`, `sequential-thinking`, `tester`, parallel `Explore` |
 | Deep | All above + `brainstorming`, `context-engineering`, `researcher`, `planner` |
 | Parallel | Per-issue workflow + coordination via parallel agents |

@@ -23,6 +23,11 @@ All modes share core steps with mode-specific variations.
 
 **Output:** `✓ Step 1: Research complete - [N] reports gathered`
 
+### [Review Gate 1] Post-Research (skip if auto mode)
+- Present research summary to user
+- AskUserQuestion: "Proceed to planning?" / "Request more research" / "Abort"
+- **Auto mode:** Skip this gate
+
 ## Step 2: Planning
 
 **Interactive/Auto/No-test:**
@@ -42,6 +47,11 @@ All modes share core steps with mode-specific variations.
 
 **Output:** `✓ Step 2: Plan created - [N] phases`
 
+### [Review Gate 2] Post-Plan (skip if auto mode)
+- Present plan overview with phases
+- AskUserQuestion: "Approve plan and start implementation?" / "Request revisions" / "Abort"
+- **Auto mode:** Skip this gate
+
 ## Step 3: Implementation
 
 **All modes:**
@@ -57,6 +67,11 @@ All modes share core steps with mode-specific variations.
 
 **Output:** `✓ Step 3: Implemented [N] files - [X/Y] tasks complete`
 
+### [Review Gate 3] Post-Implementation (skip if auto mode)
+- Present implementation summary (files changed, key changes)
+- AskUserQuestion: "Proceed to testing?" / "Request implementation changes" / "Abort"
+- **Auto mode:** Skip this gate
+
 ## Step 4: Testing (skip if no-test mode)
 
 **All modes (except no-test):**
@@ -66,6 +81,11 @@ All modes share core steps with mode-specific variations.
 - **Forbidden:** fake mocks, commented tests, changed assertions
 
 **Output:** `✓ Step 4: Tests [X/X passed]`
+
+### [Review Gate 4] Post-Testing (skip if auto mode)
+- Present test results summary
+- AskUserQuestion: "Proceed to code review?" / "Request test fixes" / "Abort"
+- **Auto mode:** Skip this gate
 
 ## Step 5: Code Review
 
@@ -99,14 +119,18 @@ All modes share core steps with mode-specific variations.
 
 ## Mode-Specific Flow Summary
 
+Legend: `[R]` = Review Gate (human approval required)
+
 ```
-interactive: 0 → 1 → 2 → 3 → 4 → 5(user) → 6
-auto:        0 → 1 → 2 → 3 → 4 → 5(auto)  → 6 → next phase
-fast:        0 → skip → 2(fast) → 3 → 4 → 5(simple) → 6
-parallel:    0 → 1? → 2(parallel) → 3(multi-agent) → 4 → 5(user) → 6
-no-test:     0 → 1 → 2 → 3 → skip → 5(user) → 6
-code:        0 → skip → skip → 3 → 4 → 5(user) → 6
+interactive: 0 → 1 → [R] → 2 → [R] → 3 → [R] → 4 → [R] → 5(user) → 6
+auto:        0 → 1 → 2 → 3 → 4 → 5(auto) → 6 → next phase (NO stops)
+fast:        0 → skip → 2(fast) → [R] → 3 → [R] → 4 → [R] → 5(simple) → 6
+parallel:    0 → 1? → [R] → 2(parallel) → [R] → 3(multi-agent) → [R] → 4 → [R] → 5(user) → 6
+no-test:     0 → 1 → [R] → 2 → [R] → 3 → [R] → skip → 5(user) → 6
+code:        0 → skip → skip → 3 → [R] → 4 → [R] → 5(user) → 6
 ```
+
+**Key difference:** `auto` mode is the ONLY mode that skips all review gates.
 
 ## Critical Rules
 
