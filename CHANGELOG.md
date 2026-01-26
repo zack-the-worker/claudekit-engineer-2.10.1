@@ -1,62 +1,120 @@
-## [2.5.0](https://github.com/claudekit/claudekit-engineer/compare/v2.4.0...v2.5.0) (2026-01-23)
+## [2.6.0-beta.10](https://github.com/claudekit/claudekit-engineer/compare/v2.6.0-beta.9...v2.6.0-beta.10) (2026-01-25)
 
 
 ### 🚀 Features
 
-* **ai-artist:** add data assets and prompt generation scripts ([3f958b0](https://github.com/claudekit/claudekit-engineer/commit/3f958b0dcc5fd116af317c0a0bcb36e689ed37c2))
-* **beads:** integrate beads as core workflow component ([#208](https://github.com/claudekit/claudekit-engineer/issues/208)) ([0c7c9c3](https://github.com/claudekit/claudekit-engineer/commit/0c7c9c31c2547710dafec3b7a2f70652525f461a)), closes [#176](https://github.com/claudekit/claudekit-engineer/issues/176)
-* **chrome-devtools:** add authentication and cookie management features ([4206332](https://github.com/claudekit/claudekit-engineer/commit/420633266f0b352d0ceacd322b9476d7d87c9efb))
-* **commands:** add mandatory /clear reminder after planning workflow ([c89478c](https://github.com/claudekit/claudekit-engineer/commit/c89478cd91e45db8a39b99bc072793201e0660a1)), closes [#355](https://github.com/claudekit/claudekit-engineer/issues/355)
-* integrate native Claude Code Tasks API ([#362](https://github.com/claudekit/claudekit-engineer/issues/362)) ([215adb1](https://github.com/claudekit/claudekit-engineer/commit/215adb12b777b611cc9b680579e590edf8e7a8cf))
-* **mcp:** add MCP manager agent and CLI integration support ([5bf9a9d](https://github.com/claudekit/claudekit-engineer/commit/5bf9a9de040b2fab608e5d4aaf91f663e54130ee))
-* **release:** add explicit release rules for minor/patch version bumps ([24706fb](https://github.com/claudekit/claudekit-engineer/commit/24706fb1f5db73ca0c6cf4b06f186c42de438f0a))
-* **skill:** add web-testing skill for comprehensive test automation ([bc42ca3](https://github.com/claudekit/claudekit-engineer/commit/bc42ca3a068ee4ce6a7ae8e2264cc1e16233945d))
-* **skill:** add web-testing skill with comprehensive testing workflows ([34cd3c1](https://github.com/claudekit/claudekit-engineer/commit/34cd3c12328dd01bf2b1f4dd93becbf6298a16a8))
-* **skills:** add cook skill for task orchestration ([458b32f](https://github.com/claudekit/claudekit-engineer/commit/458b32f1d6742bfbee300b431b47241a88e793c6))
-* **skills:** add gkg skill for semantic code analysis ([b3c2767](https://github.com/claudekit/claudekit-engineer/commit/b3c2767fcd49e392c7bb9af2a0d248c54ce067cc))
-* **skills:** add scout skill for codebase file discovery ([18e0274](https://github.com/claudekit/claudekit-engineer/commit/18e0274e68a1104c98672631146077ef47dd0f7a))
-* **threejs:** add data processing and search capabilities for Three.js API documentation ([91c2d9d](https://github.com/claudekit/claudekit-engineer/commit/91c2d9dec1b143be2d524fdaa716597a60b6ce13))
-* **web-testing:** add Playwright test automation scripts ([e56728a](https://github.com/claudekit/claudekit-engineer/commit/e56728ac157ee7444f44a20937f453bdae0eb92c))
-* **worktree:** add --worktree-root flag for Claude-driven decisions ([003cd43](https://github.com/claudekit/claudekit-engineer/commit/003cd4350293941b03bc6d12787f1170d02471d2))
+* **hooks:** add config toggle for enabling/disabling hooks ([7544d87](https://github.com/claudekit/claudekit-engineer/commit/7544d87ba84b577bd35174dd29da2ab17e3ea8de)), closes [#367](https://github.com/claudekit/claudekit-engineer/issues/367)
+* **statusline:** add configurable display modes [#368](https://github.com/claudekit/claudekit-engineer/issues/368) ([ab12ee2](https://github.com/claudekit/claudekit-engineer/commit/ab12ee212a194c6b5782f865d7aea40c53e33dfe))
 
 
 ### 🐞 Bug Fixes
 
-* **opencode:** use plural folder names for OpenCode compatibility ([7b7f177](https://github.com/claudekit/claudekit-engineer/commit/7b7f17755d6a7df95de283e660def0c5fe18f1e3))
-* **skills:** typo in 3d ref of `frontend-design` skill ([2382b00](https://github.com/claudekit/claudekit-engineer/commit/2382b004beec1ad104e284568b9734a4b8db19ab))
-* **worktree:** add validation, safety limits, and tests for robustness ([cb05c3f](https://github.com/claudekit/claudekit-engineer/commit/cb05c3fef595556615ff3056e3bba18d11b57466))
-* **worktree:** consistent location via superproject detection ([cadb65a](https://github.com/claudekit/claudekit-engineer/commit/cadb65a8b32d80a0415c65680a5af447ce038991)), closes [#345](https://github.com/claudekit/claudekit-engineer/issues/345)
+* **release:** include only plans/templates in release assets ([685a120](https://github.com/claudekit/claudekit-engineer/commit/685a12007064a3a70d1f2668a3310011dccfff91))
+
+## [2.6.0-beta.9](https://github.com/claudekit/claudekit-engineer/compare/v2.6.0-beta.8...v2.6.0-beta.9) (2026-01-25)
 
 
-### 📚 Documentation
+### 🚀 Features
 
-* add cpg marketing 2026 infographics ([fc250b7](https://github.com/claudekit/claudekit-engineer/commit/fc250b7135e4a81c4a85af25a2b61876977c09f0))
-* **ai-artist:** add comprehensive nano banana prompts and skill documentation ([9d05673](https://github.com/claudekit/claudekit-engineer/commit/9d056739f5527712458a3b5f96432369f6745489))
-* **commands:** update docs commands with improved instructions ([bc29733](https://github.com/claudekit/claudekit-engineer/commit/bc2973301e10ae15d5152aad6a369ec33eae42b7))
-* **mcp:** update Gemini CLI integration reference ([654f03c](https://github.com/claudekit/claudekit-engineer/commit/654f03cd66f0511ef861ff8b307922319dc13ae9))
-* **skill-creator:** add quality criteria reference documentation ([b448fa3](https://github.com/claudekit/claudekit-engineer/commit/b448fa39cb9421ae397cd9484039fd63d87a982f))
-* **skill:** enhance devops skill with kubernetes reference documentation ([14f6e7b](https://github.com/claudekit/claudekit-engineer/commit/14f6e7b85101894005d0c8f2150dbf9f32e4d6b0))
-* **skills:** add frontend-design workflow references ([64af261](https://github.com/claudekit/claudekit-engineer/commit/64af26179e0a03ba7db893014c318a161c82e225))
-* **skills:** add remotion skill with comprehensive references ([c5106b3](https://github.com/claudekit/claudekit-engineer/commit/c5106b34710ecb350e4539676df2fd62b7ef717a))
-* **skills:** update skill-creator with improved guidelines ([c06a3c8](https://github.com/claudekit/claudekit-engineer/commit/c06a3c8d520c343ed7211404c79f9c366b48a2fa))
-* **threejs:** add references for fundamentals, materials, shaders, and geometry ([c67cc55](https://github.com/claudekit/claudekit-engineer/commit/c67cc55720686c7bd3bec0c03df9bb8686d273dd))
-* **threejs:** update skill documentation with enhanced examples and API reference ([bd5ccdd](https://github.com/claudekit/claudekit-engineer/commit/bd5ccddbb90e6e88d0e7befa25a44d0140bad70f))
-* **web-testing:** add comprehensive testing framework references and guidelines ([d356cbb](https://github.com/claudekit/claudekit-engineer/commit/d356cbb89f2788fac43eebbe1b1988c6c7de521a))
-* **web-testing:** add comprehensive testing references and guidelines ([a45da0a](https://github.com/claudekit/claudekit-engineer/commit/a45da0a6512f1331d2855166e7b50960a84f9bc2))
-* **worktree:** restore detailed dependency install examples ([eeeba94](https://github.com/claudekit/claudekit-engineer/commit/eeeba9405850eff95589ecdff14cda42a6976817))
+* **metadata:** add deletions array for archived commands cleanup ([947b891](https://github.com/claudekit/claudekit-engineer/commit/947b891154b5e44089a6de28f48469fdd5e1497f))
+* **skills:** add agent-browser skill for AI-optimized browser automation ([a4ae50e](https://github.com/claudekit/claudekit-engineer/commit/a4ae50e15bc570f528f2a104f5977236af169efc))
+
+
+### 🐞 Bug Fixes
+
+* **deletions:** add removed agents (copywriter, database-admin, scout, scout-external) ([0cb28a1](https://github.com/claudekit/claudekit-engineer/commit/0cb28a1218875a9aea3de247d32a521a9dc4e0d0))
+* **deletions:** add skills/brainstorming/** (renamed to brainstorm) ([702ceb3](https://github.com/claudekit/claudekit-engineer/commit/702ceb387e296f4faeed1e1d3c870acd13401a8f))
+* **deletions:** add verified deprecated commands and skills ([3fe04ee](https://github.com/claudekit/claudekit-engineer/commit/3fe04ee66f1303510b0efc1ea1f0c60567de2f8e))
+* **hooks:** add fallback for usage API when OAuth unavailable ([4d10d70](https://github.com/claudekit/claudekit-engineer/commit/4d10d70b5a23c3c6c2294841973c03f9ed6fa588)), closes [#369](https://github.com/claudekit/claudekit-engineer/issues/369)
+* **metadata:** restore deletions array lost during rebase conflict ([4499a6b](https://github.com/claudekit/claudekit-engineer/commit/4499a6b56de158179a8f75ecff1fd96521b912ae))
+* **release:** preserve deletions array in metadata.json during releases ([2be49b7](https://github.com/claudekit/claudekit-engineer/commit/2be49b7b2882fdf083193b055e112aa5470238f8))
+* **release:** prevent data loss in release scripts ([ad4a151](https://github.com/claudekit/claudekit-engineer/commit/ad4a151a06fa17ed9c3590c52b92af5a2eed433b))
 
 
 ### ♻️ Code Refactoring
 
-* **agents:** remove deprecated scout agent definitions ([e07a855](https://github.com/claudekit/claudekit-engineer/commit/e07a855ddff4d32ae2070d13739f3a8acad024cc))
-* **agents:** simplify git-manager agent prompt ([e3c6da3](https://github.com/claudekit/claudekit-engineer/commit/e3c6da3c7788e905738d9ff538b37b273f395309))
-* **commands:** archive deprecated commands to commands-archived ([a7fec39](https://github.com/claudekit/claudekit-engineer/commit/a7fec391576ea7446053094b52f89495544556a2))
-* **skills:** rename brainstorming to brainstorm ([7ef3c20](https://github.com/claudekit/claudekit-engineer/commit/7ef3c205f7002291d459008b586e9f9b34e1a994))
+* **deletions:** use glob patterns instead of explicit paths ([9c4a8ed](https://github.com/claudekit/claudekit-engineer/commit/9c4a8ed860b35c143f9e05bb5eb179c397c89d22))
 
 
-### ✅ Tests
+### 👷 CI
 
-* **worktree:** add comprehensive edge case and user scenario tests ([e52dd54](https://github.com/claudekit/claudekit-engineer/commit/e52dd54bb91f807342a47c8043eef6b55a555e7c))
+* add auto-sync workflow to merge main back to dev after releases ([cd45b07](https://github.com/claudekit/claudekit-engineer/commit/cd45b07e5626fc1ee7c455d278edd22522444f7d))
+
+## [2.6.0-beta.8](https://github.com/claudekit/claudekit-engineer/compare/v2.6.0-beta.7...v2.6.0-beta.8) (2026-01-24)
+
+
+### 🐞 Bug Fixes
+
+* **deletions:** add removed agents (copywriter, database-admin, scout, scout-external) ([e0a3e9b](https://github.com/claudekit/claudekit-engineer/commit/e0a3e9bcf49a7b0b9751d291a6ae5ccbf0cf7585))
+
+## [2.6.0-beta.7](https://github.com/claudekit/claudekit-engineer/compare/v2.6.0-beta.6...v2.6.0-beta.7) (2026-01-24)
+
+
+### 🐞 Bug Fixes
+
+* **deletions:** add skills/brainstorming/** (renamed to brainstorm) ([39c4522](https://github.com/claudekit/claudekit-engineer/commit/39c45225f0eb2b3b3090e410caafd81dc8f73b4e))
+
+## [2.6.0-beta.6](https://github.com/claudekit/claudekit-engineer/compare/v2.6.0-beta.5...v2.6.0-beta.6) (2026-01-24)
+
+
+### 🐞 Bug Fixes
+
+* **deletions:** add verified deprecated commands and skills ([cc28253](https://github.com/claudekit/claudekit-engineer/commit/cc28253b5ba788736854893efb9ad9d3ec6674e5))
+
+## [2.6.0-beta.5](https://github.com/claudekit/claudekit-engineer/compare/v2.6.0-beta.4...v2.6.0-beta.5) (2026-01-24)
+
+
+### ♻️ Code Refactoring
+
+* **deletions:** use glob patterns instead of explicit paths ([6a8407a](https://github.com/claudekit/claudekit-engineer/commit/6a8407a491c644b66d067b85fda3c04ff69932e5))
+
+## [2.6.0-beta.4](https://github.com/claudekit/claudekit-engineer/compare/v2.6.0-beta.3...v2.6.0-beta.4) (2026-01-24)
+
+
+### 🐞 Bug Fixes
+
+* **release:** prevent data loss in release scripts ([58f17ab](https://github.com/claudekit/claudekit-engineer/commit/58f17ab3afbdd66d22e27a062992af54bc72d85c))
+
+## [2.6.0-beta.3](https://github.com/claudekit/claudekit-engineer/compare/v2.6.0-beta.2...v2.6.0-beta.3) (2026-01-24)
+
+
+### 🐞 Bug Fixes
+
+* **metadata:** restore deletions array lost during rebase conflict ([1a25b83](https://github.com/claudekit/claudekit-engineer/commit/1a25b83d0688123f1701ff1c08ad602730218a96))
+
+## [2.6.0-beta.2](https://github.com/claudekit/claudekit-engineer/compare/v2.6.0-beta.1...v2.6.0-beta.2) (2026-01-24)
+
+
+### 🐞 Bug Fixes
+
+* **release:** preserve deletions array in metadata.json during releases ([2d729e7](https://github.com/claudekit/claudekit-engineer/commit/2d729e74f5c860555fd2d24579031ba859aa5839))
+
+## [2.6.0-beta.1](https://github.com/claudekit/claudekit-engineer/compare/v2.5.0...v2.6.0-beta.1) (2026-01-24)
+
+
+### 🚀 Features
+
+* **metadata:** add deletions array for archived commands cleanup ([5125bd5](https://github.com/claudekit/claudekit-engineer/commit/5125bd5262228268d4fab3be33020f8b116a22a4))
+* **skills:** add agent-browser skill for AI-optimized browser automation ([429a2e7](https://github.com/claudekit/claudekit-engineer/commit/429a2e79bd99bc739898f2457cca9b5d22662247))
+
+
+### 👷 CI
+
+* add auto-sync workflow to merge main back to dev after releases ([658d09a](https://github.com/claudekit/claudekit-engineer/commit/658d09aee5f5ff4924210fa7b83d2f88a91184bb))
+
+## [2.5.0-beta.11](https://github.com/claudekit/claudekit-engineer/compare/v2.5.0-beta.10...v2.5.0-beta.11) (2026-01-24)
+
+
+### 🚀 Features
+
+* **metadata:** add deletions array for archived commands cleanup ([5125bd5](https://github.com/claudekit/claudekit-engineer/commit/5125bd5262228268d4fab3be33020f8b116a22a4))
+
+## [2.5.0-beta.10](https://github.com/claudekit/claudekit-engineer/compare/v2.5.0-beta.9...v2.5.0-beta.10) (2026-01-23)
+
+
+### 🚀 Features
+
+* **skills:** add agent-browser skill for AI-optimized browser automation ([429a2e7](https://github.com/claudekit/claudekit-engineer/commit/429a2e79bd99bc739898f2457cca9b5d22662247))
 
 ## [2.5.0-beta.9](https://github.com/claudekit/claudekit-engineer/compare/v2.5.0-beta.8...v2.5.0-beta.9) (2026-01-23)
 

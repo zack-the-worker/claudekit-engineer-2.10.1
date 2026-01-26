@@ -57,7 +57,20 @@ const { execSync } = require('child_process');
       fs.mkdirSync(claudeDir, { recursive: true });
     }
 
+    // Read existing metadata to preserve ALL custom fields
+    let existingMetadata = {};
+    if (fs.existsSync(metadataPath)) {
+      try {
+        existingMetadata = JSON.parse(fs.readFileSync(metadataPath, 'utf8'));
+      } catch (parseErr) {
+        console.warn('⚠️ Could not parse existing metadata.json, starting fresh');
+      }
+    }
+
     const metadata = {
+      // Preserve ALL existing fields first
+      ...existingMetadata,
+      // Generated fields override existing (always update these)
       version: packageJson.version,
       name: packageJson.name,
       description: packageJson.description,
@@ -111,7 +124,7 @@ const { execSync } = require('child_process');
     const archiveTargets = [
       '.claude',
       '.opencode',
-      'plans',
+      'plans/templates',
       '.gitignore',
       '.repomixignore',
       '.mcp.json',
