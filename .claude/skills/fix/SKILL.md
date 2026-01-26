@@ -1,26 +1,41 @@
 ---
-name: fixing
-description: Fix bugs, errors, test failures, CI/CD issues with intelligent routing. Use when reporting bugs, type errors, log errors, UI issues, code problems. Auto-classifies complexity and activates relevant skills.
-version: 1.0.0
+name: fix
+description: ALWAYS activate this skill before fixing ANY bug, error, test failure, CI/CD issue, type error, lint, log error, UI issue, code problem.
+version: 1.1.0
 ---
 
 # Fixing
 
 Unified skill for fixing issues of any complexity with intelligent routing.
 
-## Step 0: Mode Selection
+## Arguments
+
+- `--auto` - Activate autonomous mode (**default**)
+- `--review` - Activate human-in-the-loop review mode
+- `--quick` - Activate quick mode
+
+## Workflow
+
+### Step 1: Mode Selection
 
 **First action:** If there is no "auto" keyword in the request, use `AskUserQuestion` to determine workflow mode:
 
 | Option | Recommend When | Behavior |
 |--------|----------------|----------|
-| **Autonomous** | Simple/moderate issues | Auto-approve if score >= 9.5 & 0 critical |
-| **Human-in-the-loop** | Critical/production code | Pause for approval at each step |
+| **Autonomous** (default) | Simple/moderate issues | Auto-approve if score >= 9.5 & 0 critical |
+| **Human-in-the-loop Review** | Critical/production code | Pause for approval at each step |
 | **Quick** | Type errors, lint, trivial bugs | Fast debug → fix → review cycle |
 
 See `references/mode-selection.md` for AskUserQuestion format.
 
-## Step 1: Complexity Assessment
+### Step 2: Debug
+
+- Activate `debug` skill.
+- Guess all possible root causes.
+- Spawn multiple `Explore` subagents in parallel to verify each hypothesis.
+- Create report with all findings for the next step.
+
+### Step 3: Complexity Assessment & Fix Implementation
 
 Classify before routing. See `references/complexity-assessment.md`.
 
@@ -31,11 +46,25 @@ Classify before routing. See `references/complexity-assessment.md`.
 | **Complex** | System-wide, architecture impact | `references/workflow-deep.md` |
 | **Parallel** | 2+ independent issues | Parallel `fullstack-developer` agents |
 
-## Skill/Subagent Activation Matrix
+### Step 4: Fix Verification & Prevent Future Issues
+
+- Read and analyze all the implemented changes.
+- Spawn multiple `Explore` subagents to find possible related code for verification.
+- Make sure these fixes don't break other parts of the codebase.
+- Prevent future issues by adding comprehensive validation.
+
+### Step 5: Finalize
+
+- Report summary to user with confidence level/score, all the changes and related files.
+- Ask to commit via `git-manager` subagent and update docs if needed via `docs-manager` subagent (in parallel).
+
+---
+
+## IMPORTANT: Skill/Subagent Activation Matrix
 
 See `references/skill-activation-matrix.md` for complete matrix.
 
-**Always activate:** `debugging` (all workflows)
+**Always activate:** `debug` (all workflows)
 **Conditional:** `problem-solving`, `sequential-thinking`, `brainstorming`, `context-engineering`
 **Subagents:** `debugger`, `researcher`, `planner`, `code-reviewer`, `tester`, `Bash`
 **Parallel:** Multiple `Explore` agents for scouting, `Bash` agents for verification
