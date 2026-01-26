@@ -53,7 +53,9 @@ git diff --cached | grep -iE "(api[_-]?key|token|password|secret|credential)"
 
 ### Step 3: Split Decision
 
-NOTE: Search for related issues on GitHub and add to body.
+**NOTE:**
+- Search for related issues on GitHub and add to body.
+- Only use `feat`, `fix`, or `perf` prefixes for files in `.claude` directory (do not use `docs`).
 
 **Split commits if:**
 - Different types mixed (feat + fix, code + docs)

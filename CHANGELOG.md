@@ -1,3 +1,52 @@
+## [2.6.0](https://github.com/claudekit/claudekit-engineer/compare/v2.5.0...v2.6.0) (2026-01-26)
+
+
+### 🚀 Features
+
+* **hooks:** add config toggle for enabling/disabling hooks ([7544d87](https://github.com/claudekit/claudekit-engineer/commit/7544d87ba84b577bd35174dd29da2ab17e3ea8de)), closes [#367](https://github.com/claudekit/claudekit-engineer/issues/367)
+* **metadata:** add deletions array for archived commands cleanup ([947b891](https://github.com/claudekit/claudekit-engineer/commit/947b891154b5e44089a6de28f48469fdd5e1497f))
+* **metadata:** add deletions array for archived commands cleanup ([5125bd5](https://github.com/claudekit/claudekit-engineer/commit/5125bd5262228268d4fab3be33020f8b116a22a4))
+* **skills:** add agent-browser skill for AI-optimized browser automation ([a4ae50e](https://github.com/claudekit/claudekit-engineer/commit/a4ae50e15bc570f528f2a104f5977236af169efc))
+* **skills:** add agent-browser skill for AI-optimized browser automation ([429a2e7](https://github.com/claudekit/claudekit-engineer/commit/429a2e79bd99bc739898f2457cca9b5d22662247))
+* **statusline:** add configurable display modes [#368](https://github.com/claudekit/claudekit-engineer/issues/368) ([ab12ee2](https://github.com/claudekit/claudekit-engineer/commit/ab12ee212a194c6b5782f865d7aea40c53e33dfe))
+
+
+### 🐞 Bug Fixes
+
+* **deletions:** add removed agents (copywriter, database-admin, scout, scout-external) ([0cb28a1](https://github.com/claudekit/claudekit-engineer/commit/0cb28a1218875a9aea3de247d32a521a9dc4e0d0))
+* **deletions:** add removed agents (copywriter, database-admin, scout, scout-external) ([e0a3e9b](https://github.com/claudekit/claudekit-engineer/commit/e0a3e9bcf49a7b0b9751d291a6ae5ccbf0cf7585))
+* **deletions:** add skills/brainstorming/** (renamed to brainstorm) ([702ceb3](https://github.com/claudekit/claudekit-engineer/commit/702ceb387e296f4faeed1e1d3c870acd13401a8f))
+* **deletions:** add skills/brainstorming/** (renamed to brainstorm) ([39c4522](https://github.com/claudekit/claudekit-engineer/commit/39c45225f0eb2b3b3090e410caafd81dc8f73b4e))
+* **deletions:** add verified deprecated commands and skills ([3fe04ee](https://github.com/claudekit/claudekit-engineer/commit/3fe04ee66f1303510b0efc1ea1f0c60567de2f8e))
+* **deletions:** add verified deprecated commands and skills ([cc28253](https://github.com/claudekit/claudekit-engineer/commit/cc28253b5ba788736854893efb9ad9d3ec6674e5))
+* **hooks:** add fallback for usage API when OAuth unavailable ([4d10d70](https://github.com/claudekit/claudekit-engineer/commit/4d10d70b5a23c3c6c2294841973c03f9ed6fa588)), closes [#369](https://github.com/claudekit/claudekit-engineer/issues/369)
+* **metadata:** restore deletions array lost during rebase conflict ([4499a6b](https://github.com/claudekit/claudekit-engineer/commit/4499a6b56de158179a8f75ecff1fd96521b912ae))
+* **metadata:** restore deletions array lost during rebase conflict ([1a25b83](https://github.com/claudekit/claudekit-engineer/commit/1a25b83d0688123f1701ff1c08ad602730218a96))
+* **release:** include only plans/templates in release assets ([685a120](https://github.com/claudekit/claudekit-engineer/commit/685a12007064a3a70d1f2668a3310011dccfff91))
+* **release:** preserve deletions array in metadata.json during releases ([2be49b7](https://github.com/claudekit/claudekit-engineer/commit/2be49b7b2882fdf083193b055e112aa5470238f8))
+* **release:** preserve deletions array in metadata.json during releases ([2d729e7](https://github.com/claudekit/claudekit-engineer/commit/2d729e74f5c860555fd2d24579031ba859aa5839))
+* **release:** prevent data loss in release scripts ([ad4a151](https://github.com/claudekit/claudekit-engineer/commit/ad4a151a06fa17ed9c3590c52b92af5a2eed433b))
+* **release:** prevent data loss in release scripts ([58f17ab](https://github.com/claudekit/claudekit-engineer/commit/58f17ab3afbdd66d22e27a062992af54bc72d85c))
+
+
+### 📚 Documentation
+
+* **git:** add merge-main-first reminder to PR and merge workflows ([04677c7](https://github.com/claudekit/claudekit-engineer/commit/04677c75433a09d25e49fa5082e2470994e71dae))
+* **git:** add note to search GitHub issues for commit context ([21823de](https://github.com/claudekit/claudekit-engineer/commit/21823de822a261e824eae47f89ad5fa66261c3ef))
+* simplify primary workflow instructions ([11329c7](https://github.com/claudekit/claudekit-engineer/commit/11329c712edbbc973f8a94f61d58d07577e4d9e5))
+
+
+### ♻️ Code Refactoring
+
+* **deletions:** use glob patterns instead of explicit paths ([9c4a8ed](https://github.com/claudekit/claudekit-engineer/commit/9c4a8ed860b35c143f9e05bb5eb179c397c89d22))
+* **deletions:** use glob patterns instead of explicit paths ([6a8407a](https://github.com/claudekit/claudekit-engineer/commit/6a8407a491c644b66d067b85fda3c04ff69932e5))
+
+
+### 👷 CI
+
+* add auto-sync workflow to merge main back to dev after releases ([cd45b07](https://github.com/claudekit/claudekit-engineer/commit/cd45b07e5626fc1ee7c455d278edd22522444f7d))
+* add auto-sync workflow to merge main back to dev after releases ([658d09a](https://github.com/claudekit/claudekit-engineer/commit/658d09aee5f5ff4924210fa7b83d2f88a91184bb))
+
 ## [2.6.0-beta.10](https://github.com/claudekit/claudekit-engineer/compare/v2.6.0-beta.9...v2.6.0-beta.10) (2026-01-25)
 
 
