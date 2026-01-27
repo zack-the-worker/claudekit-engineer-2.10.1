@@ -164,7 +164,7 @@ function renderSessionLines(ctx) {
   // Add usage/reset info to session part (stays on line 1 with model - Claude Code only reads line 1)
   const usageStr = buildUsageString(ctx);
   if (usageStr) {
-    sessionPart += `  ⌛ ${usageStr.replace(/\)$/, '% used)')}`;
+    sessionPart += `  ⌛ ${usageStr.replace(/\)$/, ' used)')}`;
   }
 
   // Build stats part (only lines changed now)
