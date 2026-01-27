@@ -1,3 +1,16 @@
+## [2.8.1](https://github.com/claudekit/claudekit-engineer/compare/v2.8.0...v2.8.1) (2026-01-27)
+
+
+### 🐞 Bug Fixes
+
+* **hooks:** allow Python venv creation and inject venv rules into subagents ([412822b](https://github.com/claudekit/claudekit-engineer/commit/412822b1a1d9d42d9280569833db64c2259f6c8e)), closes [#386](https://github.com/claudekit/claudekit-engineer/issues/386)
+* **hooks:** skip paths after --exclude flags in path-extractor ([6479d41](https://github.com/claudekit/claudekit-engineer/commit/6479d411f49146c1f9df60457b4918ced2d6cfc0)), closes [#388](https://github.com/claudekit/claudekit-engineer/issues/388)
+
+
+### ✅ Tests
+
+* **hooks:** add venv creation command tests for Issue [#386](https://github.com/claudekit/claudekit-engineer/issues/386) ([b3c62a6](https://github.com/claudekit/claudekit-engineer/commit/b3c62a697cce1b381f5c8c7ccd02008c279be052))
+
 ## [2.8.1-beta.1](https://github.com/claudekit/claudekit-engineer/compare/v2.8.0...v2.8.1-beta.1) (2026-01-27)
 
 
