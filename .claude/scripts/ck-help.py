@@ -178,7 +178,7 @@ CATEGORY_GUIDES = {
             ("Quick plan", "`/plan:fast` \"your task\""),
             ("Deep research", "`/plan:hard` \"complex task\""),
             ("Validate", "`/plan:validate` (interview to confirm decisions)"),
-            ("Execute plan", "`/code` (runs the plan)"),
+            ("Execute plan", "`/cook` (runs the plan)"),
         ],
         "tip": "Use /plan:validate to confirm assumptions before coding",
     },
@@ -189,7 +189,7 @@ CATEGORY_GUIDES = {
             ("Auto mode", "`/cook:auto` \"trust me bro\""),
             ("Test", "`/test`"),
         ],
-        "tip": "Cook is standalone - it plans internally. Use /plan → /code for explicit planning",
+        "tip": "Cook is standalone - it plans internally. Use /plan → /cook for explicit planning",
     },
     "bootstrap": {
         "title": "Project Setup",
