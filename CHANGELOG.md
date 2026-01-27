@@ -1,3 +1,16 @@
+## [2.8.0](https://github.com/claudekit/claudekit-engineer/compare/v2.7.0...v2.8.0) (2026-01-27)
+
+
+### 🚀 Features
+
+* **ai-artist:** add mandatory validation workflow ([c56d80f](https://github.com/claudekit/claudekit-engineer/commit/c56d80f143a6231173fa256d9eda53111338e0a0)), closes [#363](https://github.com/claudekit/claudekit-engineer/issues/363)
+
+
+### 🐞 Bug Fixes
+
+* deprecate commands/fix.md in favor of global fix skill ([81ab712](https://github.com/claudekit/claudekit-engineer/commit/81ab71268c21b45edd12780246f02dce8a0d913f)), closes [#382](https://github.com/claudekit/claudekit-engineer/issues/382)
+* **statusline:** remove duplicate percent sign in usage display ([f80b9fe](https://github.com/claudekit/claudekit-engineer/commit/f80b9fecc8865cd300a19b1c16394426ea453d7f))
+
 ## [2.8.0-beta.1](https://github.com/claudekit/claudekit-engineer/compare/v2.7.0...v2.8.0-beta.1) (2026-01-27)
 
 
