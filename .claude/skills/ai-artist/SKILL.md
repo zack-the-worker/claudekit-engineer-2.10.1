@@ -1,13 +1,19 @@
 ---
 name: ai-artist
-description: "Generate images via Nano Banana with 129 curated prompts. 3 modes: search (best match), creative (remix), wild (experimental). Actions: generate for banners, portraits, infographics, products. Styles: Ukiyo-e, Bento grid, cyberpunk, cinematic, vintage patent."
-version: 3.0.0
+description: "Generate images via Nano Banana with 129 curated prompts. Mandatory validation interview refines style/mood/colors (use --skip to bypass). 3 modes: search, creative, wild. Styles: Ukiyo-e, Bento grid, cyberpunk, cinematic, vintage patent."
+version: 3.1.0
 license: MIT
 ---
 
 # AI Artist - Nano Banana Image Generation
 
 Generate images using 129 curated prompts from awesome-nano-banana-pro-prompts collection.
+
+**Validation interview is mandatory** (use `--skip` to bypass).
+
+## Workflow
+
+**IMPORTANT:** Follow `references/validation-workflow.md` when this skill is activated.
 
 ## Quick Start
 
@@ -50,6 +56,7 @@ python3 scripts/generate.py "futuristic city" -o city.png --mode all -v
 | `--model` | flash (fast) or pro (quality/4K) |
 | `-v, --verbose` | Show matched prompts and details |
 | `--dry-run` | Show prompt without generating |
+| `--skip` | Bypass validation interview |
 
 ---
 
@@ -96,6 +103,7 @@ The `wild` mode randomly applies one of these artistic transformations:
 
 | Topic | File |
 |-------|------|
+| **Validation Workflow** | `references/validation-workflow.md` |
 | All Prompts | `data/awesome-prompts.csv` |
 | Nano Banana Guide | `references/nano-banana.md` |
 | Image Prompting | `references/image-prompting.md` |
