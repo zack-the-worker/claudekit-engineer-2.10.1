@@ -115,7 +115,7 @@ After validation completes, provide summary:
 **IMPORTANT:** After providing the validation summary, you MUST remind the user:
 
 > **Best Practice:** Run `/clear` before implementing to start with fresh context.
-> Then run `/code {plan-path}` to begin implementation.
+> Then run `/cook {plan-path}` to begin implementation.
 >
 > Fresh context helps Claude focus solely on implementation without planning context pollution, improving plan adherence.
 
