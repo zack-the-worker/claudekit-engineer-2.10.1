@@ -1,3 +1,10 @@
+## [2.7.0-beta.2](https://github.com/claudekit/claudekit-engineer/compare/v2.7.0-beta.1...v2.7.0-beta.2) (2026-01-27)
+
+
+### 🐞 Bug Fixes
+
+* **statusline:** remove duplicate percent sign in usage display ([f80b9fe](https://github.com/claudekit/claudekit-engineer/commit/f80b9fecc8865cd300a19b1c16394426ea453d7f))
+
 ## [2.7.0-beta.1](https://github.com/claudekit/claudekit-engineer/compare/v2.6.0...v2.7.0-beta.1) (2026-01-26)
 
 
