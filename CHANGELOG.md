@@ -1,3 +1,10 @@
+## [2.7.0-beta.4](https://github.com/claudekit/claudekit-engineer/compare/v2.7.0-beta.3...v2.7.0-beta.4) (2026-01-27)
+
+
+### 🚀 Features
+
+* **ai-artist:** add mandatory validation workflow ([c56d80f](https://github.com/claudekit/claudekit-engineer/commit/c56d80f143a6231173fa256d9eda53111338e0a0)), closes [#363](https://github.com/claudekit/claudekit-engineer/issues/363)
+
 ## [2.7.0-beta.3](https://github.com/claudekit/claudekit-engineer/compare/v2.7.0-beta.2...v2.7.0-beta.3) (2026-01-27)
 
 
