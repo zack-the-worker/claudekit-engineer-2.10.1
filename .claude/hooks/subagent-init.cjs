@@ -23,6 +23,7 @@ const {
   extractTaskListId,
   isHookEnabled
 } = require('./lib/ck-config-utils.cjs');
+const { resolveSkillsVenv } = require('./lib/context-builder.cjs');
 
 // Early exit if hook disabled in config
 if (!isHookEnabled('subagent-init')) {
@@ -138,11 +139,19 @@ async function main() {
       lines.push(``);
     }
 
+    // Resolve Python venv path for subagent instructions
+    const skillsVenv = resolveSkillsVenv();
+
     // Core rules (minimal)
     lines.push(`## Rules`);
     lines.push(`- Reports → ${reportsPath}`);
     lines.push(`- YAGNI / KISS / DRY`);
     lines.push(`- Concise, list unresolved Qs at end`);
+    // Python venv rules (if venv exists)
+    if (skillsVenv) {
+      lines.push(`- Python scripts in .claude/skills/: Use \`${skillsVenv}\``);
+      lines.push(`- Never use global pip install`);
+    }
 
     // Naming templates (computed directly for reliable injection)
     lines.push(``);
