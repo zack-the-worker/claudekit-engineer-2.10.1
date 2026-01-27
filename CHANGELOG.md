@@ -1,3 +1,10 @@
+## [2.7.0-beta.3](https://github.com/claudekit/claudekit-engineer/compare/v2.7.0-beta.2...v2.7.0-beta.3) (2026-01-27)
+
+
+### 🐞 Bug Fixes
+
+* deprecate commands/fix.md in favor of global fix skill ([81ab712](https://github.com/claudekit/claudekit-engineer/commit/81ab71268c21b45edd12780246f02dce8a0d913f)), closes [#382](https://github.com/claudekit/claudekit-engineer/issues/382)
+
 ## [2.7.0-beta.2](https://github.com/claudekit/claudekit-engineer/compare/v2.7.0-beta.1...v2.7.0-beta.2) (2026-01-27)
 
 
