@@ -12,6 +12,7 @@
     "commands/cook.md",
     "commands/design/**",
     "commands/fix/**",
+    "commands/fix.md",
     "commands/git/**",
     "commands/integrate/**",
     "commands/scout/**",
