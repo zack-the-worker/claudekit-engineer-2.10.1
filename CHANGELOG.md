@@ -1,3 +1,37 @@
+## [2.9.0-beta.1](https://github.com/claudekit/claudekit-engineer/compare/v2.8.1-beta.1...v2.9.0-beta.1) (2026-01-28)
+
+
+### 🚀 Features
+
+* added new find-skill skill ([c08b276](https://github.com/claudekit/claudekit-engineer/commit/c08b276ddc382386da054d08d4083611f1b911fa))
+* **ai-artist:** add mandatory validation workflow ([09636b9](https://github.com/claudekit/claudekit-engineer/commit/09636b9de8ee9958a2bb3dffbba0f8602c4561b8)), closes [#363](https://github.com/claudekit/claudekit-engineer/issues/363)
+* **payment-integration:** add Stripe references for best practices and API upgrades ([57b3379](https://github.com/claudekit/claudekit-engineer/commit/57b3379c19ee7c0bf1bf43e36e9f381a4848659d))
+
+
+### 🐞 Bug Fixes
+
+* deprecate commands/fix.md in favor of global fix skill ([6c44aa7](https://github.com/claudekit/claudekit-engineer/commit/6c44aa7f001327c991c4c66a36158dc738245c4c)), closes [#382](https://github.com/claudekit/claudekit-engineer/issues/382)
+* **hooks:** allow Python venv creation and inject venv rules into subagents ([51d9324](https://github.com/claudekit/claudekit-engineer/commit/51d93244b2821d235d7184390735871a69ddceb7)), closes [#386](https://github.com/claudekit/claudekit-engineer/issues/386)
+* **hooks:** skip paths after --exclude flags in path-extractor ([ca448db](https://github.com/claudekit/claudekit-engineer/commit/ca448db8452eb23b01e397b184958d1e3fdaf0c8)), closes [#388](https://github.com/claudekit/claudekit-engineer/issues/388)
+* resolve merge conflict in CHANGELOG.md ([e98a0d9](https://github.com/claudekit/claudekit-engineer/commit/e98a0d965a7fbcb24958c42dc4fdab961805e0f3))
+* **statusline:** remove duplicate percent sign in usage display ([669fc04](https://github.com/claudekit/claudekit-engineer/commit/669fc04f6126cd62e3474b9f5ec0f6386463771d))
+
+
+### ⚡ Performance Improvements
+
+* **skills:** enhance `cook` skill with native claude tasks ([85de5b6](https://github.com/claudekit/claudekit-engineer/commit/85de5b6d45f55358034e3174bb51a76469ead3e0))
+
+
+### ✅ Tests
+
+* **hooks:** add venv creation command tests for Issue [#386](https://github.com/claudekit/claudekit-engineer/issues/386) ([57766ef](https://github.com/claudekit/claudekit-engineer/commit/57766effe9a7488f3d18416f39c981b80fc13306))
+
+
+### 👷 CI
+
+* add workflow to sync dev to main after release ([2babf98](https://github.com/claudekit/claudekit-engineer/commit/2babf98733c65d938ccfbead3d974c7ad18a9e25))
+* add workflow to sync dev to main after release ([b93f548](https://github.com/claudekit/claudekit-engineer/commit/b93f5485b7fbb5811c0959ce8c420d1666020db1))
+
 ## [2.8.1-beta.1](https://github.com/claudekit/claudekit-engineer/compare/v2.8.0...v2.8.1-beta.1) (2026-01-27)
 
 
