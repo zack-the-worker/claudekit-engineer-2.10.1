@@ -16,9 +16,16 @@ End-to-end implementation with automatic workflow detection.
 /cook <natural language task OR plan path>
 ```
 
-**Optional flags:** `--fast`, `--parallel`, `--no-test`, `--auto`
+**IMPORTANT:** If no flag is provided, the skill will use the `interactive` mode by default for the workflow.
 
-Example:
+**Optional flags to select the workflow mode:** 
+- `--interactive`: Full workflow with user input (**default**)
+- `--fast`: Skip research, scout→plan→code
+- `--parallel`: Multi-agent execution
+- `--no-test`: Skip testing step
+- `--auto`: Auto-approve all steps
+
+**Example:**
 ```
 /cook "Add user authentication to the app" --fast
 /cook path/to/plan.md --auto
@@ -45,15 +52,16 @@ See `references/intent-detection.md` for detection logic.
 
 **Default (non-auto):** Stops at `[Review]` gates for human approval before each major step.
 **Auto mode (`--auto`):** Skips human review gates, implements all phases continuously.
+**Claude Tasks:** Utilize all these tools `TaskCreate`, `TaskUpdate`, `TaskGet` and `TaskList` during implementation step.
 
 | Mode | Research | Testing | Review Gates | Phase Progression |
 |------|----------|---------|--------------|-------------------|
 | interactive | ✓ | ✓ | **User approval at each step** | One at a time |
 | auto | ✓ | ✓ | Auto if score≥9.5 | All at once (no stops) |
-| fast | ✗ | ✓ | User approval at each step | One at a time |
-| parallel | Optional | ✓ | User approval at each step | Parallel groups |
-| no-test | ✓ | ✗ | User approval at each step | One at a time |
-| code | ✗ | ✓ | User approval at each step | Per plan |
+| fast | ✗ | ✓ | **User approval at each step** | One at a time |
+| parallel | Optional | ✓ | **User approval at each step** | Parallel groups |
+| no-test | ✓ | ✗ | **User approval at each step** | One at a time |
+| code | ✗ | ✓ | **User approval at each step** | Per plan |
 
 ## Step Output Format
 

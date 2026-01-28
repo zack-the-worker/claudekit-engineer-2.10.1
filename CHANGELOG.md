@@ -73,7 +73,6 @@
 * **release:** pump v2.6.1-beta.0 ([0fed02e](https://github.com/claudekit/claudekit-engineer/commit/0fed02e9fe99e81b0878700f71db195bd40654bf))
 * resolve merge conflict in package.json version ([e435700](https://github.com/claudekit/claudekit-engineer/commit/e435700500e3957fcf0b4e7b83ed8cb5d045fcb4))
 * resolve merge conflicts from main into dev ([7074a60](https://github.com/claudekit/claudekit-engineer/commit/7074a609a3f30cb1827ab91e5c5e4e8d3c6ad819))
-
 ## [2.7.0-beta.1](https://github.com/claudekit/claudekit-engineer/compare/v2.6.0...v2.7.0-beta.1) (2026-01-26)
 
 

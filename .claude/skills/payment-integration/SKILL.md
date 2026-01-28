@@ -1,13 +1,13 @@
 ---
 name: payment-integration
-description: Integrate payments with SePay (VietQR, Vietnamese bank transfers) and Polar (global SaaS subscriptions, billing). Use for checkout flows, webhooks, QR codes, subscription management.
-version: 1.0.0
+description: Integrate payments with SePay (VietQR), Polar (SaaS subscriptions), Stripe (global payments). Use for checkout, webhooks, QR codes, subscriptions, API upgrades.
+version: 1.1.0
 license: MIT
 ---
 
 # Payment Integration
 
-Implement payment processing with SePay (Vietnamese payments) and Polar (global SaaS monetization).
+Implement payment processing with SePay (Vietnamese payments), Polar (global SaaS monetization), and Stripe (global payment infrastructure).
 
 ## When to Use
 
@@ -39,6 +39,14 @@ Use when implementing:
 - Merchant of Record (tax compliance)
 - Digital product sales
 
+**Choose Stripe for:**
+- Global payment infrastructure
+- Enterprise-grade payment processing
+- Connect platforms (marketplaces)
+- Billing/subscriptions at scale
+- Custom checkout experiences
+- Payment Element integrations
+
 ## Quick Reference
 
 ### SePay Integration
@@ -58,6 +66,11 @@ Use when implementing:
 - **Benefits**: `references/polar/benefits.md` - Automated delivery (GitHub, Discord, licenses, files)
 - **SDK Usage**: `references/polar/sdk.md` - TypeScript, Python, PHP, Go, framework adapters
 - **Best Practices**: `references/polar/best-practices.md` - Security, patterns, monitoring
+
+### Stripe Integration
+- **Full Documentation**: https://stripe.com/llms.txt
+- **Best Practices**: `references/stripe/stripe-best-practices.md` - Integration design, API selection, Checkout vs Payment Element
+- **Upgrading**: `references/stripe/stripe-upgrade.md` - API versions, SDK upgrades, Stripe.js versioning
 
 ### Integration Scripts
 - **SePay Webhook Verification**: `scripts/sepay-webhook-verify.js` - Verify SePay webhook authenticity
@@ -82,6 +95,13 @@ Use when implementing:
 6. Load `references/polar/benefits.md` if automating delivery
 7. Load `references/polar/best-practices.md` for production readiness
 
+### Stripe Implementation
+1. Load `references/stripe/stripe-best-practices.md` for integration design
+2. Choose integration: Checkout (hosted/embedded) or Payment Element
+3. Use CheckoutSessions API for most payment flows
+4. Use Billing APIs for subscriptions (combine with Checkout)
+5. Load `references/stripe/stripe-upgrade.md` when upgrading API versions
+
 ## Key Capabilities
 
 **SePay:**
@@ -100,6 +120,14 @@ Use when implementing:
 - Customer portal (self-service)
 - Multi-language SDKs
 - Rate limit: 300 req/min
+
+**Stripe:**
+- Global payment infrastructure
+- CheckoutSessions, PaymentIntents, SetupIntents APIs
+- Billing/subscriptions with trials, prorations
+- Connect for marketplaces/platforms
+- Payment Element for custom UI
+- Multi-language SDKs
 
 ## Instructions
 
