@@ -10,7 +10,7 @@ Dynamic routing agent.
 from google.adk.agents import Agent
 
 agent = Agent(
-    name="assistant", model="gemini-2.0-flash",
+    name="assistant", model="gemini-2.5-flash",
     instruction="You are a helpful assistant.",
     tools=[search_tool], sub_agents=[code_agent],
     generate_content_config={"temperature": 0.7}
@@ -27,8 +27,8 @@ from google.adk.agents import SequentialAgent
 pipeline = SequentialAgent(
     name="research_pipeline",
     sub_agents=[
-        Agent(name="searcher", model="gemini-2.0-flash", tools=[search]),
-        Agent(name="writer", model="gemini-2.0-flash", tools=[write]),
+        Agent(name="searcher", model="gemini-2.5-flash", tools=[search]),
+        Agent(name="writer", model="gemini-2.5-flash", tools=[write]),
     ]
 )
 ```
@@ -41,8 +41,8 @@ from google.adk.agents import ParallelAgent
 parallel = ParallelAgent(
     name="multi_source",
     sub_agents=[
-        Agent(name="web", model="gemini-2.0-flash", tools=[web_search]),
-        Agent(name="db", model="gemini-2.0-flash", tools=[db_query]),
+        Agent(name="web", model="gemini-2.5-flash", tools=[web_search]),
+        Agent(name="db", model="gemini-2.5-flash", tools=[db_query]),
     ]
 )
 ```
@@ -55,7 +55,7 @@ from google.adk.agents import LoopAgent
 loop = LoopAgent(
     name="refiner",
     sub_agents=[
-        Agent(name="generator", model="gemini-2.0-flash", tools=[generate]),
+        Agent(name="generator", model="gemini-2.5-flash", tools=[generate]),
         Agent(name="validator", model="gemini-2.5-flash", tools=[validate]),
     ],
     max_iterations=5,
@@ -90,7 +90,7 @@ __all__ = ["root_agent"]
 
 # agent.py
 from google.adk.agents import Agent
-root_agent = Agent(name="my_agent", model="gemini-2.0-flash", instruction="...")
+root_agent = Agent(name="my_agent", model="gemini-2.5-flash", instruction="...")
 
 # A2A server
 from google.adk.servers.a2a_server import create_a2a_server
@@ -112,10 +112,10 @@ src/google/adk/
 
 ```python
 root = Agent(
-    name="root", model="gemini-2.0-flash",
+    name="root", model="gemini-2.5-flash",
     instruction="Root behavior.",
     global_instruction="Always be polite and concise.",
-    sub_agents=[Agent(name="sub1", model="gemini-2.0-flash")]
+    sub_agents=[Agent(name="sub1", model="gemini-2.5-flash")]
 )
 ```
 

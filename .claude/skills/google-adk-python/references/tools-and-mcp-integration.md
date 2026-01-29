@@ -55,7 +55,7 @@ async def load_doc(name: str, tool_context: ToolContext) -> str:
 from google.adk.tools import google_search, load_artifacts, BuiltInCodeExecutor
 
 executor = BuiltInCodeExecutor()
-agent = Agent(name="agent", model="gemini-2.0-flash", tools=[google_search, load_artifacts, executor])
+agent = Agent(name="agent", model="gemini-2.5-flash", tools=[google_search, load_artifacts, executor])
 ```
 
 ## MCP Integration
@@ -76,7 +76,7 @@ filesystem_mcp = MCPToolset(
     tool_filter=['read_file', 'list_directory']
 )
 
-agent = Agent(name="agent", model="gemini-2.0-flash", tools=[filesystem_mcp])
+agent = Agent(name="agent", model="gemini-2.5-flash", tools=[filesystem_mcp])
 ```
 
 **Multiple servers:**
@@ -98,7 +98,7 @@ postgres_mcp = MCPToolset(
     )
 )
 
-agent = Agent(name="agent", model="gemini-2.0-flash", tools=[filesystem_mcp, git_mcp, postgres_mcp])
+agent = Agent(name="agent", model="gemini-2.5-flash", tools=[filesystem_mcp, git_mcp, postgres_mcp])
 ```
 
 ## Tool Filtering
@@ -120,7 +120,7 @@ async def approve(amount: float) -> dict:
     return {"approved": True}
 
 tool = LongRunningFunctionTool(func=approve)
-agent = Agent(name="agent", model="gemini-2.0-flash", tools=[tool])
+agent = Agent(name="agent", model="gemini-2.5-flash", tools=[tool])
 ```
 
 ## ExampleTool
@@ -133,7 +133,7 @@ examples = ExampleTool(examples=[
     {"input": "Capital of France?", "output": "Paris"}
 ])
 
-agent = Agent(name="agent", model="gemini-2.0-flash", tools=[examples])
+agent = Agent(name="agent", model="gemini-2.5-flash", tools=[examples])
 ```
 
 ## Best Practices
