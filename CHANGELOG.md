@@ -1,3 +1,16 @@
+## [2.9.0-beta.3](https://github.com/claudekit/claudekit-engineer/compare/v2.9.0-beta.2...v2.9.0-beta.3) (2026-01-29)
+
+
+### 🐞 Bug Fixes
+
+* **ck-help:** remove stale CATEGORY_GUIDES for deleted commands ([#391](https://github.com/claudekit/claudekit-engineer/issues/391)) ([888b856](https://github.com/claudekit/claudekit-engineer/commit/888b856d945c2d6c804af98cd2d49c5c36890e72))
+* clean up stale references to deleted agents and renamed skills ([#391](https://github.com/claudekit/claudekit-engineer/issues/391)) ([ef45c04](https://github.com/claudekit/claudekit-engineer/commit/ef45c04522a6e0ad493130ec6cb0af15df8522e2))
+
+
+### 📚 Documentation
+
+* update stale agent, command, and skill references ([#391](https://github.com/claudekit/claudekit-engineer/issues/391)) ([2317887](https://github.com/claudekit/claudekit-engineer/commit/23178878dff5274cbab0114c375d7476ca37132d))
+
 ## [2.9.0-beta.2](https://github.com/claudekit/claudekit-engineer/compare/v2.9.0-beta.1...v2.9.0-beta.2) (2026-01-29)
 
 
