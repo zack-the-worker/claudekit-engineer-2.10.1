@@ -23,6 +23,7 @@
     "skills/beads/**",
     "skills/brainstorming/**",
     "skills/claude-code/**",
+    "skills/debugging/**",
     "skills/frontend-design-pro/**"
   ],
   "version": "2.9.0-beta.1",
