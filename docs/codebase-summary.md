@@ -1,7 +1,7 @@
 # Codebase Summary
 
-**Last Updated**: 2025-12-28
-**Version**: 2.2.0-beta.4
+**Last Updated**: 2026-01-28
+**Version**: 2.9.0-beta.2
 **Repository**: [claudekit/claudekit-engineer](https://github.com/claudekit/claudekit-engineer)
 
 ## Overview
@@ -52,7 +52,7 @@ claudekit-engineer/
 
 ## Key Components
 
-### 1. Agent Orchestration System (17+ Agents)
+### 1. Agent Orchestration System (14 Agents)
 
 **Claude Code Agents** (`.claude/agents/`):
 - `planner.md` - Technical planning and architecture (Opus model)
@@ -63,47 +63,31 @@ claudekit-engineer/
 - `debugger.md` - Issue analysis and debugging
 - `docs-manager.md` - Documentation management (Gemini model)
 - `git-manager.md` - Version control operations
-- `scout.md` - Parallel codebase exploration
-- `scout-external.md` - External codebase exploration
-- `copywriter.md` - Content creation
 - `journal-writer.md` - Development journaling
 - `brainstormer.md` - Solution ideation
 - `project-manager.md` - Project tracking
 - `ui-ux-designer.md` - UI/UX design
-- `ui-ux-developer.md` - Design implementation
-- `database-admin.md` - Database operations
+- `mcp-manager.md` - MCP server management
+- `code-simplifier.md` - Code optimization and simplification
 
-### 2. Slash Commands System (75+ Commands)
+### 2. Slash Commands System (Command Directories)
 
-**Core Commands** (6):
-- `/plan`, `/cook`, `/test`, `/ask`, `/bootstrap`, `/brainstorm`
+**Core Development Commands**:
+- `/plan` - Research and planning
+- `/cook` - Feature implementation
+- `/test` - Test execution
+- `/ask` - Technical consultation
+- `/bootstrap` - Project initialization
+- `/brainstorm` - Solution ideation
+- `/debug` - Issue debugging
+- `/fix` - Bug fixes
 
-**Planning Variants** (6):
-- `/plan:two`, `/plan:ci`, `/plan:cro`, `/plan:hard`, `/plan:fast`, `/plan:parallel`
-
-**Code Variants** (4):
-- `/code`, `/code:auto`, `/code:no-test`, `/code:parallel`
-
-**Debugging & Fixing** (8):
-- `/debug`, `/fix:fast`, `/fix:hard`, `/fix:ci`, `/fix:test`, `/fix:types`, `/fix:logs`, `/fix:ui`
-
-**Design** (5):
-- `/design:fast`, `/design:good`, `/design:3d`, `/design:screenshot`, `/design:video`
-
-**Content** (4):
-- `/content:fast`, `/content:good`, `/content:enhance`, `/content:cro`
-
-**Documentation** (3):
-- `/docs:init`, `/docs:update`, `/docs:summarize`
-
-**Git Operations** (4):
-- `/git:cm`, `/git:cp`, `/git:pr`, `/git:merge`
-
-**Integration** (2):
-- `/integrate:polar`, `/integrate:sepay`
-
-**Project Management** (7):
-- `/scout`, `/scout:ext`, `/watzup`, `/journal`, `/use-mcp`, `/check-and-commit`, `/ck-help`
+**Command Directories** (`.claude/commands/`):
+- `bootstrap/` - Project initialization workflows
+- `docs/` - Documentation commands
+- `plan/` - Planning variants
+- `review/` - Code review workflows
+- `test/` - Testing commands
 
 ### 3. Skills Library (38 Skills)
 
@@ -117,24 +101,19 @@ claudekit-engineer/
 - **UI Styling** (`ui-styling/`) - shadcn/ui, Tailwind CSS, canvas-design
   - 7 references, 2 Python utilities
 
-**Individual Skills** (38 Total):
-- **Authentication**: better-auth
-- **Browser Automation**: chrome-devtools
-- **Debugging**: systematic-debugging, root-cause-tracing, defense-in-depth, verification-before-completion
-- **Documentation**: docs-seeker, repomix
-- **Document Processing**: document-skills (docx, pdf, pptx, xlsx)
-- **Media**: ffmpeg, imagemagick
-- **Gemini AI**: gemini-audio, gemini-document-processing, ai-multimodal, gemini-video-understanding
-- **MCP**: mcp-builder, mcp-management
-- **Problem Solving**: collision-zone-thinking, meta-pattern-recognition, scale-game, inversion-exercise, simplification-cascades, sequential-thinking, when-stuck
-- **E-commerce**: shopify
-- **Development**: skill-creator, payment-integration (Polar, SePay)
+**Current Skills** (47+ Total):
+- ai-artist, ai-multimodal, agent-browser, backend-development, better-auth
+- brainstorm, chrome-devtools, code-review, common, context-engineering
+- cook, copywriting, databases, debug, devops
+- docs-seeker, document-skills, find-skills, frontend-design, frontend-development
+- git, gkg, google-adk-python, markdown-novel-viewer, mcp-builder
+- mcp-management, media-processing, mermaidjs-v11, mobile-development, payment-integration
+- planning, plans-kanban, problem-solving, react-best-practices, remotion
+- repomix, research, scout, sequential-thinking, shader
+- shopify, skill-creator, template-skill, threejs, ui-styling
+- ui-ux-pro-max, web-design-guidelines, web-frameworks, web-testing
 
-**Archived Skills** (`.claude/skills/_archive/`):
-- 14 original skills consolidated into Phase 1 groups
-- Full preservation for reference or rollback
-
-### 4. Hook System (4 Core Hooks)
+### 4. Hook System (8 Core Hooks)
 
 **Location**: `.claude/hooks/`
 
@@ -165,9 +144,14 @@ claudekit-engineer/
    - Automatic platform detection via `process.platform`
    - Improves AI response time and token efficiency
 
+5. **privacy-block.cjs** - Sensitive File Access Control
+6. **descriptive-name.cjs** - Naming conventions enforcement
+7. **post-edit-simplify-reminder.cjs** - Post-edit optimization hints
+8. **usage-context-awareness.cjs** - Context-aware usage patterns
+
 **Hook Features:**
 - Fail-Safe: All hooks exit 0 (non-blocking) - graceful degradation
-- Performance: Optimized token consumption (v1.20.0-beta.12)
+- Performance: Optimized token consumption
 - Cross-Platform: Windows (PowerShell) & Unix (Bash) via Node.js dispatcher
 - Comprehensive Test Coverage: test-scout-block.sh (11 tests), test-scout-block.ps1 (7 tests)
 
@@ -344,23 +328,23 @@ Features: Automated releases, changelog generation
 ## Critical Files
 
 ### Configuration
-- `/mnt/d/www/claudekit/claudekit-engineer/package.json` - Node.js config
-- `/mnt/d/www/claudekit/claudekit-engineer/.releaserc.json` - Release config
-- `/mnt/d/www/claudekit/claudekit-engineer/.commitlintrc.json` - Commit linting
-- `/mnt/d/www/claudekit/claudekit-engineer/.gitignore` - Git exclusions
-- `/mnt/d/www/claudekit/claudekit-engineer/.repomixignore` - Repomix exclusions
+- `package.json` - Node.js config
+- `.releaserc.json` - Release config
+- `.commitlintrc.json` - Commit linting
+- `.gitignore` - Git exclusions
+- `.repomixignore` - Repomix exclusions
 
 ### Documentation
-- `/mnt/d/www/claudekit/claudekit-engineer/README.md` - Main project docs
-- `/mnt/d/www/claudekit/claudekit-engineer/CLAUDE.md` - Agent instructions
-- `/mnt/d/www/claudekit/claudekit-engineer/CHANGELOG.md` - Version history
-- `/mnt/d/www/claudekit/claudekit-engineer/guide/COMMANDS.md` - Command reference
+- `README.md` - Main project docs
+- `CLAUDE.md` - Agent instructions
+- `CHANGELOG.md` - Version history
+- `guide/COMMANDS.md` - Command reference
 
 ### Workflows
-- `/mnt/d/www/claudekit/claudekit-engineer/.claude/rules/primary-workflow.md`
-- `/mnt/d/www/claudekit/claudekit-engineer/.claude/rules/development-rules.md`
-- `/mnt/d/www/claudekit/claudekit-engineer/.claude/rules/orchestration-protocol.md`
-- `/mnt/d/www/claudekit/claudekit-engineer/.claude/rules/documentation-management.md`
+- `.claude/rules/primary-workflow.md`
+- `.claude/rules/development-rules.md`
+- `.claude/rules/orchestration-protocol.md`
+- `.claude/rules/documentation-management.md`
 
 ## Related Projects
 
@@ -371,7 +355,7 @@ Features: Automated releases, changelog generation
 
 ## Version History
 
-**Current**: v1.20.0-beta.12 (released 2025-12-10)
+**Current**: v2.9.0-beta.2 (released 2026-01-28)
 **License**: MIT
 **Author**: Duy Nguyen
 **Repository**: https://github.com/claudekit/claudekit-engineer
