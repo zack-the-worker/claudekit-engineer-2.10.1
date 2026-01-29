@@ -1,6 +1,6 @@
 ---
 name: google-adk-python
-description: "Build AI agents with Google ADK Python (Agent Development Kit). Use for multi-agent systems, A2A protocol, MCP tools, workflow agents, sessions/memory, callbacks/plugins, Vertex AI deployment, evaluation."
+description: "Build AI agents with Google ADK Python. Multi-agent systems, A2A protocol, MCP tools, workflow agents, state/memory, callbacks/plugins, Vertex AI deployment, evaluation."
 license: Apache-2.0
 version: 2.0.0
 ---
