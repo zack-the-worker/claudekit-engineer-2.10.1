@@ -1,3 +1,10 @@
+## [2.9.0-beta.5](https://github.com/claudekit/claudekit-engineer/compare/v2.9.0-beta.4...v2.9.0-beta.5) (2026-01-29)
+
+
+### 🐞 Bug Fixes
+
+* replace invalid gemini-3.0-flash model ID with gemini-3-flash-preview ([44cf1e1](https://github.com/claudekit/claudekit-engineer/commit/44cf1e1eb537298d6db974ba125d8b34be77e80e)), closes [#394](https://github.com/claudekit/claudekit-engineer/issues/394)
+
 ## [2.9.0-beta.4](https://github.com/claudekit/claudekit-engineer/compare/v2.9.0-beta.3...v2.9.0-beta.4) (2026-01-29)
 
 
