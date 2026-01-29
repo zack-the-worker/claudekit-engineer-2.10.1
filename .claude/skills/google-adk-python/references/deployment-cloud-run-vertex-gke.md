@@ -45,7 +45,7 @@ adk deploy --target vertex --agent my_agent.py:agent --project my-project
 ```yaml
 agent:
   name: my-agent
-  model: gemini-2.0-flash-exp
+  model: gemini-2.5-flash
   region: us-central1
   scaling: {min_instances: 1, max_instances: 10}
   resources: {cpu: 2, memory: 4Gi}
@@ -114,7 +114,7 @@ from dataclasses import dataclass
 
 @dataclass
 class Config:
-  model_id: str = os.getenv('MODEL_ID', 'gemini-2.0-flash-exp')
+  model_id: str = os.getenv('MODEL_ID', 'gemini-2.5-flash')
   api_key: str = os.getenv('GOOGLE_API_KEY')
   log_level: str = os.getenv('LOG_LEVEL', 'INFO')
 

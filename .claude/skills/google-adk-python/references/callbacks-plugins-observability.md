@@ -40,7 +40,7 @@ def after_tool_callback(tool: str, args: dict, tool_context: ToolContext, respon
 from google.adk.agents.web_agent import WebAgent
 
 agent = WebAgent(
-    name='my_agent', model='gemini-2.0-flash-exp',
+    name='my_agent', model='gemini-2.5-flash',
     before_agent_callback=before_agent_callback,
     before_model_callback=[callback1, callback2]
 )
@@ -69,7 +69,7 @@ class CountPlugin(BasePlugin):
     async def before_model_callback(self, *, callback_context: CallbackContext, llm_request: LlmRequest):
         print(f"Model: {llm_request.model_id}")
 
-agent = WebAgent(name='agent', model='gemini-2.0-flash-exp', plugins=[CountPlugin()])
+agent = WebAgent(name='agent', model='gemini-2.5-flash', plugins=[CountPlugin()])
 ```
 
 ## Built-in Plugins
@@ -80,7 +80,7 @@ from google.adk.plugins.context_filter_plugin import ContextFilterPlugin
 
 plugin1 = SaveFilesAsArtifactsPlugin()
 plugin2 = ContextFilterPlugin(filter_fn=lambda ctx: ctx.priority > 5)
-agent = WebAgent(name='agent', model='gemini-2.0-flash-exp', plugins=[plugin1, plugin2])
+agent = WebAgent(name='agent', model='gemini-2.5-flash', plugins=[plugin1, plugin2])
 ```
 
 ## Observability
@@ -95,7 +95,7 @@ tracer_provider = register(
     endpoint='http://localhost:6006/v1/traces'
 )
 
-agent = WebAgent(name='agent', model='gemini-2.0-flash-exp')
+agent = WebAgent(name='agent', model='gemini-2.5-flash')
 result = await agent.run('What is 2+2?')
 ```
 

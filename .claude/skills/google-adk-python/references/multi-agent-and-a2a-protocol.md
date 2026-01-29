@@ -6,12 +6,12 @@
 from google.adk.agents import Agent
 
 code_agent = Agent(
-    name="code_specialist", model="gemini-2.0-flash",
+    name="code_specialist", model="gemini-2.5-flash",
     description="Code generation/debugging", tools=[executor, linter]
 )
 
 research_agent = Agent(
-    name="researcher", model="gemini-2.0-flash",
+    name="researcher", model="gemini-2.5-flash",
     description="Web search/analysis", tools=[search, scraper]
 )
 
@@ -29,9 +29,9 @@ coordinator = Agent(
     name="coordinator", model="gemini-2.5-flash",
     instruction="Delegate: code_specialist (programming), data_analyst (data), writer (docs)",
     sub_agents=[
-        Agent(name="code_specialist", model="gemini-2.0-flash", tools=[code_tools]),
-        Agent(name="data_analyst", model="gemini-2.0-flash", tools=[data_tools]),
-        Agent(name="writer", model="gemini-2.0-flash", tools=[writing_tools])
+        Agent(name="code_specialist", model="gemini-2.5-flash", tools=[code_tools]),
+        Agent(name="data_analyst", model="gemini-2.5-flash", tools=[data_tools]),
+        Agent(name="writer", model="gemini-2.5-flash", tools=[writing_tools])
     ]
 )
 ```
@@ -48,7 +48,7 @@ prime_checker = RemoteA2aAgent(
 
 root = Agent(
     name="coordinator", model="gemini-2.5-flash",
-    sub_agents=[prime_checker, Agent(name="calc", model="gemini-2.0-flash", tools=[calc])]
+    sub_agents=[prime_checker, Agent(name="calc", model="gemini-2.5-flash", tools=[calc])]
 )
 ```
 
@@ -60,8 +60,8 @@ root = Agent(
     instruction="Handle inquiries",
     global_instruction="Be polite, follow privacy policy, escalate if uncertain",
     sub_agents=[
-        Agent(name="billing", model="gemini-2.0-flash", tools=[billing]),
-        Agent(name="tech", model="gemini-2.0-flash", tools=[tech])
+        Agent(name="billing", model="gemini-2.5-flash", tools=[billing]),
+        Agent(name="tech", model="gemini-2.5-flash", tools=[tech])
     ]
 )
 ```
@@ -76,9 +76,9 @@ from google.adk.agents import SequentialAgent
 pipeline = SequentialAgent(
     name="content",
     sub_agents=[
-        Agent(name="researcher", model="gemini-2.0-flash", tools=[search]),
+        Agent(name="researcher", model="gemini-2.5-flash", tools=[search]),
         Agent(name="writer", model="gemini-2.5-flash", tools=[write]),
-        Agent(name="editor", model="gemini-2.0-flash", tools=[edit])
+        Agent(name="editor", model="gemini-2.5-flash", tools=[edit])
     ]
 )
 ```
@@ -91,9 +91,9 @@ from google.adk.agents import ParallelAgent
 parallel = ParallelAgent(
     name="multi_source",
     sub_agents=[
-        Agent(name="web", model="gemini-2.0-flash", tools=[web]),
-        Agent(name="db", model="gemini-2.0-flash", tools=[db]),
-        Agent(name="api", model="gemini-2.0-flash", tools=[api])
+        Agent(name="web", model="gemini-2.5-flash", tools=[web]),
+        Agent(name="db", model="gemini-2.5-flash", tools=[db]),
+        Agent(name="api", model="gemini-2.5-flash", tools=[api])
     ]
 )
 ```
@@ -101,9 +101,9 @@ parallel = ParallelAgent(
 ### Hierarchical
 
 ```python
-backend = Agent(name="backend", model="gemini-2.0-flash",
+backend = Agent(name="backend", model="gemini-2.5-flash",
     sub_agents=[Agent(name="api", tools=[api]), Agent(name="db", tools=[db])])
-frontend = Agent(name="frontend", model="gemini-2.0-flash",
+frontend = Agent(name="frontend", model="gemini-2.5-flash",
     sub_agents=[Agent(name="ui", tools=[ui]), Agent(name="ux", tools=[ux])])
 root = Agent(name="root", model="gemini-2.5-flash", sub_agents=[backend, frontend])
 ```
@@ -116,7 +116,7 @@ from google.adk.agents import LoopAgent
 loop = LoopAgent(
     name="review",
     sub_agents=[
-        Agent(name="generator", model="gemini-2.0-flash", tools=[gen]),
+        Agent(name="generator", model="gemini-2.5-flash", tools=[gen]),
         Agent(name="reviewer", model="gemini-2.5-flash", tools=[lint])
     ],
     max_iterations=3

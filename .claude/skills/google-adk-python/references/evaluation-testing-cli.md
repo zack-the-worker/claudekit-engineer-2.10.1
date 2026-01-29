@@ -58,26 +58,26 @@ from google.adk.agents.web_agent import WebAgent
 
 @pytest.fixture
 def test_agent():
-    return WebAgent(name='test', model='gemini-2.0-flash-exp')
+    return WebAgent(name='test', model='gemini-2.5-flash')
 
 # test_agent.py
 @pytest.mark.asyncio
 async def test_basic():
-    agent = WebAgent(name='test', model='gemini-2.0-flash-exp')
+    agent = WebAgent(name='test', model='gemini-2.5-flash')
     result = await agent.run('What is 2+2?')
     assert '4' in result.text
 
 @pytest.mark.asyncio
 async def test_tools():
     def calc(a: int, b: int) -> int: return a + b
-    agent = WebAgent(name='test', model='gemini-2.0-flash-exp', tools=[calc])
+    agent = WebAgent(name='test', model='gemini-2.5-flash', tools=[calc])
     result = await agent.run('Add 5 and 7')
     assert '12' in result.text
 
 # Integration
 @pytest.mark.asyncio
 async def test_multi_turn():
-    agent = WebAgent(name='test', model='gemini-2.0-flash-exp')
+    agent = WebAgent(name='test', model='gemini-2.5-flash')
     r1 = await agent.run('My name is Alice')
     r2 = await agent.run('What is my name?')
     assert 'Alice' in r2.text
