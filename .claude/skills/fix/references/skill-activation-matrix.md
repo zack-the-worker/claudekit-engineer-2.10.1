@@ -14,7 +14,7 @@ When to activate each skill during fixing workflows.
 |-------|---------------|
 | `problem-solving` | Stuck on approach, multiple failed attempts |
 | `sequential-thinking` | Complex logic chain, multi-step reasoning needed |
-| `brainstorming` | Multiple valid approaches, architecture decision |
+| `brainstorm` | Multiple valid approaches, architecture decision |
 | `context-engineering` | Fixing AI/LLM/agent code, context window issues |
 | `ai-multimodal` | UI issues, screenshots provided, visual bugs |
 
@@ -60,6 +60,6 @@ See `references/parallel-exploration.md` for detailed patterns.
 | "AI", "LLM", "agent", "context" | `context-engineering` |
 | "stuck", "tried everything" | `problem-solving` |
 | "complex", "multi-step" | `sequential-thinking` |
-| "which approach", "options" | `brainstorming` |
+| "which approach", "options" | `brainstorm` |
 | "latest docs", "best practice" | `researcher` subagent |
 | Screenshot attached | `ai-multimodal` |

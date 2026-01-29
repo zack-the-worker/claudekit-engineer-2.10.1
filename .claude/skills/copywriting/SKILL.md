@@ -84,7 +84,7 @@ CTAs: "Start [verb]ing" • "Get [benefit]" • "Yes, I want [benefit]"
 
 ## Agent Integration
 
-**Primary:** copywriter | **Related:** brand-guidelines, content-marketing, email-marketing
+**Primary:** fullstack-developer | **Related:** brand-guidelines, content-marketing, email-marketing
 
 ## Best Practices
 

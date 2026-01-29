@@ -1,8 +1,8 @@
 # Project Overview & Product Development Requirements (PDR)
 
 **Project Name**: ClaudeKit Engineer
-**Version**: 2.2.0-beta.4
-**Last Updated**: 2025-12-28
+**Version**: 2.9.0-beta.2
+**Last Updated**: 2026-01-28
 **Status**: Active Development
 **Repository**: https://github.com/claudekit/claudekit-engineer
 
@@ -79,83 +79,47 @@ Provide a production-ready template that:
   - Blocks: node_modules, __pycache__, .git/, dist/, build/
   - Improves AI agent response time and token efficiency
 
-### 2. Comprehensive Slash Commands (75+)
+### 2. Comprehensive Slash Commands
 
-**Core Development**:
+**Core Development Commands**:
 - `/plan` - Research and create implementation plans
 - `/cook` - Implement features with full workflow
 - `/test` - Run comprehensive test suites
 - `/ask` - Expert technical consultation
 - `/bootstrap` - Initialize new projects end-to-end
 - `/brainstorm` - Solution ideation and evaluation
+- `/debug` - Deep issue analysis
 
-**Planning Variants**:
-- `/plan:two`, `/plan:ci`, `/plan:cro`, `/plan:hard`, `/plan:fast`, `/plan:parallel`
+**Command Organization** (`.claude/commands/`):
+Commands are organized into modular directories:
+- `bootstrap/` - Project initialization workflows
+- `docs/` - Documentation generation and updates
+- `plan/` - Planning command variants
+- `review/` - Code review workflows
+- `test/` - Testing and validation commands
 
-**Code Variants**:
-- `/code`, `/code:auto`, `/code:no-test`, `/code:parallel`
+### 3. Extensive Skills Library (47+ Skills)
 
-**Debugging & Fixing** (14 variants):
-- `/debug`, `/fix:fast`, `/fix:hard`, `/fix:ci`, `/fix:test`, `/fix:types`, `/fix:logs`, `/fix:ui`
+**Organized by Domain** (`.claude/skills/`):
 
-**Design & Content**:
-- `/design:fast`, `/design:good`, `/design:3d`, `/design:screenshot`, `/design:video`
-- `/content:fast`, `/content:good`, `/content:enhance`, `/content:cro`
-
-**Documentation**:
-- `/docs:init`, `/docs:update`, `/docs:summarize`
-
-**Git Operations**:
-- `/git:cm`, `/git:cp`, `/git:pr`, `/git:merge`
-
-**Integrations**:
-- `/integrate:polar`, `/integrate:sepay`
-
-**Project Management**:
-- `/watzup`, `/journal`, `/scout`, `/scout:ext`, `/use-mcp`, `/check-and-commit`, `/ck-help`
-
-### 3. Extensive Skills Library (38 Skills)
-
-**Phase 1 Organized Groups**:
-- **DevOps** (5 Cloudflare skills, Docker, Google Cloud)
-- **Databases** (MongoDB, PostgreSQL)
-- **Web Frameworks** (Next.js, Turborepo, RemixIcon)
-- **UI Styling** (shadcn/ui, Tailwind CSS, Canvas Design)
-
-**Authentication**:
-- Better Auth integration & OAuth flows
-
-**Debugging & Problem Solving**:
-- Systematic debugging, root-cause tracing, defense-in-depth
-- Verification before completion, meta-pattern recognition
-- Collision-zone thinking, inversion exercises, scale game
-- Simplification cascades, sequential thinking
-
-**Documentation & Exploration**:
-- Repomix (codebase compaction)
-- Docs-seeker (documentation access)
-- Scout parallel exploration
-
-**Document Processing**:
-- PDF, DOCX, PPTX, XLSX processing
-
-**Media Processing**:
-- FFmpeg (video/audio encoding)
-- ImageMagick (image manipulation)
-
-**Development Tools**:
-- Chrome DevTools automation
-- MCP server building
-- Skill creator framework
-
-**Gemini AI Integration**:
-- Audio analysis & speech generation
-- Video understanding
-- Image generation & analysis
-- Document processing
-
-**E-commerce**:
-- Shopify APIs and extensions
+**AI & Vision**: ai-artist, ai-multimodal, agent-browser
+**Authentication**: better-auth
+**Backend & Databases**: backend-development, databases
+**Code Quality & Debugging**: code-review, debug, sequential-thinking
+**Content & Copywriting**: copywriting, brainstorm
+**Design & Frontend**: frontend-design, frontend-development, ui-styling, ui-ux-pro-max, web-design-guidelines
+**DevOps & Infrastructure**: devops, git
+**Documentation**: docs-seeker, repomix, markdown-novel-viewer, document-skills
+**Framework Integration**: web-frameworks, react-best-practices, shopify
+**Game Development**: threejs, shader
+**Media Processing**: media-processing (FFmpeg, ImageMagick)
+**MCP Tools**: mcp-builder, mcp-management
+**Mobile Development**: mobile-development
+**Project Planning**: planning, plans-kanban
+**Skill Development**: skill-creator, template-skill
+**Testing & QA**: web-testing
+**Visualization**: mermaidjs-v11
+**Workflow Tools**: cook, research, scout, payment-integration
 
 ### 4. Automated Release Management
 
@@ -414,8 +378,8 @@ Provide a production-ready template that:
 **Actor**: Developer
 **Goal**: Identify and fix production bug
 **Flow**:
-1. Run `/fix:logs "API timeout errors"`
-2. Debugger agent analyzes logs
+1. Run `/debug "API timeout errors"`
+2. Debugger agent analyzes logs and system
 3. Root cause identified
 4. Fix plan created
 5. AI implements solution
@@ -425,17 +389,18 @@ Provide a production-ready template that:
 
 **Outcome**: Bug fixed with comprehensive testing and documentation
 
-### UC4: Create Pull Request
+### UC4: Manage Commits and Deployments
 **Actor**: Developer
-**Goal**: Submit code for review
+**Goal**: Maintain professional git history
 **Flow**:
-1. Run `/git:pr feature/new-auth main`
-2. AI analyzes all commits in branch
-3. AI generates comprehensive PR description
-4. PR created with proper context
-5. Links to related issues added
+1. Developer completes feature implementation
+2. Run tests via `/test` command
+3. Code review via `/cook` workflow
+4. Conventional commit via git-manager agent
+5. Push to feature branch
+6. Create PR via GitHub interface
 
-**Outcome**: Professional PR ready for review
+**Outcome**: Professional commit history and clean PR ready for review
 
 ### UC5: Update Documentation
 **Actor**: Project Manager

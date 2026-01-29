@@ -65,7 +65,7 @@ Classify before routing. See `references/complexity-assessment.md`.
 See `references/skill-activation-matrix.md` for complete matrix.
 
 **Always activate:** `debug` (all workflows)
-**Conditional:** `problem-solving`, `sequential-thinking`, `brainstorming`, `context-engineering`
+**Conditional:** `problem-solving`, `sequential-thinking`, `brainstorm`, `context-engineering`
 **Subagents:** `debugger`, `researcher`, `planner`, `code-reviewer`, `tester`, `Bash`
 **Parallel:** Multiple `Explore` agents for scouting, `Bash` agents for verification
 
