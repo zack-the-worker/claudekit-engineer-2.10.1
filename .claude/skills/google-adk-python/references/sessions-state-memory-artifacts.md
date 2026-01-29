@@ -43,12 +43,12 @@ async def save_image(name: str, bytes: bytes, tool_context: ToolContext) -> dict
     return {"name": name, "version": version}
 
 async def load_text(name: str, tool_context: ToolContext) -> str:
-    parts = await tool_context.load_artifact(name)
-    return parts[0].inline_data.data.decode()
+    artifact = await tool_context.load_artifact(name)
+    return artifact.inline_data.data.decode() if artifact else None
 
 async def load_version(name: str, version: int, tool_context: ToolContext) -> str:
-    parts = await tool_context.load_artifact(name, version=version)
-    return parts[0].inline_data.data.decode()
+    artifact = await tool_context.load_artifact(name, version=version)
+    return artifact.inline_data.data.decode() if artifact else None
 ```
 
 Versioning: Each save creates new version (1, 2, 3...), load without version returns latest.

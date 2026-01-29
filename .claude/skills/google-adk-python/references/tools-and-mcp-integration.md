@@ -45,8 +45,8 @@ async def save_doc(name: str, content: str, tool_context: ToolContext) -> dict:
     return {"name": name, "version": version}
 
 async def load_doc(name: str, tool_context: ToolContext) -> str:
-    parts = await tool_context.load_artifact(name)
-    return parts[0].inline_data.data.decode()
+    artifact = await tool_context.load_artifact(name)
+    return artifact.inline_data.data.decode() if artifact else None
 ```
 
 ## Built-in Tools
@@ -114,19 +114,19 @@ MCPToolset(connection_params=params, tool_filter=lambda t: t.name.startswith('re
 ## LongRunningFunctionTool
 
 ```python
-from google.adk.tools import LongRunningFunctionTool
+from google.adk.tools.long_running_tool import LongRunningFunctionTool
 
 async def approve(amount: float) -> dict:
     return {"approved": True}
 
-tool = LongRunningFunctionTool(approve)
+tool = LongRunningFunctionTool(func=approve)
 agent = Agent(name="agent", model="gemini-2.0-flash", tools=[tool])
 ```
 
 ## ExampleTool
 
 ```python
-from google.adk.tools import ExampleTool
+from google.adk.tools.example_tool import ExampleTool
 
 examples = ExampleTool(examples=[
     {"input": "2+2?", "output": "4"},
