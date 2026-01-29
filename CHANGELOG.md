@@ -1,3 +1,10 @@
+## [2.9.0-beta.4](https://github.com/claudekit/claudekit-engineer/compare/v2.9.0-beta.3...v2.9.0-beta.4) (2026-01-29)
+
+
+### ⚡ Performance Improvements
+
+* **skills:** enhance `skill-creator` skill with plugin marketplace ([aeee285](https://github.com/claudekit/claudekit-engineer/commit/aeee285cc87e53fbbb07436fda75a2efb5d24d73))
+
 ## [2.9.0-beta.3](https://github.com/claudekit/claudekit-engineer/compare/v2.9.0-beta.2...v2.9.0-beta.3) (2026-01-29)
 
 
