@@ -292,8 +292,18 @@ Detailed validation criteria for evaluating skills:
 - **Script quality**: `references/script-quality-criteria.md`
 - **Structure & organization**: `references/structure-organization-criteria.md`
 
+## Plugin Marketplaces
+
+For distributing skills as plugins via marketplaces, see:
+- **Overview**: `references/plugin-marketplace-overview.md`
+- **Schema**: `references/plugin-marketplace-schema.md`
+- **Sources**: `references/plugin-marketplace-sources.md`
+- **Hosting**: `references/plugin-marketplace-hosting.md`
+- **Troubleshooting**: `references/plugin-marketplace-troubleshooting.md`
+
 ## References
 - [Agent Skills](https://docs.claude.com/en/docs/claude-code/skills.md)
 - [Agent Skills Spec](.claude/skills/agent_skills_spec.md)
 - [Agent Skills Overview](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview.md)
 - [Best Practices](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/best-practices.md)
+- [Plugin Marketplaces](https://code.claude.com/docs/en/plugin-marketplaces.md)
