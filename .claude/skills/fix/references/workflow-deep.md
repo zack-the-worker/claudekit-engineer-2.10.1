@@ -25,7 +25,7 @@ Use `researcher` subagent for external knowledge.
 **Output:** `✓ Step 2: Research complete - [key findings]`
 
 ### Step 3: Brainstorm
-Activate `brainstorming` skill.
+Activate `brainstorm` skill.
 
 - Evaluate multiple approaches
 - Consider trade-offs
