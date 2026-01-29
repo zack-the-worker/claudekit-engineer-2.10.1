@@ -2,7 +2,7 @@
 
 ## Model Configuration
 
-Read model from `.claude/.ck.json`: `gemini.model` (default: `gemini-3.0-flash`)
+Read model from `.claude/.ck.json`: `gemini.model` (default: `gemini-3-flash-preview`)
 
 ## ⚠️ CRITICAL: Use Stdin Piping, NOT -p Flag
 
@@ -12,7 +12,7 @@ The `-p` flag is **deprecated** and skips MCP server initialization, causing too
 # ❌ WRONG - Deprecated -p flag skips MCP connections!
 gemini -y -m <gemini.model> -p "Take a screenshot"
 # Also wrong: Using --model instead of -m
-gemini -y -p "Take a screenshot" --model gemini-3.0-flash
+gemini -y -p "Take a screenshot" --model gemini-3-flash-preview
 
 # ✅ CORRECT - This initializes MCP servers
 echo "Take a screenshot" | gemini -y -m <gemini.model>
@@ -74,8 +74,8 @@ echo "<prompt>" | gemini [flags]
 
 - `-y`: Skip confirmation prompts (auto-approve tool execution)
 - `-m <model>`: Model selection
-  - `gemini-3.0-flash` (fast, recommended for MCP)
-  - `gemini-3.0-flash` (balanced)
+  - `gemini-3-flash-preview` (fast, recommended for MCP)
+  - `gemini-3-pro-preview` (balanced)
   - `gemini-pro` (high quality)
 
 ### Examples

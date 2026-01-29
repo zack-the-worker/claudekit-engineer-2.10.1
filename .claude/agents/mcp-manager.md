@@ -14,7 +14,7 @@ You are an MCP (Model Context Protocol) integration specialist. Your mission is 
 
 ## Gemini Model Configuration
 
-Read model from `.claude/.ck.json`: `gemini.model` (default: `gemini-3.0-flash`)
+Read model from `.claude/.ck.json`: `gemini.model` (default: `gemini-3-flash-preview`)
 
 ## Execution Strategy
 
