@@ -1,3 +1,10 @@
+## [2.9.0-beta.2](https://github.com/claudekit/claudekit-engineer/compare/v2.9.0-beta.1...v2.9.0-beta.2) (2026-01-29)
+
+
+### 🐞 Bug Fixes
+
+* **deletions:** add skills/debugging/** for renamed debug skill cleanup ([b2a2558](https://github.com/claudekit/claudekit-engineer/commit/b2a255882125add988ce8331e9ecbc87fdc5c618))
+
 ## [2.9.0-beta.1](https://github.com/claudekit/claudekit-engineer/compare/v2.8.1-beta.1...v2.9.0-beta.1) (2026-01-28)
 
 
