@@ -136,19 +136,12 @@ def expand_synonyms(text: str) -> str:
 
 # Task keyword mappings for intent detection
 TASK_MAPPINGS = {
-    "fix": ["fix", "bug", "error", "broken", "issue", "debug", "crash", "fail", "wrong", "not working"],
     "plan": ["plan", "design", "architect", "research", "think", "analyze", "strategy", "how to", "approach"],
     "cook": ["implement", "build", "create", "add", "feature", "code", "develop", "make", "write"],
     "bootstrap": ["start", "new", "init", "setup", "project", "scaffold", "generate", "begin"],
     "test": ["test", "check", "verify", "validate", "spec", "unit", "integration", "coverage", "login", "auth", "e2e"],
     "docs": ["document", "readme", "docs", "explain", "comment", "documentation"],
-    "git": ["commit", "push", "pr", "merge", "branch", "pull", "request", "git"],
-    "design": ["ui", "ux", "style", "layout", "visual", "css", "component", "page", "responsive"],
     "review": ["review", "audit", "inspect", "quality", "refactor", "clean"],
-    "content": ["copy", "text", "marketing", "content", "blog", "seo"],
-    "integrate": ["integrate", "payment", "api", "connect", "webhook", "third-party"],
-    "skill": ["skill", "agent", "automate", "workflow"],
-    "scout": ["find", "search", "locate", "explore", "scan", "where"],
     "config": ["config", "configure", "settings", "ck.json", ".ck.json", "setup", "locale", "language", "paths"],
     "coding-level": ["coding", "level", "eli5", "junior", "senior", "lead", "god", "beginner", "expert", "teach", "learn", "explain"],
     # New categories
@@ -156,22 +149,12 @@ TASK_MAPPINGS = {
     "kanban": ["kanban", "board", "dashboard", "progress", "track", "orchestration", "visualize"],
     "preview": ["preview", "view", "render", "markdown", "reader", "novel"],
     "journal": ["journal", "diary", "log", "entry", "reflect", "failure", "lesson"],
-    "brainstorm": ["brainstorm", "idea", "ideate", "creative", "explore ideas", "think through"],
     "watzup": ["watzup", "status", "summary", "wrap up", "what's up", "recent", "changes"],
     "notifications": ["notification", "notifications", "notify", "discord", "telegram", "slack", "alert", "webhook", "stop hook", "session end", "setup notification", "setup notifications", "configure discord", "configure telegram", "configure slack", "discord webhook", "telegram bot", "slack webhook"],
 }
 
 # Category workflows and tips
 CATEGORY_GUIDES = {
-    "fix": {
-        "title": "Fixing Issues",
-        "workflow": [
-            ("Start", "`/fix` \"describe your issue\""),
-            ("If stuck", "`/debug` \"more details\""),
-            ("Verify", "`/test`"),
-        ],
-        "tip": "Include error messages for better results",
-    },
     "plan": {
         "title": "Planning",
         "workflow": [
@@ -203,7 +186,6 @@ CATEGORY_GUIDES = {
         "title": "Testing",
         "workflow": [
             ("Run tests", "`/test`"),
-            ("Fix failures", "`/fix:test`"),
         ],
         "tip": "Run tests frequently during development",
     },
@@ -215,63 +197,12 @@ CATEGORY_GUIDES = {
         ],
         "tip": "Keep docs close to code for accuracy",
     },
-    "git": {
-        "title": "Git Workflow",
-        "workflow": [
-            ("Commit", "`/git:cm`"),
-            ("Push", "`/git:cp`"),
-            ("PR", "`/git:pr`"),
-        ],
-        "tip": "Commit often with clear messages",
-    },
-    "design": {
-        "title": "Design",
-        "workflow": [
-            ("Quick design", "`/design:fast` \"description\""),
-            ("From screenshot", "`/design:screenshot` <path>"),
-            ("3D design", "`/design:3d` \"description\""),
-        ],
-        "tip": "Reference existing designs for consistency",
-    },
     "review": {
         "title": "Code Review",
         "workflow": [
             ("Full review", "`/review:codebase`"),
         ],
         "tip": "Review before merging to main",
-    },
-    "content": {
-        "title": "Content Creation",
-        "workflow": [
-            ("Quick copy", "`/content:fast` \"requirements\""),
-            ("Quality copy", "`/content:good` \"requirements\""),
-            ("Optimize", "`/content:cro`"),
-        ],
-        "tip": "Know your audience before writing",
-    },
-    "integrate": {
-        "title": "Integration",
-        "workflow": [
-            ("Polar.sh", "`/integrate:polar`"),
-            ("SePay", "`/integrate:sepay`"),
-        ],
-        "tip": "Read API docs before integrating",
-    },
-    "skill": {
-        "title": "Skill Management",
-        "workflow": [
-            ("Create", "`/skill:create`"),
-            ("Optimize", "`/skill:optimize`"),
-        ],
-        "tip": "Skills extend agent capabilities",
-    },
-    "scout": {
-        "title": "Codebase Exploration",
-        "workflow": [
-            ("Find files", "`/scout` \"what to find\""),
-            ("External tools", "`/scout:ext` \"query\""),
-        ],
-        "tip": "Be specific about what you're looking for",
     },
     "coding-level": {
         "title": "Coding Level (Adaptive Communication)",
@@ -301,7 +232,7 @@ CATEGORY_GUIDES = {
         "workflow": [
             ("Create worktree", "`/worktree` \"feature description\""),
             ("Work in isolation", "cd to worktree, implement, test"),
-            ("Review & merge", "`/git:pr` from worktree → merge → cleanup"),
+            ("Review & merge", "Create PR from worktree → merge → cleanup"),
             ("List worktrees", "`/worktree list`"),
             ("Remove worktree", "`/worktree remove <name>`"),
         ],
@@ -334,15 +265,6 @@ CATEGORY_GUIDES = {
             ("Lessons learned", "Turn setbacks into future guidance"),
         ],
         "tip": "Use after repeated test failures, critical bugs, or architectural pivots. Raw honesty = future wisdom",
-    },
-    "brainstorm": {
-        "title": "Brainstorming & Ideation",
-        "workflow": [
-            ("Quick brainstorm", "`/brainstorm \"your question\"`"),
-            ("Explore approaches", "Get 2-3 viable solutions with trade-offs"),
-            ("Challenge assumptions", "Receive brutally honest feedback"),
-        ],
-        "tip": "Respects codingLevel. Set `codingLevel: 0` for ELI5 explanations or `5` for expert-only mode",
     },
     "watzup": {
         "title": "Session Review & Wrap-up",
@@ -520,14 +442,12 @@ def show_overview(data: dict, prefix: str) -> None:
     print()
     print("**Quick Start:**")
     print(f"- `/{prefix}cook` - Implement features (standalone)")
-    print(f"- `/{prefix}plan` + `/{prefix}code` - Plan then execute")
-    print(f"- `/{prefix}fix` - Fix bugs intelligently")
+    print(f"- `/{prefix}plan` + `/{prefix}cook` - Plan then execute")
     print(f"- `/{prefix}test` - Run and analyze tests")
     print()
     print("**Common Workflows:**")
-    print(f"- New feature: `/{prefix}plan` → `/{prefix}code` → `/{prefix}test` → `/{prefix}git:pr`")
-    print(f"- Bug fix: `/{prefix}debug` → `/{prefix}fix` → `/{prefix}test` → `/{prefix}git:cm`")
-    print(f"- Review: `/{prefix}scout` → `/{prefix}review` → `/{prefix}watzup`")
+    print(f"- New feature: `/{prefix}plan` → `/{prefix}cook` → `/{prefix}test`")
+    print(f"- Review: `/{prefix}review` → `/{prefix}watzup`")
     print()
     print("**Categories:**")
     for cat_key in sorted(categories.keys()):
