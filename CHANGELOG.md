@@ -1,3 +1,16 @@
+## [2.9.0-beta.6](https://github.com/claudekit/claudekit-engineer/compare/v2.9.0-beta.5...v2.9.0-beta.6) (2026-01-29)
+
+
+### 🚀 Features
+
+* **skills:** update google-adk-python skill with v1.0.0+ features ([2effa64](https://github.com/claudekit/claudekit-engineer/commit/2effa640800afe4474d6fcc65c811e94c6aae61f)), closes [#396](https://github.com/claudekit/claudekit-engineer/issues/396)
+
+
+### 🐞 Bug Fixes
+
+* **skills:** correct API inaccuracies in google-adk-python skill ([a81b756](https://github.com/claudekit/claudekit-engineer/commit/a81b756be91130b440ccff409723f1529606562b))
+* **skills:** update gemini model refs to 2.5-flash, add gemini-3 preview ([8bef76d](https://github.com/claudekit/claudekit-engineer/commit/8bef76d126884a77d2789f2c371c1ad557bc05f8))
+
 ## [2.9.0-beta.5](https://github.com/claudekit/claudekit-engineer/compare/v2.9.0-beta.4...v2.9.0-beta.5) (2026-01-29)
 
 
