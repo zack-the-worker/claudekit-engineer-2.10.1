@@ -1,3 +1,15 @@
+## [2.9.0-beta.7](https://github.com/claudekit/claudekit-engineer/compare/v2.9.0-beta.6...v2.9.0-beta.7) (2026-01-30)
+
+
+### 🚀 Features
+
+* add --parallel flag to /fix skill ([3b7ae4f](https://github.com/claudekit/claudekit-engineer/commit/3b7ae4f8a7503135edaf172238d99d6713cd161a)), closes [#400](https://github.com/claudekit/claudekit-engineer/issues/400)
+
+
+### 🐞 Bug Fixes
+
+* update /fix:parallel syntax to /fix --parallel in review command ([074ac52](https://github.com/claudekit/claudekit-engineer/commit/074ac52ca4e5eb2a3aaaed87dd8ad123b6f99301)), closes [#400](https://github.com/claudekit/claudekit-engineer/issues/400)
+
 ## [2.9.0-beta.6](https://github.com/claudekit/claudekit-engineer/compare/v2.9.0-beta.5...v2.9.0-beta.6) (2026-01-29)
 
 
