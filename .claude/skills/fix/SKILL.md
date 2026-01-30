@@ -13,6 +13,7 @@ Unified skill for fixing issues of any complexity with intelligent routing.
 - `--auto` - Activate autonomous mode (**default**)
 - `--review` - Activate human-in-the-loop review mode
 - `--quick` - Activate quick mode
+- `--parallel` - Activate parallel mode: route to parallel `fullstack-developer` agents per issue
 
 ## Workflow
 
@@ -44,7 +45,7 @@ Classify before routing. See `references/complexity-assessment.md`.
 | **Simple** | Single file, clear error, type/lint | `references/workflow-quick.md` |
 | **Moderate** | Multi-file, root cause unclear | `references/workflow-standard.md` |
 | **Complex** | System-wide, architecture impact | `references/workflow-deep.md` |
-| **Parallel** | 2+ independent issues | Parallel `fullstack-developer` agents |
+| **Parallel** | 2+ independent issues OR `--parallel` flag | Parallel `fullstack-developer` agents |
 
 ### Step 4: Fix Verification & Prevent Future Issues
 
