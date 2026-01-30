@@ -1,26 +1,31 @@
 ---
 name: payment-integration
-description: Integrate payments with SePay (VietQR), Polar (SaaS subscriptions), Stripe (global payments). Use for checkout, webhooks, QR codes, subscriptions, API upgrades.
-version: 1.1.0
+description: Integrate payments with SePay (VietQR), Polar (SaaS subscriptions), Stripe (global payments). Use for checkout, webhooks, QR codes, subscriptions, currency conversion, multi-provider order management, commission systems.
+version: 2.0.0
 license: MIT
 ---
 
 # Payment Integration
 
-Implement payment processing with SePay (Vietnamese payments), Polar (global SaaS monetization), and Stripe (global payment infrastructure).
+Production-proven payment processing patterns with SePay (Vietnamese bank transfers), Polar (global SaaS monetization), and Stripe (global payment infrastructure). Includes multi-provider order management, currency conversion, commission systems, and webhook handling.
 
 ## When to Use
 
 Use when implementing:
 - Payment gateway integration (checkout, processing)
 - Subscription management (trials, upgrades, billing)
-- Webhook handling (payment notifications)
+- Webhook handling (payment notifications, idempotency)
 - QR code payments (VietQR, NAPAS)
 - Usage-based billing (metering, credits)
 - Automated benefit delivery (licenses, GitHub access, Discord roles)
 - Customer portals (self-service management)
 - Bank transfer automation (Vietnamese banks)
 - Product catalogs with pricing
+- Multi-provider order management (Polar + SePay)
+- Currency conversion (USD/VND with fallback chains)
+- Commission and referral systems
+- Revenue tracking and maintainer payouts
+- Discount management and cross-provider sync
 
 ## Platform Selection
 
@@ -55,7 +60,7 @@ Use when implementing:
 - **Webhooks**: `references/sepay/webhooks.md` - Setup, payload structure, verification, retry logic
 - **SDK Usage**: `references/sepay/sdk.md` - Node.js, PHP, Laravel implementations
 - **QR Codes**: `references/sepay/qr-codes.md` - VietQR generation, templates, integration
-- **Best Practices**: `references/sepay/best-practices.md` - Security, patterns, monitoring
+- **Best Practices**: `references/sepay/best-practices.md` - Transaction parsing, order matching, webhook handling, currency conversion, invoice generation, error handling
 
 ### Polar Integration
 - **Overview & Auth**: `references/polar/overview.md` - Platform capabilities, authentication methods, MoR concept
@@ -65,7 +70,10 @@ Use when implementing:
 - **Webhooks**: `references/polar/webhooks.md` - Event types, signature verification, monitoring
 - **Benefits**: `references/polar/benefits.md` - Automated delivery (GitHub, Discord, licenses, files)
 - **SDK Usage**: `references/polar/sdk.md` - TypeScript, Python, PHP, Go, framework adapters
-- **Best Practices**: `references/polar/best-practices.md` - Security, patterns, monitoring
+- **Best Practices**: `references/polar/best-practices.md` - SDK initialization, checkout flows, webhooks, fee calculations, discount management, error handling
+
+### Multi-Provider Patterns
+- **Order Management**: `references/multi-provider-order-management-patterns.md` - Unified order schema, currency conversion, commissions, revenue tracking, refunds, webhook idempotency
 
 ### Stripe Integration
 - **Full Documentation**: https://stripe.com/llms.txt
