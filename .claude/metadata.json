@@ -5,6 +5,7 @@
     "agents/scout.md",
     "agents/scout-external.md",
     "commands/brainstorm.md",
+    "commands/debug.md",
     "commands/code/**",
     "commands/code.md",
     "commands/content/**",
