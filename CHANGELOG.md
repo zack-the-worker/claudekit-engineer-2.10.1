@@ -1,3 +1,10 @@
+## [2.9.0-beta.9](https://github.com/claudekit/claudekit-engineer/compare/v2.9.0-beta.8...v2.9.0-beta.9) (2026-01-31)
+
+
+### 🐞 Bug Fixes
+
+* enrich plan:validate Step 5 with detailed validation log template ([#405](https://github.com/claudekit/claudekit-engineer/issues/405)) ([58ce22b](https://github.com/claudekit/claudekit-engineer/commit/58ce22b1cde9901c464efe818c14ab96173c651a)), closes [#402](https://github.com/claudekit/claudekit-engineer/issues/402)
+
 ## [2.9.0-beta.8](https://github.com/claudekit/claudekit-engineer/compare/v2.9.0-beta.7...v2.9.0-beta.8) (2026-01-31)
 
 
