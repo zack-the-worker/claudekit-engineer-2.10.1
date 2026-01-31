@@ -1,3 +1,10 @@
+## [2.9.0-beta.8](https://github.com/claudekit/claudekit-engineer/compare/v2.9.0-beta.7...v2.9.0-beta.8) (2026-01-31)
+
+
+### 🐞 Bug Fixes
+
+* add deprecated debug.md to metadata deletions and archive ([2abf65c](https://github.com/claudekit/claudekit-engineer/commit/2abf65cd4ca8d15a7a9a381783ecba5664303ad6)), closes [#403](https://github.com/claudekit/claudekit-engineer/issues/403)
+
 ## [2.9.0-beta.7](https://github.com/claudekit/claudekit-engineer/compare/v2.9.0-beta.6...v2.9.0-beta.7) (2026-01-30)
 
 
