@@ -76,9 +76,13 @@ Use when implementing:
 - **Order Management**: `references/multi-provider-order-management-patterns.md` - Unified order schema, currency conversion, commissions, revenue tracking, refunds, webhook idempotency
 
 ### Stripe Integration
-- **Full Documentation**: https://stripe.com/llms.txt
+- **Full Documentation**: https://docs.stripe.com/llms.txt - Complete Stripe docs for LLMs
+- **SDKs**: `references/stripe/stripe-sdks.md` - Node.js, Python, Ruby, Go, PHP, Java, .NET setup & usage
+- **Stripe.js**: `references/stripe/stripe-js.md` - Client-side Elements, Payment Element, Embedded Checkout
+- **CLI**: `references/stripe/stripe-cli.md` - Webhook testing, logs, fixtures, local development
 - **Best Practices**: `references/stripe/stripe-best-practices.md` - Integration design, API selection, Checkout vs Payment Element
 - **Upgrading**: `references/stripe/stripe-upgrade.md` - API versions, SDK upgrades, Stripe.js versioning
+- **External Docs**: https://docs.stripe.com/sdks | https://docs.stripe.com/js | https://docs.stripe.com/cli
 
 ### Integration Scripts
 - **SePay Webhook Verification**: `scripts/sepay-webhook-verify.js` - Verify SePay webhook authenticity
@@ -105,10 +109,13 @@ Use when implementing:
 
 ### Stripe Implementation
 1. Load `references/stripe/stripe-best-practices.md` for integration design
-2. Choose integration: Checkout (hosted/embedded) or Payment Element
-3. Use CheckoutSessions API for most payment flows
-4. Use Billing APIs for subscriptions (combine with Checkout)
-5. Load `references/stripe/stripe-upgrade.md` when upgrading API versions
+2. Load `references/stripe/stripe-sdks.md` for server-side SDK setup
+3. Load `references/stripe/stripe-js.md` for client-side Elements/Checkout
+4. Use `stripe listen` via CLI for local webhook testing (`references/stripe/stripe-cli.md`)
+5. Choose integration: Checkout (hosted/embedded) or Payment Element
+6. Use CheckoutSessions API for most payment flows
+7. Use Billing APIs for subscriptions (combine with Checkout)
+8. Load `references/stripe/stripe-upgrade.md` when upgrading API versions
 
 ## Key Capabilities
 
@@ -139,16 +146,8 @@ Use when implementing:
 
 ## Instructions
 
-When implementing payment integration:
-
-1. **Identify platform** based on requirements (Vietnamese vs global, payment types)
-2. **Load relevant references** progressively as needed
-3. **Implement authentication** using platform-specific methods
-4. **Set up products/pricing** according to business model
-5. **Implement checkout flow** (hosted, embedded, or API-driven)
-6. **Configure webhooks** with proper verification
-7. **Handle payment events** (success, failure, refund)
-8. **Test thoroughly** in sandbox before production
-9. **Monitor and optimize** using platform analytics
-
-Load only the references needed for current implementation step to maintain context efficiency.
+1. Identify platform (Vietnamese → SePay, global SaaS → Polar/Stripe)
+2. Load relevant references progressively
+3. Implement auth → products → checkout → webhooks → events
+4. Test in sandbox, then production
+5. Load only needed references to maintain context efficiency
