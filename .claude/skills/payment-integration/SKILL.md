@@ -1,153 +1,90 @@
 ---
 name: payment-integration
-description: Integrate payments with SePay (VietQR), Polar (SaaS subscriptions), Stripe (global payments). Use for checkout, webhooks, QR codes, subscriptions, currency conversion, multi-provider order management, commission systems.
-version: 2.0.0
+description: Integrate payments with SePay (VietQR), Polar, Stripe, Creem.io (MoR, licensing). Checkout, webhooks, subscriptions, QR codes, multi-provider orders, commissions.
+version: 2.1.0
 license: MIT
 ---
 
 # Payment Integration
 
-Production-proven payment processing patterns with SePay (Vietnamese bank transfers), Polar (global SaaS monetization), and Stripe (global payment infrastructure). Includes multi-provider order management, currency conversion, commission systems, and webhook handling.
+Production-proven payment processing with SePay (Vietnamese banks), Polar (global SaaS), Stripe (global infrastructure), and Creem.io (MoR + licensing).
 
 ## When to Use
 
-Use when implementing:
 - Payment gateway integration (checkout, processing)
 - Subscription management (trials, upgrades, billing)
-- Webhook handling (payment notifications, idempotency)
+- Webhook handling (notifications, idempotency)
 - QR code payments (VietQR, NAPAS)
-- Usage-based billing (metering, credits)
-- Automated benefit delivery (licenses, GitHub access, Discord roles)
-- Customer portals (self-service management)
-- Bank transfer automation (Vietnamese banks)
-- Product catalogs with pricing
-- Multi-provider order management (Polar + SePay)
-- Currency conversion (USD/VND with fallback chains)
-- Commission and referral systems
-- Revenue tracking and maintainer payouts
-- Discount management and cross-provider sync
+- Software licensing (device activation)
+- Multi-provider order management
+- Revenue splits and commissions
 
 ## Platform Selection
 
-**Choose SePay for:**
-- Vietnamese market (VND currency)
-- Bank transfer automation
-- VietQR/NAPAS payments
-- Local payment methods
-- Direct bank account monitoring
-
-**Choose Polar for:**
-- Global SaaS products
-- Subscription management
-- Usage-based billing
-- Automated benefits (GitHub, Discord, licenses)
-- Merchant of Record (tax compliance)
-- Digital product sales
-
-**Choose Stripe for:**
-- Global payment infrastructure
-- Enterprise-grade payment processing
-- Connect platforms (marketplaces)
-- Billing/subscriptions at scale
-- Custom checkout experiences
-- Payment Element integrations
+| Platform | Best For |
+|----------|----------|
+| **SePay** | Vietnamese market, VND, bank transfers, VietQR |
+| **Polar** | Global SaaS, subscriptions, automated benefits (GitHub/Discord) |
+| **Stripe** | Enterprise payments, Connect platforms, custom checkout |
+| **Creem.io** | MoR + licensing, revenue splits, no-code checkout |
 
 ## Quick Reference
 
-### SePay Integration
-- **Overview & Auth**: `references/sepay/overview.md` - Platform capabilities, API/OAuth2 auth, supported banks
-- **API Reference**: `references/sepay/api.md` - Endpoints, transactions, bank accounts, virtual accounts
-- **Webhooks**: `references/sepay/webhooks.md` - Setup, payload structure, verification, retry logic
-- **SDK Usage**: `references/sepay/sdk.md` - Node.js, PHP, Laravel implementations
-- **QR Codes**: `references/sepay/qr-codes.md` - VietQR generation, templates, integration
-- **Best Practices**: `references/sepay/best-practices.md` - Transaction parsing, order matching, webhook handling, currency conversion, invoice generation, error handling
+### SePay
+- `references/sepay/overview.md` - Auth, supported banks
+- `references/sepay/api.md` - Endpoints, transactions
+- `references/sepay/webhooks.md` - Setup, verification
+- `references/sepay/sdk.md` - Node.js, PHP, Laravel
+- `references/sepay/qr-codes.md` - VietQR generation
+- `references/sepay/best-practices.md` - Production patterns
 
-### Polar Integration
-- **Overview & Auth**: `references/polar/overview.md` - Platform capabilities, authentication methods, MoR concept
-- **Products & Pricing**: `references/polar/products.md` - Product types, pricing models, usage-based billing
-- **Checkouts**: `references/polar/checkouts.md` - Checkout flows, embedded checkout, links
-- **Subscriptions**: `references/polar/subscriptions.md` - Lifecycle, upgrades, downgrades, trials
-- **Webhooks**: `references/polar/webhooks.md` - Event types, signature verification, monitoring
-- **Benefits**: `references/polar/benefits.md` - Automated delivery (GitHub, Discord, licenses, files)
-- **SDK Usage**: `references/polar/sdk.md` - TypeScript, Python, PHP, Go, framework adapters
-- **Best Practices**: `references/polar/best-practices.md` - SDK initialization, checkout flows, webhooks, fee calculations, discount management, error handling
+### Polar
+- `references/polar/overview.md` - Auth, MoR concept
+- `references/polar/products.md` - Pricing models
+- `references/polar/checkouts.md` - Checkout flows
+- `references/polar/subscriptions.md` - Lifecycle management
+- `references/polar/webhooks.md` - Event handling
+- `references/polar/benefits.md` - Automated delivery
+- `references/polar/sdk.md` - Multi-language SDKs
+- `references/polar/best-practices.md` - Production patterns
 
-### Multi-Provider Patterns
-- **Order Management**: `references/multi-provider-order-management-patterns.md` - Unified order schema, currency conversion, commissions, revenue tracking, refunds, webhook idempotency
+### Stripe
+- `references/stripe/stripe-best-practices.md` - Integration design
+- `references/stripe/stripe-sdks.md` - Server SDKs
+- `references/stripe/stripe-js.md` - Payment Element
+- `references/stripe/stripe-cli.md` - Local testing
+- `references/stripe/stripe-upgrade.md` - Version upgrades
+- External: https://docs.stripe.com/llms.txt
 
-### Stripe Integration
-- **Full Documentation**: https://docs.stripe.com/llms.txt - Complete Stripe docs for LLMs
-- **SDKs**: `references/stripe/stripe-sdks.md` - Node.js, Python, Ruby, Go, PHP, Java, .NET setup & usage
-- **Stripe.js**: `references/stripe/stripe-js.md` - Client-side Elements, Payment Element, Embedded Checkout
-- **CLI**: `references/stripe/stripe-cli.md` - Webhook testing, logs, fixtures, local development
-- **Best Practices**: `references/stripe/stripe-best-practices.md` - Integration design, API selection, Checkout vs Payment Element
-- **Upgrading**: `references/stripe/stripe-upgrade.md` - API versions, SDK upgrades, Stripe.js versioning
-- **External Docs**: https://docs.stripe.com/sdks | https://docs.stripe.com/js | https://docs.stripe.com/cli
+### Creem.io
+- `references/creem/overview.md` - MoR, auth, global support
+- `references/creem/api.md` - Products, checkout sessions
+- `references/creem/checkouts.md` - No-code links, storefronts
+- `references/creem/subscriptions.md` - Trials, seat-based
+- `references/creem/licensing.md` - Device activation
+- `references/creem/webhooks.md` - Signature verification
+- `references/creem/sdk.md` - Next.js, Better Auth
+- External: https://docs.creem.io/llms.txt
 
-### Integration Scripts
-- **SePay Webhook Verification**: `scripts/sepay-webhook-verify.js` - Verify SePay webhook authenticity
-- **Polar Webhook Verification**: `scripts/polar-webhook-verify.js` - Verify Polar webhook signatures
-- **Checkout Helper**: `scripts/checkout-helper.js` - Generate checkout sessions for both platforms
+### Multi-Provider
+- `references/multi-provider-order-management-patterns.md` - Unified orders, currency conversion
 
-## Implementation Workflow
-
-### SePay Implementation
-1. Load `references/sepay/overview.md` for auth setup
-2. Load `references/sepay/api.md` or `references/sepay/sdk.md` for integration
-3. Load `references/sepay/webhooks.md` for payment notifications
-4. Use `scripts/sepay-webhook-verify.js` for webhook verification
-5. Load `references/sepay/best-practices.md` for production readiness
-
-### Polar Implementation
-1. Load `references/polar/overview.md` for auth and concepts
-2. Load `references/polar/products.md` for product setup
-3. Load `references/polar/checkouts.md` for payment flows
-4. Load `references/polar/webhooks.md` for event handling
-5. Use `scripts/polar-webhook-verify.js` for webhook verification
-6. Load `references/polar/benefits.md` if automating delivery
-7. Load `references/polar/best-practices.md` for production readiness
-
-### Stripe Implementation
-1. Load `references/stripe/stripe-best-practices.md` for integration design
-2. Load `references/stripe/stripe-sdks.md` for server-side SDK setup
-3. Load `references/stripe/stripe-js.md` for client-side Elements/Checkout
-4. Use `stripe listen` via CLI for local webhook testing (`references/stripe/stripe-cli.md`)
-5. Choose integration: Checkout (hosted/embedded) or Payment Element
-6. Use CheckoutSessions API for most payment flows
-7. Use Billing APIs for subscriptions (combine with Checkout)
-8. Load `references/stripe/stripe-upgrade.md` when upgrading API versions
+### Scripts
+- `scripts/sepay-webhook-verify.js` - SePay webhook verification
+- `scripts/polar-webhook-verify.js` - Polar webhook verification
+- `scripts/checkout-helper.js` - Checkout session generator
 
 ## Key Capabilities
 
-**SePay:**
-- Payment gateway (QR, bank transfer, cards)
-- Bank account monitoring with webhooks
-- Order-based virtual accounts
-- VietQR generation API
-- 44+ Vietnamese banks supported
-- Rate limit: 2 calls/second
+| Platform | Highlights |
+|----------|------------|
+| **SePay** | QR/bank/cards, 44+ VN banks, webhooks, 2 req/s |
+| **Polar** | MoR, subscriptions, usage billing, benefits, 300 req/min |
+| **Stripe** | CheckoutSessions, Billing, Connect, Payment Element |
+| **Creem.io** | MoR, licensing, revenue splits, no-code checkout |
 
-**Polar:**
-- Merchant of Record (global tax compliance)
-- Subscription lifecycle management
-- Usage-based billing (events, meters)
-- Automated benefits (GitHub, Discord, licenses)
-- Customer portal (self-service)
-- Multi-language SDKs
-- Rate limit: 300 req/min
+## Implementation
 
-**Stripe:**
-- Global payment infrastructure
-- CheckoutSessions, PaymentIntents, SetupIntents APIs
-- Billing/subscriptions with trials, prorations
-- Connect for marketplaces/platforms
-- Payment Element for custom UI
-- Multi-language SDKs
+See `references/implementation-workflows.md` for step-by-step guides per platform.
 
-## Instructions
-
-1. Identify platform (Vietnamese → SePay, global SaaS → Polar/Stripe)
-2. Load relevant references progressively
-3. Implement auth → products → checkout → webhooks → events
-4. Test in sandbox, then production
-5. Load only needed references to maintain context efficiency
+**General flow:** auth → products → checkout → webhooks → events
