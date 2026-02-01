@@ -1,3 +1,10 @@
+## [2.9.0-beta.11](https://github.com/claudekit/claudekit-engineer/compare/v2.9.0-beta.10...v2.9.0-beta.11) (2026-02-01)
+
+
+### 🐞 Bug Fixes
+
+* **skills:** strengthen Finalize step execution in cook and fix ([#409](https://github.com/claudekit/claudekit-engineer/issues/409)) ([7bb3f34](https://github.com/claudekit/claudekit-engineer/commit/7bb3f340e3997e59ca1b60985ccdb3b0b735844d)), closes [#408](https://github.com/claudekit/claudekit-engineer/issues/408)
+
 ## [2.9.0-beta.10](https://github.com/claudekit/claudekit-engineer/compare/v2.9.0-beta.9...v2.9.0-beta.10) (2026-02-01)
 
 
