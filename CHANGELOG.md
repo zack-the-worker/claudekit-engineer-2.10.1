@@ -1,3 +1,10 @@
+## [2.9.0-beta.10](https://github.com/claudekit/claudekit-engineer/compare/v2.9.0-beta.9...v2.9.0-beta.10) (2026-02-01)
+
+
+### 🐞 Bug Fixes
+
+* **ui-ux-pro-max:** resolve f-string backslash syntax error ([41a2328](https://github.com/claudekit/claudekit-engineer/commit/41a23287af9bbdb6621fb7550c59ae9630dd75f9)), closes [#406](https://github.com/claudekit/claudekit-engineer/issues/406)
+
 ## [2.9.0-beta.9](https://github.com/claudekit/claudekit-engineer/compare/v2.9.0-beta.8...v2.9.0-beta.9) (2026-01-31)
 
 
