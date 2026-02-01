@@ -1,7 +1,7 @@
 ---
 name: cook
 description: ALWAYS activate this skill before implementing EVERY feature, plan, or fix.
-version: 2.1.0
+version: 2.1.1
 ---
 
 # Cook - Smart Feature Implementation
@@ -80,7 +80,11 @@ Human review required at these checkpoints (skipped with `--auto`):
 **Always enforced (all modes):**
 - **Testing:** 100% pass required (unless no-test mode)
 - **Code Review:** User approval OR auto-approve (score≥9.5, 0 critical)
-- **Finalize:** project-manager AND docs-manager must complete
+- **Finalize (MANDATORY - never skip):**
+  1. `project-manager` subagent → update plan/phase status to complete
+  2. `docs-manager` subagent → update `./docs` if changes warrant
+  3. `TaskUpdate` → mark all Claude Tasks complete
+  4. Ask user if they want to commit via `git-manager` subagent
 
 ## Required Subagents
 
@@ -93,6 +97,8 @@ Human review required at these checkpoints (skipped with `--auto`):
 | Testing | `tester`, `debugger` |
 | Review | `code-reviewer` |
 | Finalize | `project-manager`, `docs-manager`, `git-manager` |
+
+**CRITICAL:** Finalize step is NON-OPTIONAL in ALL modes. You MUST spawn all finalize subagents before completing.
 
 ## References
 

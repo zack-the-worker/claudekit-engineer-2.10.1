@@ -1,7 +1,7 @@
 ---
 name: fix
 description: ALWAYS activate this skill before fixing ANY bug, error, test failure, CI/CD issue, type error, lint, log error, UI issue, code problem.
-version: 1.1.0
+version: 1.1.1
 ---
 
 # Fixing
@@ -54,10 +54,12 @@ Classify before routing. See `references/complexity-assessment.md`.
 - Make sure these fixes don't break other parts of the codebase.
 - Prevent future issues by adding comprehensive validation.
 
-### Step 5: Finalize
+### Step 5: Finalize (MANDATORY - never skip)
 
-- Report summary to user with confidence level/score, all the changes and related files.
-- Ask to commit via `git-manager` subagent and update docs if needed via `docs-manager` subagent (in parallel).
+1. Report summary: confidence score, changes, files
+2. `docs-manager` subagent → update `./docs` if changes warrant (NON-OPTIONAL)
+3. `TaskUpdate` → mark all Claude Tasks complete
+4. Ask user if they want to commit via `git-manager` subagent
 
 ---
 
