@@ -10,7 +10,7 @@ if (!isHookEnabled('descriptive-name')) {
 }
 
 try {
-  let injectedPrompt = `IMPORTANT: MUST use kebab-case file naming with a long descriptive name to ensure this file name is self-documenting, 
+  let injectedPrompt = `IMPORTANT: Except markdowns or docs, all scripts MUST use kebab-case file naming with a long descriptive name to ensure this file name is self-documenting, 
 so that when LLM is using tools (Grep, Glob, Search) to list files, it can guess what the file does right away without reading the file.`
 
   console.log(JSON.stringify({
