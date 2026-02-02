@@ -326,7 +326,7 @@
     },
     "hooks": {
       "type": "object",
-      "description": "Toggle individual hooks on/off. Default: all enabled.",
+      "description": "Toggle individual hooks on/off. Default: all enabled. Set a hook to `false` to disable; only explicit `false` disables (undefined/null/missing keys default to enabled).",
       "properties": {
         "session-init": {
           "type": "boolean",
