@@ -66,6 +66,7 @@ const DEFAULT_CONFIG = {
     'subagent-init': true,
     'dev-rules-reminder': true,
     'usage-context-awareness': true,
+    'context-tracking': true,
     'scout-block': true,
     'privacy-block': true,
     'post-edit-simplify-reminder': true
