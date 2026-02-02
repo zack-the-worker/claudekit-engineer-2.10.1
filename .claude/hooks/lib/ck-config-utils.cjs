@@ -526,6 +526,7 @@ function getDefaultConfig(includeProject = true, includeAssertions = true, inclu
     docs: { ...DEFAULT_CONFIG.docs },
     codingLevel: -1,  // Default: disabled (no injection, saves tokens)
     skills: { ...DEFAULT_CONFIG.skills },
+    hooks: { ...DEFAULT_CONFIG.hooks },
     statusline: 'full'
   };
   if (includeLocale) {
