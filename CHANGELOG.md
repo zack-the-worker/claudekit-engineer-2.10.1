@@ -1,3 +1,10 @@
+## [2.9.0-beta.13](https://github.com/claudekit/claudekit-engineer/compare/v2.9.0-beta.12...v2.9.0-beta.13) (2026-02-02)
+
+
+### 🐞 Bug Fixes
+
+* use sibling directory for monorepo worktree location ([#411](https://github.com/claudekit/claudekit-engineer/issues/411)) ([2761244](https://github.com/claudekit/claudekit-engineer/commit/276124497b1e79f4f36f194f6b4112b5374f87c4))
+
 ## [2.9.0-beta.12](https://github.com/claudekit/claudekit-engineer/compare/v2.9.0-beta.11...v2.9.0-beta.12) (2026-02-02)
 
 
