@@ -48,5 +48,5 @@
 - Use `/preview --ascii` for terminal-friendly diagrams (no browser needed to understand)
 - **Plan context:** Active plan determined from `## Plan Context` in hook injection; visuals save to `{plan_dir}/visuals/`
 - If no active plan, fallback to `plans/visuals/` directory
-- Leverage `mermaidjs-v11` skill for advanced diagram syntax when needed
+- For Mermaid diagrams, use `/mermaidjs-v11` skill for v11 syntax rules
 - See `primary-workflow.md` → Step 6 for workflow integration

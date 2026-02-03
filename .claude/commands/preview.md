@@ -135,10 +135,12 @@ When `--explain`, `--slides`, `--diagram`, or `--ascii` flag is provided:
 
 ### Step 2: Generate Content
 
-**IMPORTANT:** Activate `mermaidjs-v11` skill for proper Mermaid syntax. Key rules:
-- Use double quotes for node text with special chars: `A["text with /slashes"]`
+**Mermaid Diagram Syntax:**
+When generating ` ```mermaid ` code blocks, use `/mermaidjs-v11` skill for v11 syntax rules.
+
+**Essential rules (always apply):**
+- Quote node text with special characters: `A["text with /slashes"]`
 - Escape brackets in labels: `A["array[0]"]`
-- See skill for all 24+ diagram types and syntax
 
 Use the appropriate template based on flag:
 
