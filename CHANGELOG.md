@@ -1,3 +1,18 @@
+## [2.9.0-beta.14](https://github.com/claudekit/claudekit-engineer/compare/v2.9.0-beta.13...v2.9.0-beta.14) (2026-02-03)
+
+
+### 🐞 Bug Fixes
+
+* add Python <3.7 fallback and extend encoding fix to other skills ([a5549df](https://github.com/claudekit/claudekit-engineer/commit/a5549dfcacd8295dcefb6df027058ef5bb17522d)), closes [#415](https://github.com/claudekit/claudekit-engineer/issues/415)
+* handle Windows cp1252 encoding in ui-ux-pro-max search scripts ([bc5c800](https://github.com/claudekit/claudekit-engineer/commit/bc5c80040f04d90e7f3a3f03965c68a5d8e907d9)), closes [#415](https://github.com/claudekit/claudekit-engineer/issues/415)
+* **hooks:** add missing hooks property to getDefaultConfig ([cfce191](https://github.com/claudekit/claudekit-engineer/commit/cfce191e7cedb63dd072bbd7206b8175f7e1e658)), closes [#413](https://github.com/claudekit/claudekit-engineer/issues/413)
+* **hooks:** respect hooks config for context/usage section injection ([7b0566c](https://github.com/claudekit/claudekit-engineer/commit/7b0566c896ff2d029abbf7aa58bf1f0c5ed87f06)), closes [#413](https://github.com/claudekit/claudekit-engineer/issues/413)
+
+
+### ✅ Tests
+
+* **hooks:** add tests for hooks config behavior ([7249150](https://github.com/claudekit/claudekit-engineer/commit/72491503b103da143aae9bde25a28f4bb32c153f)), closes [#413](https://github.com/claudekit/claudekit-engineer/issues/413)
+
 ## [2.9.0-beta.13](https://github.com/claudekit/claudekit-engineer/compare/v2.9.0-beta.12...v2.9.0-beta.13) (2026-02-02)
 
 
