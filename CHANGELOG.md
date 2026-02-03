@@ -1,3 +1,10 @@
+## [2.9.0-beta.17](https://github.com/claudekit/claudekit-engineer/compare/v2.9.0-beta.16...v2.9.0-beta.17) (2026-02-03)
+
+
+### 🐞 Bug Fixes
+
+* merge main into dev to resolve version conflicts ([be4a904](https://github.com/claudekit/claudekit-engineer/commit/be4a904ceaf703f52c2bd085dd98f0811659f49d))
+
 ## [2.9.0-beta.16](https://github.com/claudekit/claudekit-engineer/compare/v2.9.0-beta.15...v2.9.0-beta.16) (2026-02-03)
 
 
