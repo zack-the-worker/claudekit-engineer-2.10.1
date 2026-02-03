@@ -40,3 +40,13 @@
 - Implement features according to specifications
 - Handle edge cases and error scenarios
 - **DO NOT** create new enhanced files, update to the existing files directly.
+
+## Visual Aids
+- Use `/preview --explain` when explaining unfamiliar code patterns or complex logic
+- Use `/preview --diagram` for architecture diagrams and data flow visualization
+- Use `/preview --slides` for step-by-step walkthroughs and presentations
+- Use `/preview --ascii` for terminal-friendly diagrams (no browser needed to understand)
+- **Plan context:** Active plan determined from `## Plan Context` in hook injection; visuals save to `{plan_dir}/visuals/`
+- If no active plan, fallback to `plans/visuals/` directory
+- Leverage `mermaidjs-v11` skill for advanced diagram syntax when needed
+- See `primary-workflow.md` → Step 6 for workflow integration
