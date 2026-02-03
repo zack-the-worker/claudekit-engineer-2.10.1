@@ -19,6 +19,7 @@
     "commands/scout/**",
     "commands/scout.md",
     "commands/skill/**",
+    "skills/.shadowed/**",
     "skills/_archive/**",
     "skills/aesthetic/**",
     "skills/beads/**",
