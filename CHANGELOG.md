@@ -1,3 +1,10 @@
+## [2.10.0-beta.1](https://github.com/claudekit/claudekit-engineer/compare/v2.9.1-beta.4...v2.10.0-beta.1) (2026-02-03)
+
+
+### 🚀 Features
+
+* **plan:** auto-propagate validation decisions to phase files ([#431](https://github.com/claudekit/claudekit-engineer/issues/431)) ([3005b94](https://github.com/claudekit/claudekit-engineer/commit/3005b94bce05e271aa755af3d74e0c5c03b3d72a))
+
 ## [2.9.1-beta.4](https://github.com/claudekit/claudekit-engineer/compare/v2.9.1-beta.3...v2.9.1-beta.4) (2026-02-03)
 
 
