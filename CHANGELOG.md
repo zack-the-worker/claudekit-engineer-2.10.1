@@ -1,3 +1,10 @@
+## [2.9.1-beta.1](https://github.com/claudekit/claudekit-engineer/compare/v2.9.0...v2.9.1-beta.1) (2026-02-03)
+
+
+### 🐞 Bug Fixes
+
+* **hooks:** disable skill-dedup hook due to race condition ([#422](https://github.com/claudekit/claudekit-engineer/issues/422)) ([512bd30](https://github.com/claudekit/claudekit-engineer/commit/512bd302486966dea45d98458f3530d75b474bb9))
+
 ## [2.9.0](https://github.com/claudekit/claudekit-engineer/compare/v2.8.1...v2.9.0) (2026-02-03)
 
 
