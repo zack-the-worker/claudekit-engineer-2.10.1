@@ -2,19 +2,16 @@
 /**
  * Skill Dedup Hook - Prevents local skills from shadowing global versions
  *
- * Fires: SessionStart (shadow local duplicates) + SessionEnd (restore them)
+ * @deprecated DISABLED in v2.9.1 due to race condition with parallel sessions.
+ * See issue #422: concurrent sessions overwrite manifest, orphaning skills.
+ * Hook file kept for reference; will be redesigned in future release.
  *
- * When engineer kit is installed globally (~/.claude/skills/) and marketing kit
- * locally (.claude/skills/), Claude Code's priority system causes local skills
- * to shadow global ones. This hook temporarily moves local duplicates aside
- * during the session so global (typically newer) versions take effect.
- *
- * Flow:
+ * Original design:
  *   SessionStart: move overlapping local skills to .claude/skills/.shadowed/
  *   SessionEnd:   restore .shadowed/ skills back to .claude/skills/
  *
- * Exit Codes:
- *   0 - Success (non-blocking, allows continuation)
+ * Problem: Non-atomic file operations + shared manifest = race condition
+ * when multiple Claude Code sessions run in the same directory.
  */
 
 const fs = require('fs');

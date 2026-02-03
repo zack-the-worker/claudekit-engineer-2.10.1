@@ -44,10 +44,75 @@ const {
 } = require('./lib/project-detector.cjs');
 
 /**
+ * One-time cleanup for orphaned .shadowed/ directories from skill-dedup hook (Issue #422)
+ * The hook was disabled due to race conditions; this restores any orphaned skills.
+ */
+function cleanupOrphanedShadowedSkills() {
+  const shadowedDir = path.join(process.cwd(), '.claude', 'skills', '.shadowed');
+  if (!fs.existsSync(shadowedDir)) return { restored: [], skipped: [], kept: [] };
+
+  const skillsDir = path.join(process.cwd(), '.claude', 'skills');
+  const restored = [];
+  const skipped = [];
+  const kept = []; // Skills kept for manual review (content differs)
+
+  try {
+    const entries = fs.readdirSync(shadowedDir, { withFileTypes: true });
+    for (const entry of entries) {
+      if (!entry.isDirectory()) continue;
+      const src = path.join(shadowedDir, entry.name);
+      const dest = path.join(skillsDir, entry.name);
+
+      try {
+        if (!fs.existsSync(dest)) {
+          fs.renameSync(src, dest);
+          restored.push(entry.name);
+        } else {
+          // Skill exists in local - verify content match before deleting orphaned copy
+          const orphanedSkill = path.join(src, 'SKILL.md');
+          const localSkill = path.join(dest, 'SKILL.md');
+          if (fs.existsSync(orphanedSkill) && fs.existsSync(localSkill)) {
+            const orphanedContent = fs.readFileSync(orphanedSkill, 'utf8');
+            const localContent = fs.readFileSync(localSkill, 'utf8');
+            if (orphanedContent === localContent) {
+              // Content identical - safe to remove orphaned duplicate
+              fs.rmSync(src, { recursive: true, force: true });
+              skipped.push(entry.name);
+            } else {
+              // Content differs - user may have edited orphaned version, keep for review
+              kept.push(entry.name);
+            }
+          } else {
+            // Missing SKILL.md - safe to remove orphaned copy
+            fs.rmSync(src, { recursive: true, force: true });
+            skipped.push(entry.name);
+          }
+        }
+      } catch (err) {
+        process.stderr.write(`[session-init] Failed to process "${entry.name}": ${err.message}\n`);
+      }
+    }
+    // Clean up manifest and shadowed dir if empty
+    const manifestFile = path.join(shadowedDir, '.dedup-manifest.json');
+    if (fs.existsSync(manifestFile)) fs.unlinkSync(manifestFile);
+    // Only remove shadowed dir if empty (kept skills may remain)
+    const remaining = fs.readdirSync(shadowedDir);
+    if (remaining.length === 0) fs.rmdirSync(shadowedDir);
+    return { restored, skipped, kept };
+  } catch (err) {
+    process.stderr.write(`[session-init] Shadowed cleanup error: ${err.message}\n`);
+    return { restored, skipped, kept };
+  }
+}
+
+/**
  * Main hook execution
  */
 async function main() {
   try {
+    // Issue #422: One-time cleanup of orphaned .shadowed/ from disabled skill-dedup hook
+    const shadowedCleanup = cleanupOrphanedShadowedSkills();
+
     const stdin = fs.readFileSync(0, 'utf-8').trim();
     const data = stdin ? JSON.parse(stdin) : {};
     const envFile = process.env.CLAUDE_ENV_FILE;
@@ -175,6 +240,23 @@ async function main() {
     }
 
     console.log(`Session ${source}. ${buildContextOutput(config, detections, resolved, staticEnv.gitRoot)}`);
+
+    // Issue #422: Notify user if orphaned skills were recovered from .shadowed/
+    const hasCleanup = shadowedCleanup.restored.length > 0 || shadowedCleanup.skipped.length > 0 || shadowedCleanup.kept.length > 0;
+    if (hasCleanup) {
+      console.log(`\n[!] SKILL-DEDUP CLEANUP (Issue #422):`);
+      console.log(`Recovered orphaned .shadowed/ directory from disabled skill-dedup hook.`);
+      if (shadowedCleanup.restored.length > 0) {
+        console.log(`Restored ${shadowedCleanup.restored.length} skill(s): ${shadowedCleanup.restored.join(', ')}`);
+      }
+      if (shadowedCleanup.skipped.length > 0) {
+        console.log(`Removed ${shadowedCleanup.skipped.length} duplicate(s): ${shadowedCleanup.skipped.join(', ')}`);
+      }
+      if (shadowedCleanup.kept.length > 0) {
+        console.log(`[!] Kept ${shadowedCleanup.kept.length} skill(s) for manual review (content differs): ${shadowedCleanup.kept.join(', ')}`);
+        console.log(`    Review .claude/skills/.shadowed/ and merge changes manually.`);
+      }
+    }
 
     // Info: Show git root when running from subdirectory (Issue #327: now supported)
     if (staticEnv.gitRoot && staticEnv.gitRoot !== process.cwd()) {
