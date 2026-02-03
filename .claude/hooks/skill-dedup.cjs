@@ -21,13 +21,6 @@ const fs = require('fs');
 const path = require('path');
 const os = require('os');
 
-// -- Config ------------------------------------------------------------------
-
-const GLOBAL_SKILLS_DIR = path.join(os.homedir(), '.claude', 'skills');
-const LOCAL_SKILLS_DIR = path.join(process.cwd(), '.claude', 'skills');
-const SHADOWED_DIR = path.join(LOCAL_SKILLS_DIR, '.shadowed');
-const MANIFEST_FILE = path.join(SHADOWED_DIR, '.dedup-manifest.json');
-
 // Directories to never shadow (internal infrastructure, not real skills)
 const SKIP_DIRS = new Set(['.shadowed', '.venv', 'node_modules', '__pycache__']);
 
@@ -58,147 +51,162 @@ function findOverlaps(globalSkills, localSkills) {
 }
 
 /**
- * Move a skill directory from local to shadowed
+ * Move a skill directory from source to destination
  */
-function shadowSkill(skillName) {
-  const src = path.join(LOCAL_SKILLS_DIR, skillName);
-  const dest = path.join(SHADOWED_DIR, skillName);
+function moveSkillDir(src, dest) {
   fs.renameSync(src, dest);
 }
 
 /**
- * Restore a skill directory from shadowed back to local
+ * Resolve paths for a given context (injectable for testing)
  */
-function restoreSkill(skillName) {
-  const src = path.join(SHADOWED_DIR, skillName);
-  const dest = path.join(LOCAL_SKILLS_DIR, skillName);
-  // Only restore if source exists and destination doesn't
-  if (fs.existsSync(src) && !fs.existsSync(dest)) {
-    fs.renameSync(src, dest);
-  }
+function resolvePaths(globalDir, localDir) {
+  const shadowedDir = path.join(localDir, '.shadowed');
+  const manifestFile = path.join(shadowedDir, '.dedup-manifest.json');
+  return { globalDir, localDir, shadowedDir, manifestFile };
+}
+
+/**
+ * Get default paths based on environment
+ */
+function getDefaultPaths() {
+  const globalDir = path.join(os.homedir(), '.claude', 'skills');
+  const localDir = path.join(process.cwd(), '.claude', 'skills');
+  return resolvePaths(globalDir, localDir);
 }
 
 // -- SessionStart: Shadow local duplicates -----------------------------------
 
-function handleSessionStart() {
-  const globalSkills = listSkillNames(GLOBAL_SKILLS_DIR);
-  const localSkills = listSkillNames(LOCAL_SKILLS_DIR);
+function handleSessionStart(paths) {
+  const { globalDir, localDir, shadowedDir } = paths;
 
-  if (globalSkills.length === 0 || localSkills.length === 0) return;
+  const globalSkills = listSkillNames(globalDir);
+  const localSkills = listSkillNames(localDir);
+
+  if (globalSkills.length === 0 || localSkills.length === 0) return { shadowed: [] };
 
   const overlaps = findOverlaps(globalSkills, localSkills);
-  if (overlaps.length === 0) return;
+  if (overlaps.length === 0) return { shadowed: [] };
 
   // If .shadowed/ already exists from a crashed previous session, restore first
-  if (fs.existsSync(SHADOWED_DIR)) {
-    handleSessionStop();
+  if (fs.existsSync(shadowedDir)) {
+    handleSessionEnd(paths);
     // Re-evaluate overlaps after restoration
-    const freshLocal = listSkillNames(LOCAL_SKILLS_DIR);
+    const freshLocal = listSkillNames(localDir);
     const freshOverlaps = findOverlaps(globalSkills, freshLocal);
-    if (freshOverlaps.length === 0) return;
-    // Continue with fresh overlaps
-    return doShadow(freshOverlaps);
+    if (freshOverlaps.length === 0) return { shadowed: [] };
+    return doShadow(freshOverlaps, paths);
   }
 
-  doShadow(overlaps);
+  return doShadow(overlaps, paths);
 }
 
-function doShadow(overlaps) {
+function doShadow(overlaps, paths) {
+  const { localDir, shadowedDir, manifestFile } = paths;
+
   // Create .shadowed directory
-  fs.mkdirSync(SHADOWED_DIR, { recursive: true });
+  fs.mkdirSync(shadowedDir, { recursive: true });
 
   const shadowed = [];
   for (const name of overlaps) {
     try {
-      shadowSkill(name);
+      moveSkillDir(path.join(localDir, name), path.join(shadowedDir, name));
       shadowed.push(name);
     } catch (err) {
-      // Non-fatal: skip this skill, continue with others
       process.stderr.write(`[skill-dedup] Failed to shadow "${name}": ${err.message}\n`);
     }
   }
 
-  if (shadowed.length === 0) return;
+  if (shadowed.length === 0) return { shadowed: [] };
 
-  // Write manifest so SessionStop knows what to restore
+  // Write manifest so SessionEnd knows what to restore
   const manifest = {
     shadowedAt: new Date().toISOString(),
     skills: shadowed,
-    globalDir: GLOBAL_SKILLS_DIR,
-    localDir: LOCAL_SKILLS_DIR
+    globalDir: paths.globalDir,
+    localDir: paths.localDir
   };
-  fs.writeFileSync(MANIFEST_FILE, JSON.stringify(manifest, null, 2));
+  fs.writeFileSync(manifestFile, JSON.stringify(manifest, null, 2));
 
-  // Output for session context
   console.log(`Skill dedup: ${shadowed.length} local skill(s) shadowed — global versions active: ${shadowed.join(', ')}`);
+  return { shadowed };
 }
 
-// -- SessionStop: Restore shadowed skills ------------------------------------
+// -- SessionEnd: Restore shadowed skills -------------------------------------
 
-function handleSessionStop() {
-  if (!fs.existsSync(MANIFEST_FILE)) {
-    // No manifest = nothing was shadowed, or manual cleanup already done
-    // Still check for orphaned .shadowed dir
-    if (fs.existsSync(SHADOWED_DIR)) {
-      restoreOrphanedSkills();
+function handleSessionEnd(paths) {
+  const { shadowedDir, manifestFile } = paths;
+
+  if (!fs.existsSync(manifestFile)) {
+    if (fs.existsSync(shadowedDir)) {
+      return restoreOrphanedSkills(paths);
     }
-    return;
+    return { restored: [] };
   }
 
   let manifest;
   try {
-    manifest = JSON.parse(fs.readFileSync(MANIFEST_FILE, 'utf8'));
+    manifest = JSON.parse(fs.readFileSync(manifestFile, 'utf8'));
   } catch {
-    // Corrupt manifest — attempt blind restore
-    restoreOrphanedSkills();
-    return;
+    return restoreOrphanedSkills(paths);
   }
 
   const restored = [];
   for (const name of manifest.skills || []) {
     try {
-      restoreSkill(name);
-      restored.push(name);
+      const src = path.join(shadowedDir, name);
+      const dest = path.join(paths.localDir, name);
+      if (fs.existsSync(src) && !fs.existsSync(dest)) {
+        moveSkillDir(src, dest);
+        restored.push(name);
+      }
     } catch (err) {
       process.stderr.write(`[skill-dedup] Failed to restore "${name}": ${err.message}\n`);
     }
   }
 
-  // Clean up .shadowed directory
-  cleanupShadowedDir();
+  cleanupShadowedDir(paths);
 
   if (restored.length > 0) {
     console.log(`Skill dedup: restored ${restored.length} local skill(s): ${restored.join(', ')}`);
   }
+  return { restored };
 }
 
 /**
  * Restore any skill directories found in .shadowed/ without a manifest
  * Safety net for crashed sessions or corrupt manifests
  */
-function restoreOrphanedSkills() {
+function restoreOrphanedSkills(paths) {
+  const { shadowedDir, localDir } = paths;
+  const restored = [];
   try {
-    const entries = fs.readdirSync(SHADOWED_DIR, { withFileTypes: true });
+    const entries = fs.readdirSync(shadowedDir, { withFileTypes: true });
     for (const entry of entries) {
       if (entry.isDirectory()) {
-        restoreSkill(entry.name);
+        const src = path.join(shadowedDir, entry.name);
+        const dest = path.join(localDir, entry.name);
+        if (fs.existsSync(src) && !fs.existsSync(dest)) {
+          moveSkillDir(src, dest);
+          restored.push(entry.name);
+        }
       }
     }
   } catch {
     // Best effort
   }
-  cleanupShadowedDir();
+  cleanupShadowedDir(paths);
+  return { restored };
 }
 
 /**
  * Remove the .shadowed directory and manifest
  */
-function cleanupShadowedDir() {
+function cleanupShadowedDir(paths) {
+  const { shadowedDir, manifestFile } = paths;
   try {
-    // Remove manifest file first
-    if (fs.existsSync(MANIFEST_FILE)) fs.unlinkSync(MANIFEST_FILE);
-    // Remove directory (should be empty now)
-    if (fs.existsSync(SHADOWED_DIR)) fs.rmdirSync(SHADOWED_DIR);
+    if (fs.existsSync(manifestFile)) fs.unlinkSync(manifestFile);
+    if (fs.existsSync(shadowedDir)) fs.rmdirSync(shadowedDir);
   } catch {
     // Non-fatal: leftover empty dir is harmless
   }
@@ -208,29 +216,42 @@ function cleanupShadowedDir() {
 
 function main() {
   try {
-    // Read hook event from stdin payload
     let payload = {};
     try {
       const input = fs.readFileSync('/dev/stdin', 'utf8').trim();
       if (input) payload = JSON.parse(input);
     } catch {
-      // No stdin or invalid JSON — determine mode from .shadowed existence
+      // No stdin or invalid JSON
     }
 
+    const paths = getDefaultPaths();
     const event = payload.hook_event_name || '';
 
     if (event === 'SessionEnd' || event === 'Stop') {
-      handleSessionStop();
+      handleSessionEnd(paths);
     } else {
-      // Default: SessionStart behavior (also handles startup, resume, clear, compact)
-      handleSessionStart();
+      handleSessionStart(paths);
     }
   } catch (err) {
-    // Fail open — never block session startup/shutdown
     process.stderr.write(`[skill-dedup] Error: ${err.message}\n`);
   }
 
   process.exit(0);
 }
 
-main();
+// Export for testing
+if (require.main === module) {
+  main();
+}
+
+module.exports = {
+  listSkillNames,
+  findOverlaps,
+  resolvePaths,
+  handleSessionStart,
+  handleSessionEnd,
+  doShadow,
+  restoreOrphanedSkills,
+  cleanupShadowedDir,
+  SKIP_DIRS
+};
