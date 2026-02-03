@@ -1,3 +1,11 @@
+## [2.9.1-beta.4](https://github.com/claudekit/claudekit-engineer/compare/v2.9.1-beta.3...v2.9.1-beta.4) (2026-02-03)
+
+
+### 🐞 Bug Fixes
+
+* /docs:init stalls after Phase 1 ([#428](https://github.com/claudekit/claudekit-engineer/issues/428)) ([ef28c36](https://github.com/claudekit/claudekit-engineer/commit/ef28c361c5e6fb6333e12162355fd622f3a33803)), closes [#427](https://github.com/claudekit/claudekit-engineer/issues/427)
+* **worktree:** use internal worktrees/ for monorepos ([#429](https://github.com/claudekit/claudekit-engineer/issues/429)) ([a0a538a](https://github.com/claudekit/claudekit-engineer/commit/a0a538aa6b5c904bdc27676dc376b0f340851b0f))
+
 ## [2.9.1-beta.3](https://github.com/claudekit/claudekit-engineer/compare/v2.9.1-beta.2...v2.9.1-beta.3) (2026-02-03)
 
 
