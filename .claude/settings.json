@@ -12,21 +12,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node .claude/hooks/skill-dedup.cjs"
-          },
-          {
-            "type": "command",
             "command": "node .claude/hooks/session-init.cjs"
-          }
-        ]
-      }
-    ],
-    "SessionEnd": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "node .claude/hooks/skill-dedup.cjs"
           }
         ]
       }
