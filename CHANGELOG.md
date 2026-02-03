@@ -1,3 +1,12 @@
+## [2.9.1-beta.3](https://github.com/claudekit/claudekit-engineer/compare/v2.9.1-beta.2...v2.9.1-beta.3) (2026-02-03)
+
+
+### ⚡ Performance Improvements
+
+* **hooks:** added `cook-after-plan-reminder` hook ([aea498d](https://github.com/claudekit/claudekit-engineer/commit/aea498df13be108098882f60de52353e7dcd8ec6))
+* **skills:** enhance `/cook` skill to respect rules and subagents ([15ca501](https://github.com/claudekit/claudekit-engineer/commit/15ca501d7a715e005830b5277c391b29e2d73372))
+* **skills:** enhance `/skill-creator` skill to respect rules and subagents ([c07a736](https://github.com/claudekit/claudekit-engineer/commit/c07a7365d549fa0f355fde69fea3d5d4ace4f8f7))
+
 ## [2.9.1-beta.2](https://github.com/claudekit/claudekit-engineer/compare/v2.9.1-beta.1...v2.9.1-beta.2) (2026-02-03)
 
 
