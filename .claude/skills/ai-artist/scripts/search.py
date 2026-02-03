@@ -10,7 +10,14 @@ Platforms: midjourney, dalle, sd, flux, nano-banana
 """
 
 import argparse
+import sys
 from core import CSV_CONFIG, MAX_RESULTS, search, search_all_domains
+
+# Fix Windows cp1252 encoding: hardcoded emojis can't encode on Windows.
+# Reconfigure stdout to UTF-8 with replacement (Python 3.7+).
+if sys.stdout.encoding and sys.stdout.encoding.lower() != "utf-8":
+    if hasattr(sys.stdout, 'reconfigure'):
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 
 def format_output(result):
