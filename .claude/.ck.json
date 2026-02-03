@@ -55,5 +55,6 @@
       "useGemini": true
     }
   },
+  "hooks": {},
   "assertions": []
 }
