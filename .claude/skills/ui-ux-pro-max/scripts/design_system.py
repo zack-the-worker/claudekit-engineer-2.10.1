@@ -476,6 +476,11 @@ def generate_design_system(query: str, project_name: str = None, output_format: 
 # ============ CLI SUPPORT ============
 if __name__ == "__main__":
     import argparse
+    import sys
+
+    # Fix Windows cp1252 encoding: output contains Unicode chars from CSV data
+    if sys.stdout.encoding and sys.stdout.encoding.lower() != "utf-8":
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
     parser = argparse.ArgumentParser(description="Generate Design System")
     parser.add_argument("query", help="Search query (e.g., 'SaaS dashboard')")
