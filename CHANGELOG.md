@@ -1,3 +1,15 @@
+## [2.9.0-beta.15](https://github.com/claudekit/claudekit-engineer/compare/v2.9.0-beta.14...v2.9.0-beta.15) (2026-02-03)
+
+
+### 🚀 Features
+
+* **hooks:** add skill dedup hook for global/local overlap ([f418f3c](https://github.com/claudekit/claudekit-engineer/commit/f418f3cf78513f63458935ff2f6b1ab451194183)), closes [#417](https://github.com/claudekit/claudekit-engineer/issues/417)
+
+
+### ✅ Tests
+
+* **hooks:** add comprehensive test suite for skill-dedup hook ([87a0ed8](https://github.com/claudekit/claudekit-engineer/commit/87a0ed8f7213dfdcd531ae44050619c2fdd3e194))
+
 ## [2.9.0-beta.14](https://github.com/claudekit/claudekit-engineer/compare/v2.9.0-beta.13...v2.9.0-beta.14) (2026-02-03)
 
 
