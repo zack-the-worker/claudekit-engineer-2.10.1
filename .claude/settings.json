@@ -28,6 +28,17 @@
         ]
       }
     ],
+    "SubagentStop": [
+      {
+        "matcher": "Plan",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .claude/hooks/cook-after-plan-reminder.cjs"
+          }
+        ]
+      }
+    ],
     "UserPromptSubmit": [
       {
         "hooks": [
