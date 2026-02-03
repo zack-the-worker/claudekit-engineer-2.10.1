@@ -1,3 +1,10 @@
+## [2.9.1-beta.2](https://github.com/claudekit/claudekit-engineer/compare/v2.9.1-beta.1...v2.9.1-beta.2) (2026-02-03)
+
+
+### 🐞 Bug Fixes
+
+* **metadata:** add .shadowed/ to deletions for user cleanup ([#422](https://github.com/claudekit/claudekit-engineer/issues/422)) ([d75e6de](https://github.com/claudekit/claudekit-engineer/commit/d75e6dea026db0494b8c6addb8b06d93307627a6))
+
 ## [2.9.1-beta.1](https://github.com/claudekit/claudekit-engineer/compare/v2.9.0...v2.9.1-beta.1) (2026-02-03)
 
 
