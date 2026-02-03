@@ -1,3 +1,20 @@
+## [2.10.0-beta.2](https://github.com/claudekit/claudekit-engineer/compare/v2.10.0-beta.1...v2.10.0-beta.2) (2026-02-03)
+
+
+### 🚀 Features
+
+* **preview:** add visual generation modes ([e62b0b6](https://github.com/claudekit/claudekit-engineer/commit/e62b0b6f36d05e099dead22dd5ccf1f318d39ec2)), closes [#433](https://github.com/claudekit/claudekit-engineer/issues/433)
+
+
+### 🐞 Bug Fixes
+
+* **preview:** add mermaidjs-v11 skill activation note ([12cc244](https://github.com/claudekit/claudekit-engineer/commit/12cc2444d9fbdc2285a025f685fab8d9c76b1586))
+* **preview:** balance padding in ascii template ([ecc2a27](https://github.com/claudekit/claudekit-engineer/commit/ecc2a272c9fa4d946b9669fa2e59bba0ec906be6))
+* **preview:** correct ASCII diagram alignment in templates ([ac6a3fc](https://github.com/claudekit/claudekit-engineer/commit/ac6a3fcf0522693f341587511232282c1618c406))
+* **preview:** restore unicode box chars, fix arrow width issue ([8f547bf](https://github.com/claudekit/claudekit-engineer/commit/8f547bfbfe89c566bb7a50b127b9d3cd2998b529))
+* **preview:** use proper skill invocation syntax for mermaidjs-v11 ([de6d0b9](https://github.com/claudekit/claudekit-engineer/commit/de6d0b9299754c7bc2ebd23081e6c90880c5bf8f))
+* **preview:** use pure ASCII characters for diagram templates ([0792f6b](https://github.com/claudekit/claudekit-engineer/commit/0792f6bcafa8addb6121c411c78dd2666cc87a98))
+
 ## [2.10.0-beta.1](https://github.com/claudekit/claudekit-engineer/compare/v2.9.1-beta.4...v2.10.0-beta.1) (2026-02-03)
 
 
