@@ -1,3 +1,10 @@
+## [2.9.0-beta.16](https://github.com/claudekit/claudekit-engineer/compare/v2.9.0-beta.15...v2.9.0-beta.16) (2026-02-03)
+
+
+### 🐞 Bug Fixes
+
+* **.ck.json:** add descriptive name hook schema ([905162e](https://github.com/claudekit/claudekit-engineer/commit/905162edd18e007344c762f613a1f3c59d1bfe07))
+
 ## [2.9.0-beta.15](https://github.com/claudekit/claudekit-engineer/compare/v2.9.0-beta.14...v2.9.0-beta.15) (2026-02-03)
 
 
