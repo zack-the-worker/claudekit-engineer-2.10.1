@@ -1,15 +1,201 @@
-## [2.8.1](https://github.com/claudekit/claudekit-engineer/compare/v2.8.0...v2.8.1) (2026-01-27)
+## [2.9.0-beta.17](https://github.com/claudekit/claudekit-engineer/compare/v2.9.0-beta.16...v2.9.0-beta.17) (2026-02-03)
 
 
 ### 🐞 Bug Fixes
 
-* **hooks:** allow Python venv creation and inject venv rules into subagents ([412822b](https://github.com/claudekit/claudekit-engineer/commit/412822b1a1d9d42d9280569833db64c2259f6c8e)), closes [#386](https://github.com/claudekit/claudekit-engineer/issues/386)
-* **hooks:** skip paths after --exclude flags in path-extractor ([6479d41](https://github.com/claudekit/claudekit-engineer/commit/6479d411f49146c1f9df60457b4918ced2d6cfc0)), closes [#388](https://github.com/claudekit/claudekit-engineer/issues/388)
+* merge main into dev to resolve version conflicts ([be4a904](https://github.com/claudekit/claudekit-engineer/commit/be4a904ceaf703f52c2bd085dd98f0811659f49d))
+
+## [2.9.0-beta.16](https://github.com/claudekit/claudekit-engineer/compare/v2.9.0-beta.15...v2.9.0-beta.16) (2026-02-03)
+
+
+### 🐞 Bug Fixes
+
+* **.ck.json:** add descriptive name hook schema ([905162e](https://github.com/claudekit/claudekit-engineer/commit/905162edd18e007344c762f613a1f3c59d1bfe07))
+
+## [2.9.0-beta.15](https://github.com/claudekit/claudekit-engineer/compare/v2.9.0-beta.14...v2.9.0-beta.15) (2026-02-03)
+
+
+### 🚀 Features
+
+* **hooks:** add skill dedup hook for global/local overlap ([f418f3c](https://github.com/claudekit/claudekit-engineer/commit/f418f3cf78513f63458935ff2f6b1ab451194183)), closes [#417](https://github.com/claudekit/claudekit-engineer/issues/417)
 
 
 ### ✅ Tests
 
-* **hooks:** add venv creation command tests for Issue [#386](https://github.com/claudekit/claudekit-engineer/issues/386) ([b3c62a6](https://github.com/claudekit/claudekit-engineer/commit/b3c62a697cce1b381f5c8c7ccd02008c279be052))
+* **hooks:** add comprehensive test suite for skill-dedup hook ([87a0ed8](https://github.com/claudekit/claudekit-engineer/commit/87a0ed8f7213dfdcd531ae44050619c2fdd3e194))
+
+## [2.9.0-beta.14](https://github.com/claudekit/claudekit-engineer/compare/v2.9.0-beta.13...v2.9.0-beta.14) (2026-02-03)
+
+
+### 🐞 Bug Fixes
+
+* add Python <3.7 fallback and extend encoding fix to other skills ([a5549df](https://github.com/claudekit/claudekit-engineer/commit/a5549dfcacd8295dcefb6df027058ef5bb17522d)), closes [#415](https://github.com/claudekit/claudekit-engineer/issues/415)
+* handle Windows cp1252 encoding in ui-ux-pro-max search scripts ([bc5c800](https://github.com/claudekit/claudekit-engineer/commit/bc5c80040f04d90e7f3a3f03965c68a5d8e907d9)), closes [#415](https://github.com/claudekit/claudekit-engineer/issues/415)
+* **hooks:** add missing hooks property to getDefaultConfig ([cfce191](https://github.com/claudekit/claudekit-engineer/commit/cfce191e7cedb63dd072bbd7206b8175f7e1e658)), closes [#413](https://github.com/claudekit/claudekit-engineer/issues/413)
+* **hooks:** respect hooks config for context/usage section injection ([7b0566c](https://github.com/claudekit/claudekit-engineer/commit/7b0566c896ff2d029abbf7aa58bf1f0c5ed87f06)), closes [#413](https://github.com/claudekit/claudekit-engineer/issues/413)
+
+
+### ✅ Tests
+
+* **hooks:** add tests for hooks config behavior ([7249150](https://github.com/claudekit/claudekit-engineer/commit/72491503b103da143aae9bde25a28f4bb32c153f)), closes [#413](https://github.com/claudekit/claudekit-engineer/issues/413)
+
+## [2.9.0-beta.13](https://github.com/claudekit/claudekit-engineer/compare/v2.9.0-beta.12...v2.9.0-beta.13) (2026-02-02)
+
+
+### 🐞 Bug Fixes
+
+* use sibling directory for monorepo worktree location ([#411](https://github.com/claudekit/claudekit-engineer/issues/411)) ([2761244](https://github.com/claudekit/claudekit-engineer/commit/276124497b1e79f4f36f194f6b4112b5374f87c4))
+
+## [2.9.0-beta.12](https://github.com/claudekit/claudekit-engineer/compare/v2.9.0-beta.11...v2.9.0-beta.12) (2026-02-02)
+
+
+### 🚀 Features
+
+* add --parallel flag to /fix skill ([77b34d7](https://github.com/claudekit/claudekit-engineer/commit/77b34d7e941bad41dabf4c91eacaeb410ee95ca0)), closes [#400](https://github.com/claudekit/claudekit-engineer/issues/400)
+* **payment-integration:** add Stripe CLI and SDK reference documentation ([a472d9d](https://github.com/claudekit/claudekit-engineer/commit/a472d9db66f5dac2148ae0c6889cb13c19f89d5a))
+* **skills:** update google-adk-python skill with v1.0.0+ features ([a1fcba2](https://github.com/claudekit/claudekit-engineer/commit/a1fcba2679153a0a33219ff0f302a82c5f8fc2e5)), closes [#396](https://github.com/claudekit/claudekit-engineer/issues/396)
+
+
+### 🐞 Bug Fixes
+
+* add deprecated debug.md to metadata deletions and archive ([d096ef9](https://github.com/claudekit/claudekit-engineer/commit/d096ef9ab440beeb9a51a24e273f1a37caa54433)), closes [#403](https://github.com/claudekit/claudekit-engineer/issues/403)
+* enrich plan:validate Step 5 with detailed validation log template ([#405](https://github.com/claudekit/claudekit-engineer/issues/405)) ([105062c](https://github.com/claudekit/claudekit-engineer/commit/105062c1f424db31b7d01e4b5a658dac6e0abf7b)), closes [#402](https://github.com/claudekit/claudekit-engineer/issues/402)
+* **hooks:** exclude docs/plans from descriptive name hook ([e846d9d](https://github.com/claudekit/claudekit-engineer/commit/e846d9dcd2733dd975747736ac789716a43faa7c))
+* replace invalid gemini-3.0-flash model ID with gemini-3-flash-preview ([3715bdb](https://github.com/claudekit/claudekit-engineer/commit/3715bdb6a82ed20f32d1a283b2f61968bbc75816)), closes [#394](https://github.com/claudekit/claudekit-engineer/issues/394)
+* **skills:** correct API inaccuracies in google-adk-python skill ([b09b97b](https://github.com/claudekit/claudekit-engineer/commit/b09b97b1861025a6850c305ef065c4c52d9b247f))
+* **skills:** strengthen Finalize step execution in cook and fix ([#409](https://github.com/claudekit/claudekit-engineer/issues/409)) ([c62b847](https://github.com/claudekit/claudekit-engineer/commit/c62b847f9c7cf4505c6721e81b01e690864a12aa)), closes [#408](https://github.com/claudekit/claudekit-engineer/issues/408)
+* **skills:** update gemini model refs to 2.5-flash, add gemini-3 preview ([a66a975](https://github.com/claudekit/claudekit-engineer/commit/a66a97585b6005ee1c880b3eb792415df9764e42))
+* **ui-ux-pro-max:** resolve f-string backslash syntax error ([08e104e](https://github.com/claudekit/claudekit-engineer/commit/08e104e504b6c452830f12edfcc5309474e9232e)), closes [#406](https://github.com/claudekit/claudekit-engineer/issues/406)
+* update /fix:parallel syntax to /fix --parallel in review command ([cce4857](https://github.com/claudekit/claudekit-engineer/commit/cce4857c38360e0ddb1e4546d5852b0c63b1fd66)), closes [#400](https://github.com/claudekit/claudekit-engineer/issues/400)
+* use /fix instead of /fix --parallel (no such flag exists) ([6f05444](https://github.com/claudekit/claudekit-engineer/commit/6f05444da5e5beb50c9bf69d2e13fe068d23c6ee)), closes [#400](https://github.com/claudekit/claudekit-engineer/issues/400)
+
+
+### ⚡ Performance Improvements
+
+* **skill:** add `paddle` to `payment-integration` skill ([c1e40bd](https://github.com/claudekit/claudekit-engineer/commit/c1e40bdbb35ccf16aaaf7cdb3cb45225ca0762c1))
+* **skills:** add `creem.io` to `payment-integration` skill ([346e4c3](https://github.com/claudekit/claudekit-engineer/commit/346e4c3a6e5ee25c4001e871f657bfbcf84e1939))
+* **skills:** enhance `payment-integration` skill with best practices ([a0738a0](https://github.com/claudekit/claudekit-engineer/commit/a0738a0d709710e67606745c1f2e8ced5ccf364e))
+
+## [2.9.0-beta.11](https://github.com/claudekit/claudekit-engineer/compare/v2.9.0-beta.10...v2.9.0-beta.11) (2026-02-01)
+
+
+### 🐞 Bug Fixes
+
+* **skills:** strengthen Finalize step execution in cook and fix ([#409](https://github.com/claudekit/claudekit-engineer/issues/409)) ([7bb3f34](https://github.com/claudekit/claudekit-engineer/commit/7bb3f340e3997e59ca1b60985ccdb3b0b735844d)), closes [#408](https://github.com/claudekit/claudekit-engineer/issues/408)
+
+## [2.9.0-beta.10](https://github.com/claudekit/claudekit-engineer/compare/v2.9.0-beta.9...v2.9.0-beta.10) (2026-02-01)
+
+
+### 🐞 Bug Fixes
+
+* **ui-ux-pro-max:** resolve f-string backslash syntax error ([41a2328](https://github.com/claudekit/claudekit-engineer/commit/41a23287af9bbdb6621fb7550c59ae9630dd75f9)), closes [#406](https://github.com/claudekit/claudekit-engineer/issues/406)
+
+## [2.9.0-beta.9](https://github.com/claudekit/claudekit-engineer/compare/v2.9.0-beta.8...v2.9.0-beta.9) (2026-01-31)
+
+
+### 🐞 Bug Fixes
+
+* enrich plan:validate Step 5 with detailed validation log template ([#405](https://github.com/claudekit/claudekit-engineer/issues/405)) ([58ce22b](https://github.com/claudekit/claudekit-engineer/commit/58ce22b1cde9901c464efe818c14ab96173c651a)), closes [#402](https://github.com/claudekit/claudekit-engineer/issues/402)
+
+## [2.9.0-beta.8](https://github.com/claudekit/claudekit-engineer/compare/v2.9.0-beta.7...v2.9.0-beta.8) (2026-01-31)
+
+
+### 🐞 Bug Fixes
+
+* add deprecated debug.md to metadata deletions and archive ([2abf65c](https://github.com/claudekit/claudekit-engineer/commit/2abf65cd4ca8d15a7a9a381783ecba5664303ad6)), closes [#403](https://github.com/claudekit/claudekit-engineer/issues/403)
+
+## [2.9.0-beta.7](https://github.com/claudekit/claudekit-engineer/compare/v2.9.0-beta.6...v2.9.0-beta.7) (2026-01-30)
+
+
+### 🚀 Features
+
+* add --parallel flag to /fix skill ([3b7ae4f](https://github.com/claudekit/claudekit-engineer/commit/3b7ae4f8a7503135edaf172238d99d6713cd161a)), closes [#400](https://github.com/claudekit/claudekit-engineer/issues/400)
+
+
+### 🐞 Bug Fixes
+
+* update /fix:parallel syntax to /fix --parallel in review command ([074ac52](https://github.com/claudekit/claudekit-engineer/commit/074ac52ca4e5eb2a3aaaed87dd8ad123b6f99301)), closes [#400](https://github.com/claudekit/claudekit-engineer/issues/400)
+
+## [2.9.0-beta.6](https://github.com/claudekit/claudekit-engineer/compare/v2.9.0-beta.5...v2.9.0-beta.6) (2026-01-29)
+
+
+### 🚀 Features
+
+* **skills:** update google-adk-python skill with v1.0.0+ features ([2effa64](https://github.com/claudekit/claudekit-engineer/commit/2effa640800afe4474d6fcc65c811e94c6aae61f)), closes [#396](https://github.com/claudekit/claudekit-engineer/issues/396)
+
+
+### 🐞 Bug Fixes
+
+* **skills:** correct API inaccuracies in google-adk-python skill ([a81b756](https://github.com/claudekit/claudekit-engineer/commit/a81b756be91130b440ccff409723f1529606562b))
+* **skills:** update gemini model refs to 2.5-flash, add gemini-3 preview ([8bef76d](https://github.com/claudekit/claudekit-engineer/commit/8bef76d126884a77d2789f2c371c1ad557bc05f8))
+
+## [2.9.0-beta.5](https://github.com/claudekit/claudekit-engineer/compare/v2.9.0-beta.4...v2.9.0-beta.5) (2026-01-29)
+
+
+### 🐞 Bug Fixes
+
+* replace invalid gemini-3.0-flash model ID with gemini-3-flash-preview ([44cf1e1](https://github.com/claudekit/claudekit-engineer/commit/44cf1e1eb537298d6db974ba125d8b34be77e80e)), closes [#394](https://github.com/claudekit/claudekit-engineer/issues/394)
+
+## [2.9.0-beta.4](https://github.com/claudekit/claudekit-engineer/compare/v2.9.0-beta.3...v2.9.0-beta.4) (2026-01-29)
+
+
+### ⚡ Performance Improvements
+
+* **skills:** enhance `skill-creator` skill with plugin marketplace ([aeee285](https://github.com/claudekit/claudekit-engineer/commit/aeee285cc87e53fbbb07436fda75a2efb5d24d73))
+
+## [2.9.0-beta.3](https://github.com/claudekit/claudekit-engineer/compare/v2.9.0-beta.2...v2.9.0-beta.3) (2026-01-29)
+
+
+### 🐞 Bug Fixes
+
+* **ck-help:** remove stale CATEGORY_GUIDES for deleted commands ([#391](https://github.com/claudekit/claudekit-engineer/issues/391)) ([888b856](https://github.com/claudekit/claudekit-engineer/commit/888b856d945c2d6c804af98cd2d49c5c36890e72))
+* clean up stale references to deleted agents and renamed skills ([#391](https://github.com/claudekit/claudekit-engineer/issues/391)) ([ef45c04](https://github.com/claudekit/claudekit-engineer/commit/ef45c04522a6e0ad493130ec6cb0af15df8522e2))
+
+
+### 📚 Documentation
+
+* update stale agent, command, and skill references ([#391](https://github.com/claudekit/claudekit-engineer/issues/391)) ([2317887](https://github.com/claudekit/claudekit-engineer/commit/23178878dff5274cbab0114c375d7476ca37132d))
+
+## [2.9.0-beta.2](https://github.com/claudekit/claudekit-engineer/compare/v2.9.0-beta.1...v2.9.0-beta.2) (2026-01-29)
+
+
+### 🐞 Bug Fixes
+
+* **deletions:** add skills/debugging/** for renamed debug skill cleanup ([b2a2558](https://github.com/claudekit/claudekit-engineer/commit/b2a255882125add988ce8331e9ecbc87fdc5c618))
+
+## [2.9.0-beta.1](https://github.com/claudekit/claudekit-engineer/compare/v2.8.1-beta.1...v2.9.0-beta.1) (2026-01-28)
+
+
+### 🚀 Features
+
+* added new find-skill skill ([c08b276](https://github.com/claudekit/claudekit-engineer/commit/c08b276ddc382386da054d08d4083611f1b911fa))
+* **ai-artist:** add mandatory validation workflow ([09636b9](https://github.com/claudekit/claudekit-engineer/commit/09636b9de8ee9958a2bb3dffbba0f8602c4561b8)), closes [#363](https://github.com/claudekit/claudekit-engineer/issues/363)
+* **payment-integration:** add Stripe references for best practices and API upgrades ([57b3379](https://github.com/claudekit/claudekit-engineer/commit/57b3379c19ee7c0bf1bf43e36e9f381a4848659d))
+
+
+### 🐞 Bug Fixes
+
+* deprecate commands/fix.md in favor of global fix skill ([6c44aa7](https://github.com/claudekit/claudekit-engineer/commit/6c44aa7f001327c991c4c66a36158dc738245c4c)), closes [#382](https://github.com/claudekit/claudekit-engineer/issues/382)
+* **hooks:** allow Python venv creation and inject venv rules into subagents ([51d9324](https://github.com/claudekit/claudekit-engineer/commit/51d93244b2821d235d7184390735871a69ddceb7)), closes [#386](https://github.com/claudekit/claudekit-engineer/issues/386)
+* **hooks:** skip paths after --exclude flags in path-extractor ([ca448db](https://github.com/claudekit/claudekit-engineer/commit/ca448db8452eb23b01e397b184958d1e3fdaf0c8)), closes [#388](https://github.com/claudekit/claudekit-engineer/issues/388)
+* resolve merge conflict in CHANGELOG.md ([e98a0d9](https://github.com/claudekit/claudekit-engineer/commit/e98a0d965a7fbcb24958c42dc4fdab961805e0f3))
+* **statusline:** remove duplicate percent sign in usage display ([669fc04](https://github.com/claudekit/claudekit-engineer/commit/669fc04f6126cd62e3474b9f5ec0f6386463771d))
+
+
+### ⚡ Performance Improvements
+
+* **skills:** enhance `cook` skill with native claude tasks ([85de5b6](https://github.com/claudekit/claudekit-engineer/commit/85de5b6d45f55358034e3174bb51a76469ead3e0))
+
+
+### ✅ Tests
+
+* **hooks:** add venv creation command tests for Issue [#386](https://github.com/claudekit/claudekit-engineer/issues/386) ([57766ef](https://github.com/claudekit/claudekit-engineer/commit/57766effe9a7488f3d18416f39c981b80fc13306))
+
+
+### 👷 CI
+
+* add workflow to sync dev to main after release ([2babf98](https://github.com/claudekit/claudekit-engineer/commit/2babf98733c65d938ccfbead3d974c7ad18a9e25))
+* add workflow to sync dev to main after release ([b93f548](https://github.com/claudekit/claudekit-engineer/commit/b93f5485b7fbb5811c0959ce8c420d1666020db1))
 
 ## [2.8.1-beta.1](https://github.com/claudekit/claudekit-engineer/compare/v2.8.0...v2.8.1-beta.1) (2026-01-27)
 
@@ -86,7 +272,6 @@
 * **release:** pump v2.6.1-beta.0 ([0fed02e](https://github.com/claudekit/claudekit-engineer/commit/0fed02e9fe99e81b0878700f71db195bd40654bf))
 * resolve merge conflict in package.json version ([e435700](https://github.com/claudekit/claudekit-engineer/commit/e435700500e3957fcf0b4e7b83ed8cb5d045fcb4))
 * resolve merge conflicts from main into dev ([7074a60](https://github.com/claudekit/claudekit-engineer/commit/7074a609a3f30cb1827ab91e5c5e4e8d3c6ad819))
-
 ## [2.7.0-beta.1](https://github.com/claudekit/claudekit-engineer/compare/v2.6.0...v2.7.0-beta.1) (2026-01-26)
 
 

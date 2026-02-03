@@ -1,7 +1,7 @@
 # System Architecture
 
-**Last Updated**: 2025-12-28
-**Version**: 2.2.0-beta.4
+**Last Updated**: 2026-01-28
+**Version**: 2.9.0-beta.2
 **Project**: ClaudeKit Engineer
 
 ## Overview
@@ -60,7 +60,7 @@ ClaudeKit Engineer implements a multi-agent AI orchestration architecture where 
 
 ### 2. Agent Layer
 
-#### 2.1 Agent Types (17+ Agents)
+#### 2.1 Agent Types (14 Agents)
 
 **Planning Agents**:
 - `planner` - Technical planning and architecture (Opus)
@@ -68,27 +68,21 @@ ClaudeKit Engineer implements a multi-agent AI orchestration architecture where 
 - `brainstormer` - Solution ideation
 
 **Implementation Agents**:
-- Main agent (user interaction) - Implements code
-- `scout` - Parallel codebase exploration
-- `scout-external` - External codebase exploration
-- `ui-ux-designer` - Design creation and UX analysis
-- `ui-ux-developer` - Design implementation
-- `database-admin` - Database operations and optimization
 - `fullstack-developer` - Full-stack implementation
+- `ui-ux-designer` - Design creation and UX analysis
+- `code-simplifier` - Code optimization and simplification
 
 **Quality Assurance Agents**:
 - `code-reviewer` - Code quality assessment and standards
 - `tester` - Test creation and execution
 - `debugger` - Issue analysis, root-cause diagnosis
 
-**Documentation & Content Agents**:
+**Documentation & Operations Agents**:
 - `docs-manager` - Documentation maintenance (Gemini)
-- `copywriter` - Content creation and copy optimization
 - `journal-writer` - Development decision journaling
-
-**Operations Agents**:
 - `git-manager` - Version control and commit management
 - `project-manager` - Progress tracking and oversight
+- `mcp-manager` - MCP server management and integration
 
 #### 2.2 Agent Definition Structure
 
@@ -164,36 +158,14 @@ Issues, blockers, or questions
 - `/ask` - Technical consultation
 - `/bootstrap` - Project initialization
 - `/brainstorm` - Solution ideation
-
-**Debugging & Fixing**:
 - `/debug` - Deep analysis
-- `/fix:fast` - Quick fixes
-- `/fix:hard` - Complex problems
-- `/fix:ci` - CI/CD debugging
-- `/fix:test` - Test debugging
-- `/fix:types` - Type error resolution
-- `/fix:logs` - Log analysis
-- `/fix:ui` - UI issue fixing
 
-**Design & Content**:
-- `/design:*` - Design creation variants
-- `/content:*` - Content creation variants
-
-**Documentation**:
-- `/docs:init` - Initial docs
-- `/docs:update` - Update docs
-- `/docs:summarize` - Generate summaries
-
-**Git Operations**:
-- `/git:cm` - Commit
-- `/git:cp` - Commit and push
-- `/git:pr` - Create PR
-
-**Project Management**:
-- `/watzup` - Status review
-- `/journal` - Journaling
-- `/scout` - Codebase exploration
-- `/scout:ext` - Codebase exploration (using external tools)
+**Command Directories** (`.claude/commands/`):
+- `bootstrap/` - Project initialization workflows
+- `docs/` - Documentation commands
+- `plan/` - Planning command variants
+- `review/` - Code review workflows
+- `test/` - Testing commands
 
 #### 3.2 Command Workflow Pattern
 
@@ -323,12 +295,18 @@ Planner incorporates into plan
 
 ### 6. Integration Layer
 
-#### 6.1 Hook System (4 Core Hooks)
+#### 6.1 Hook System (8 Core Hooks)
 
 **Purpose**: Intercept and control Claude Code operations for performance, context management, and security
 
 **Hook Architecture**:
 All hooks located in `.claude/hooks/` with consistent patterns - fail-safe exit code 0 (non-blocking)
+
+**Additional Hooks**:
+- `privacy-block.cjs` - Sensitive file access control
+- `descriptive-name.cjs` - Naming conventions enforcement
+- `post-edit-simplify-reminder.cjs` - Post-edit optimization hints
+- `usage-context-awareness.cjs` - Context-aware usage patterns
 
 **1. Session-Init Hook** (`session-init.cjs`)
 - **Trigger**: Session startup

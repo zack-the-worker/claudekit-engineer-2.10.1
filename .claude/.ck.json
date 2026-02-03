@@ -48,12 +48,13 @@
     "framework": "auto"
   },
   "gemini": {
-    "model": "gemini-3.0-flash"
+    "model": "gemini-3-flash-preview"
   },
   "skills": {
     "research": {
       "useGemini": true
     }
   },
+  "hooks": {},
   "assertions": []
 }

@@ -66,6 +66,7 @@ const DEFAULT_CONFIG = {
     'subagent-init': true,
     'dev-rules-reminder': true,
     'usage-context-awareness': true,
+    'context-tracking': true,
     'scout-block': true,
     'privacy-block': true,
     'post-edit-simplify-reminder': true
@@ -525,6 +526,7 @@ function getDefaultConfig(includeProject = true, includeAssertions = true, inclu
     docs: { ...DEFAULT_CONFIG.docs },
     codingLevel: -1,  // Default: disabled (no injection, saves tokens)
     skills: { ...DEFAULT_CONFIG.skills },
+    hooks: { ...DEFAULT_CONFIG.hooks },
     statusline: 'full'
   };
   if (includeLocale) {

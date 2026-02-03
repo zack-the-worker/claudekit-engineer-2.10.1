@@ -266,10 +266,10 @@
           "enum": [
             "gemini-2.5-flash",
             "gemini-2.5-pro",
-            "gemini-3.0-pro",
-            "gemini-3.0-flash"
+            "gemini-3-pro-preview",
+            "gemini-3-flash-preview"
           ],
-          "default": "gemini-3.0-flash",
+          "default": "gemini-3-flash-preview",
           "description": "Gemini model to use for CLI commands"
         }
       },
@@ -326,7 +326,7 @@
     },
     "hooks": {
       "type": "object",
-      "description": "Toggle individual hooks on/off. Default: all enabled.",
+      "description": "Toggle individual hooks on/off. Default: all enabled. Set a hook to `false` to disable; only explicit `false` disables (undefined/null/missing keys default to enabled).",
       "properties": {
         "session-init": {
           "type": "boolean",
@@ -338,6 +338,11 @@
           "default": true,
           "description": "SubagentStart hook - injects context to subagents"
         },
+        "descriptive-name": {
+          "type": "boolean",
+          "default": true,
+          "description": "PreToolUse hook - descriptive name for scripts"
+        },
         "dev-rules-reminder": {
           "type": "boolean",
           "default": true,
@@ -346,7 +351,12 @@
         "usage-context-awareness": {
           "type": "boolean",
           "default": true,
-          "description": "UserPromptSubmit/PostToolUse hook - usage limits awareness"
+          "description": "UserPromptSubmit/PostToolUse hook - usage limits fetching and injection"
+        },
+        "context-tracking": {
+          "type": "boolean",
+          "default": true,
+          "description": "Context window tracking injection (% used, token counts) in dev-rules-reminder"
         },
         "scout-block": {
           "type": "boolean",
