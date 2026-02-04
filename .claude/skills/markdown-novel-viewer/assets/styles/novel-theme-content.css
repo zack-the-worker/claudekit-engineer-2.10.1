@@ -8,7 +8,26 @@
   flex: 1;
   margin-left: var(--sidebar-width);
   padding: 2rem;
-  transition: margin-left 0.3s ease;
+  transition: margin-left 0.15s ease;
+  overflow-y: auto;
+}
+
+/* Custom scrollbar for main content */
+.main-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.main-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.main-content::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+.main-content::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
 }
 
 body:not(.has-plan) .main-content {

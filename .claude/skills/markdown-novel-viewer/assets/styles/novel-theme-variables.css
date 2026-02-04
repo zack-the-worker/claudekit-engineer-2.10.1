@@ -32,6 +32,11 @@
   --header-height: 56px;
 }
 
+/* Content width responsive to font size */
+html[data-font-size="S"] { --content-width: 640px; }
+html[data-font-size="M"] { --content-width: 720px; }
+html[data-font-size="L"] { --content-width: 800px; }
+
 [data-theme="dark"] {
   --bg-primary: #1a1a1a;
   --bg-secondary: #252525;

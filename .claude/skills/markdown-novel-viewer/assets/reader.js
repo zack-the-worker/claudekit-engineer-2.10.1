@@ -329,21 +329,11 @@
     progressFill.style.width = `${Math.min(progress, 100)}%`;
   }
 
-  // Handle scroll for header auto-hide
+  // Handle scroll for progress bar and fixed header shadow
   function handleScroll() {
     if (!header) return;
 
     const currentScrollY = window.scrollY;
-    const viewportHeight = window.innerHeight;
-
-    // Show header on scroll up (immediate response)
-    if (currentScrollY < lastScrollY) {
-      header.classList.remove('is-hidden');
-    }
-    // Hide header on scroll down (after 1 viewport height)
-    else if (currentScrollY > lastScrollY && currentScrollY > viewportHeight) {
-      header.classList.add('is-hidden');
-    }
 
     // Add fixed shadow when scrolled past header
     if (currentScrollY > 60) {
@@ -637,11 +627,62 @@
     window.closeBottomSheet = closeBottomSheet;
   }
 
+  // Sidebar resize functionality
+  const SIDEBAR_WIDTH_KEY = 'novel-viewer-sidebar-width';
+  const resizeHandle = document.getElementById('sidebar-resize');
+  const mainContent = document.querySelector('.main-content');
+
+  function initSidebarResize() {
+    if (!resizeHandle || !sidebar) return;
+
+    // Restore saved width
+    const savedWidth = localStorage.getItem(SIDEBAR_WIDTH_KEY);
+    if (savedWidth) {
+      const width = parseInt(savedWidth, 10);
+      if (width >= 200 && width <= 480) {
+        sidebar.style.width = width + 'px';
+        if (mainContent) mainContent.style.marginLeft = width + 'px';
+      }
+    }
+
+    let isDragging = false;
+    let startX = 0;
+    let startWidth = 0;
+
+    resizeHandle.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      startX = e.clientX;
+      startWidth = sidebar.offsetWidth;
+      resizeHandle.classList.add('dragging');
+      document.body.style.cursor = 'col-resize';
+      document.body.style.userSelect = 'none';
+      e.preventDefault();
+    });
+
+    document.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      const delta = e.clientX - startX;
+      const newWidth = Math.min(480, Math.max(200, startWidth + delta));
+      sidebar.style.width = newWidth + 'px';
+      if (mainContent) mainContent.style.marginLeft = newWidth + 'px';
+    });
+
+    document.addEventListener('mouseup', () => {
+      if (!isDragging) return;
+      isDragging = false;
+      resizeHandle.classList.remove('dragging');
+      document.body.style.cursor = '';
+      document.body.style.userSelect = '';
+      localStorage.setItem(SIDEBAR_WIDTH_KEY, sidebar.offsetWidth.toString());
+    });
+  }
+
   // Initialize
   function init() {
     initTheme();
     initFontSize();
     initSidebar();
+    initSidebarResize();
     initAccordion();
     initShortcuts();
     initMobileNav();
