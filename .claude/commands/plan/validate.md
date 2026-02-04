@@ -165,14 +165,21 @@ After validation completes, provide summary:
 
 ## Next Steps (MANDATORY)
 
-**IMPORTANT:** After providing the validation summary, you MUST remind the user:
+**IMPORTANT:** After providing the validation summary, you MUST remind the user with the **full absolute path**:
 
 > **Best Practice:** Run `/clear` before implementing to start with fresh context.
-> Then run `/cook {plan-path}` to begin implementation.
+> Then run:
+> ```
+> /cook --auto {ABSOLUTE_PATH_TO_PLAN_DIR}/plan.md
+> ```
+> *(Replace with actual absolute path, e.g., `/home/user/project/plans/260203-1234-feature/plan.md`)*
+>
+> **Why `--auto`?** Plan was already validated - safe to skip review gates.
+> **Why absolute path?** After `/clear`, the new session loses context. Worktree paths won't be discoverable without the full path.
 >
 > Fresh context helps Claude focus solely on implementation without planning context pollution, improving plan adherence.
 
-This reminder is **NON-NEGOTIABLE** - always output it at the end of validation.
+This reminder is **NON-NEGOTIABLE** - always output it at the end of validation with the actual absolute path.
 
 ## Important Notes
 
