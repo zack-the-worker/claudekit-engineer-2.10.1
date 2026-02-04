@@ -1,3 +1,15 @@
+## [2.10.0-beta.6](https://github.com/claudekit/claudekit-engineer/compare/v2.10.0-beta.5...v2.10.0-beta.6) (2026-02-04)
+
+
+### 🚀 Features
+
+* **markdown-novel-viewer:** implement Focused Reader 2.0 ([#439](https://github.com/claudekit/claudekit-engineer/issues/439)) ([6a0135f](https://github.com/claudekit/claudekit-engineer/commit/6a0135f278a91386c7c24efd8e732589d1b21c96))
+
+
+### 🐞 Bug Fixes
+
+* **novel-viewer:** improve UI/UX for reading experience ([086a393](https://github.com/claudekit/claudekit-engineer/commit/086a3937b90d37b159e7b671cdb2c07459e01167))
+
 ## [2.10.0-beta.5](https://github.com/claudekit/claudekit-engineer/compare/v2.10.0-beta.4...v2.10.0-beta.5) (2026-02-04)
 
 
