@@ -1,10 +1,49 @@
-## [2.9.1](https://github.com/claudekit/claudekit-engineer/compare/v2.9.0...v2.9.1) (2026-02-03)
+## [2.10.0-beta.3](https://github.com/claudekit/claudekit-engineer/compare/v2.10.0-beta.2...v2.10.0-beta.3) (2026-02-04)
 
 
 ### 🐞 Bug Fixes
 
-* **hooks:** disable skill-dedup hook due to race condition ([#422](https://github.com/claudekit/claudekit-engineer/issues/422)) ([512bd30](https://github.com/claudekit/claudekit-engineer/commit/512bd302486966dea45d98458f3530d75b474bb9))
-* **metadata:** add .shadowed/ to deletions for user cleanup ([#422](https://github.com/claudekit/claudekit-engineer/issues/422)) ([d75e6de](https://github.com/claudekit/claudekit-engineer/commit/d75e6dea026db0494b8c6addb8b06d93307627a6))
+* empty local hooks config now inherits from global instead of resetting to defaults ([eee5ead](https://github.com/claudekit/claudekit-engineer/commit/eee5eade478536629862b1d52b7df0956612510f)), closes [#435](https://github.com/claudekit/claudekit-engineer/issues/435)
+* output full absolute path in plan reminder for worktree support ([4021b77](https://github.com/claudekit/claudekit-engineer/commit/4021b77210cd0d615ec4e1dd57fc3ec41b091107))
+
+## [2.10.0-beta.3](https://github.com/claudekit/claudekit-engineer/compare/v2.10.0-beta.2...v2.10.0-beta.3) (2026-02-04)
+
+
+### 🐞 Bug Fixes
+
+* empty local hooks config now inherits from global instead of resetting to defaults ([eee5ead](https://github.com/claudekit/claudekit-engineer/commit/eee5eade478536629862b1d52b7df0956612510f)), closes [#435](https://github.com/claudekit/claudekit-engineer/issues/435)
+
+## [2.10.0-beta.2](https://github.com/claudekit/claudekit-engineer/compare/v2.10.0-beta.1...v2.10.0-beta.2) (2026-02-03)
+
+
+### 🚀 Features
+
+* **preview:** add visual generation modes ([e62b0b6](https://github.com/claudekit/claudekit-engineer/commit/e62b0b6f36d05e099dead22dd5ccf1f318d39ec2)), closes [#433](https://github.com/claudekit/claudekit-engineer/issues/433)
+
+
+### 🐞 Bug Fixes
+
+* **preview:** add mermaidjs-v11 skill activation note ([12cc244](https://github.com/claudekit/claudekit-engineer/commit/12cc2444d9fbdc2285a025f685fab8d9c76b1586))
+* **preview:** balance padding in ascii template ([ecc2a27](https://github.com/claudekit/claudekit-engineer/commit/ecc2a272c9fa4d946b9669fa2e59bba0ec906be6))
+* **preview:** correct ASCII diagram alignment in templates ([ac6a3fc](https://github.com/claudekit/claudekit-engineer/commit/ac6a3fcf0522693f341587511232282c1618c406))
+* **preview:** restore unicode box chars, fix arrow width issue ([8f547bf](https://github.com/claudekit/claudekit-engineer/commit/8f547bfbfe89c566bb7a50b127b9d3cd2998b529))
+* **preview:** use proper skill invocation syntax for mermaidjs-v11 ([de6d0b9](https://github.com/claudekit/claudekit-engineer/commit/de6d0b9299754c7bc2ebd23081e6c90880c5bf8f))
+* **preview:** use pure ASCII characters for diagram templates ([0792f6b](https://github.com/claudekit/claudekit-engineer/commit/0792f6bcafa8addb6121c411c78dd2666cc87a98))
+
+## [2.10.0-beta.1](https://github.com/claudekit/claudekit-engineer/compare/v2.9.1-beta.4...v2.10.0-beta.1) (2026-02-03)
+
+
+### 🚀 Features
+
+* **plan:** auto-propagate validation decisions to phase files ([#431](https://github.com/claudekit/claudekit-engineer/issues/431)) ([3005b94](https://github.com/claudekit/claudekit-engineer/commit/3005b94bce05e271aa755af3d74e0c5c03b3d72a))
+
+## [2.9.1-beta.4](https://github.com/claudekit/claudekit-engineer/compare/v2.9.1-beta.3...v2.9.1-beta.4) (2026-02-03)
+
+
+### 🐞 Bug Fixes
+
+* /docs:init stalls after Phase 1 ([#428](https://github.com/claudekit/claudekit-engineer/issues/428)) ([ef28c36](https://github.com/claudekit/claudekit-engineer/commit/ef28c361c5e6fb6333e12162355fd622f3a33803)), closes [#427](https://github.com/claudekit/claudekit-engineer/issues/427)
+* **worktree:** use internal worktrees/ for monorepos ([#429](https://github.com/claudekit/claudekit-engineer/issues/429)) ([a0a538a](https://github.com/claudekit/claudekit-engineer/commit/a0a538aa6b5c904bdc27676dc376b0f340851b0f))
 
 ## [2.9.1-beta.3](https://github.com/claudekit/claudekit-engineer/compare/v2.9.1-beta.2...v2.9.1-beta.3) (2026-02-03)
 
