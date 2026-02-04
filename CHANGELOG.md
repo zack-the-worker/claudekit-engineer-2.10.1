@@ -1,3 +1,11 @@
+## [2.10.0-beta.4](https://github.com/claudekit/claudekit-engineer/compare/v2.10.0-beta.3...v2.10.0-beta.4) (2026-02-04)
+
+
+### ⚡ Performance Improvements
+
+* **skill:** optimize `code-review` skill with edge case scouting & token efficiency ([3aaae53](https://github.com/claudekit/claudekit-engineer/commit/3aaae531db5e2fc02be16e0bb6144d1f8a86e219))
+* **subagent:** optimize `code-reviewer` with edge case scouting after implementation ([2cda6d6](https://github.com/claudekit/claudekit-engineer/commit/2cda6d654f368b63b1bb92d426a150abecf14f5f))
+
 ## [2.10.0-beta.3](https://github.com/claudekit/claudekit-engineer/compare/v2.10.0-beta.2...v2.10.0-beta.3) (2026-02-04)
 
 
