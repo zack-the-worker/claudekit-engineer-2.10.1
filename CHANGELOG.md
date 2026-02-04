@@ -1,3 +1,10 @@
+## [2.10.0-beta.3](https://github.com/claudekit/claudekit-engineer/compare/v2.10.0-beta.2...v2.10.0-beta.3) (2026-02-04)
+
+
+### 🐞 Bug Fixes
+
+* empty local hooks config now inherits from global instead of resetting to defaults ([eee5ead](https://github.com/claudekit/claudekit-engineer/commit/eee5eade478536629862b1d52b7df0956612510f)), closes [#435](https://github.com/claudekit/claudekit-engineer/issues/435)
+
 ## [2.10.0-beta.2](https://github.com/claudekit/claudekit-engineer/compare/v2.10.0-beta.1...v2.10.0-beta.2) (2026-02-03)
 
 
