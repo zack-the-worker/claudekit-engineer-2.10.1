@@ -1,3 +1,10 @@
+## [2.10.0-beta.5](https://github.com/claudekit/claudekit-engineer/compare/v2.10.0-beta.4...v2.10.0-beta.5) (2026-02-04)
+
+
+### 🐞 Bug Fixes
+
+* **hooks:** add language-aware file naming guidance ([0718d91](https://github.com/claudekit/claudekit-engineer/commit/0718d91c7a787bf92555365c33d0f123e5f357fd)), closes [#440](https://github.com/claudekit/claudekit-engineer/issues/440)
+
 ## [2.10.0-beta.4](https://github.com/claudekit/claudekit-engineer/compare/v2.10.0-beta.3...v2.10.0-beta.4) (2026-02-04)
 
 
