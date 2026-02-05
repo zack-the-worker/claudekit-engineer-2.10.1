@@ -1,3 +1,38 @@
+## [2.10.0](https://github.com/claudekit/claudekit-engineer/compare/v2.9.1...v2.10.0) (2026-02-05)
+
+
+### 🚀 Features
+
+* **markdown-novel-viewer:** implement Focused Reader 2.0 ([#439](https://github.com/claudekit/claudekit-engineer/issues/439)) ([6a0135f](https://github.com/claudekit/claudekit-engineer/commit/6a0135f278a91386c7c24efd8e732589d1b21c96))
+* **plan:** auto-propagate validation decisions to phase files ([#431](https://github.com/claudekit/claudekit-engineer/issues/431)) ([3005b94](https://github.com/claudekit/claudekit-engineer/commit/3005b94bce05e271aa755af3d74e0c5c03b3d72a))
+* **preview:** add visual generation modes ([e62b0b6](https://github.com/claudekit/claudekit-engineer/commit/e62b0b6f36d05e099dead22dd5ccf1f318d39ec2)), closes [#433](https://github.com/claudekit/claudekit-engineer/issues/433)
+
+
+### 🐞 Bug Fixes
+
+* /docs:init stalls after Phase 1 ([#428](https://github.com/claudekit/claudekit-engineer/issues/428)) ([ef28c36](https://github.com/claudekit/claudekit-engineer/commit/ef28c361c5e6fb6333e12162355fd622f3a33803)), closes [#427](https://github.com/claudekit/claudekit-engineer/issues/427)
+* empty local hooks config now inherits from global instead of resetting to defaults ([eee5ead](https://github.com/claudekit/claudekit-engineer/commit/eee5eade478536629862b1d52b7df0956612510f)), closes [#435](https://github.com/claudekit/claudekit-engineer/issues/435)
+* **help:** update /preview usage hints with generation modes ([afa9709](https://github.com/claudekit/claudekit-engineer/commit/afa970962564a4961df5c4f3aefbb0f8c06c9ab9))
+* **hooks:** add language-aware file naming guidance ([0718d91](https://github.com/claudekit/claudekit-engineer/commit/0718d91c7a787bf92555365c33d0f123e5f357fd)), closes [#440](https://github.com/claudekit/claudekit-engineer/issues/440)
+* **novel-viewer:** improve UI/UX for reading experience ([086a393](https://github.com/claudekit/claudekit-engineer/commit/086a3937b90d37b159e7b671cdb2c07459e01167))
+* output full absolute path in plan reminder for worktree support ([4021b77](https://github.com/claudekit/claudekit-engineer/commit/4021b77210cd0d615ec4e1dd57fc3ec41b091107))
+* **preview:** add mermaidjs-v11 skill activation note ([12cc244](https://github.com/claudekit/claudekit-engineer/commit/12cc2444d9fbdc2285a025f685fab8d9c76b1586))
+* **preview:** balance padding in ascii template ([ecc2a27](https://github.com/claudekit/claudekit-engineer/commit/ecc2a272c9fa4d946b9669fa2e59bba0ec906be6))
+* **preview:** correct ASCII diagram alignment in templates ([ac6a3fc](https://github.com/claudekit/claudekit-engineer/commit/ac6a3fcf0522693f341587511232282c1618c406))
+* **preview:** restore unicode box chars, fix arrow width issue ([8f547bf](https://github.com/claudekit/claudekit-engineer/commit/8f547bfbfe89c566bb7a50b127b9d3cd2998b529))
+* **preview:** use proper skill invocation syntax for mermaidjs-v11 ([de6d0b9](https://github.com/claudekit/claudekit-engineer/commit/de6d0b9299754c7bc2ebd23081e6c90880c5bf8f))
+* **preview:** use pure ASCII characters for diagram templates ([0792f6b](https://github.com/claudekit/claudekit-engineer/commit/0792f6bcafa8addb6121c411c78dd2666cc87a98))
+* **worktree:** use internal worktrees/ for monorepos ([#429](https://github.com/claudekit/claudekit-engineer/issues/429)) ([a0a538a](https://github.com/claudekit/claudekit-engineer/commit/a0a538aa6b5c904bdc27676dc376b0f340851b0f))
+
+
+### ⚡ Performance Improvements
+
+* **hooks:** added `cook-after-plan-reminder` hook ([aea498d](https://github.com/claudekit/claudekit-engineer/commit/aea498df13be108098882f60de52353e7dcd8ec6))
+* **skill:** optimize `code-review` skill with edge case scouting & token efficiency ([3aaae53](https://github.com/claudekit/claudekit-engineer/commit/3aaae531db5e2fc02be16e0bb6144d1f8a86e219))
+* **skills:** enhance `/cook` skill to respect rules and subagents ([15ca501](https://github.com/claudekit/claudekit-engineer/commit/15ca501d7a715e005830b5277c391b29e2d73372))
+* **skills:** enhance `/skill-creator` skill to respect rules and subagents ([c07a736](https://github.com/claudekit/claudekit-engineer/commit/c07a7365d549fa0f355fde69fea3d5d4ace4f8f7))
+* **subagent:** optimize `code-reviewer` with edge case scouting after implementation ([2cda6d6](https://github.com/claudekit/claudekit-engineer/commit/2cda6d654f368b63b1bb92d426a150abecf14f5f))
+
 ## [2.10.0-beta.7](https://github.com/claudekit/claudekit-engineer/compare/v2.10.0-beta.6...v2.10.0-beta.7) (2026-02-05)
 
 
