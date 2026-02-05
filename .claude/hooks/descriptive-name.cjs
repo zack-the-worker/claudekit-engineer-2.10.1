@@ -8,8 +8,9 @@ if (!isHookEnabled('descriptive-name')) {
 }
 
 try {
-  let injectedPrompt = `File naming guidance:
-- Prefer kebab-case for JS/TS/Python/shell (.js, .ts, .py, .sh)
+  let injectedPrompt = `## File naming guidance:
+- Skip this guidance if you are creating markdown or plain text files
+- Prefer kebab-case for JS/TS/Python/shell (.js, .ts, .py, .sh) with descriptive names
 - Respect language conventions: C#/Java/Kotlin/Swift use PascalCase (.cs, .java, .kt, .swift), Go/Rust use snake_case (.go, .rs)
 - Other languages: follow their ecosystem's standard naming convention
 - Goal: self-documenting names for LLM tools (Grep, Glob, Search)`
