@@ -1,3 +1,10 @@
+## [2.10.1-beta.1](https://github.com/claudekit/claudekit-engineer/compare/v2.10.0...v2.10.1-beta.1) (2026-02-05)
+
+
+### 🐞 Bug Fixes
+
+* **hooks:** hotfix `descriptive-name` hook ([9cb59dd](https://github.com/claudekit/claudekit-engineer/commit/9cb59dd2c5d7a2cb5d267490e2c1a7de23dd211e))
+
 ## [2.10.0](https://github.com/claudekit/claudekit-engineer/compare/v2.9.1...v2.10.0) (2026-02-05)
 
 
