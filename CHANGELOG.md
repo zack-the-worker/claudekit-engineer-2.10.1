@@ -1,3 +1,10 @@
+## [2.10.0-beta.7](https://github.com/claudekit/claudekit-engineer/compare/v2.10.0-beta.6...v2.10.0-beta.7) (2026-02-05)
+
+
+### 🐞 Bug Fixes
+
+* **help:** update /preview usage hints with generation modes ([afa9709](https://github.com/claudekit/claudekit-engineer/commit/afa970962564a4961df5c4f3aefbb0f8c06c9ab9))
+
 ## [2.10.0-beta.6](https://github.com/claudekit/claudekit-engineer/compare/v2.10.0-beta.5...v2.10.0-beta.6) (2026-02-04)
 
 
