@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/claudekit/claudekit-engineer.git"
+    "url": "https://github.com/zack-the-worker/claudekit-engineer-2.10.1.git"
   },
   "keywords": [
     "claude-code",
@@ -24,9 +24,9 @@
   "author": "Duy Nguyen",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/claudekit/claudekit-engineer/issues"
+    "url": "https://github.com/zack-the-worker/claudekit-engineer-2.10.1/issues"
   },
-  "homepage": "https://github.com/claudekit/claudekit-engineer#readme",
+  "homepage": "https://github.com/zack-the-worker/claudekit-engineer-2.10.1#readme",
   "files": [
     ".claude/",
     "plans/",
